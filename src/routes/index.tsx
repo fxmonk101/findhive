@@ -1,24 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery, queryOptions } from "@tanstack/react-query";
+import { Hero } from "@/components/home/Hero";
+import { CategoryStrip } from "@/components/home/CategoryStrip";
+import { CategoryShowcase } from "@/components/home/CategoryShowcase";
+import { Newsletter } from "@/components/home/Newsletter";
+import { ProductGrid } from "@/components/product/ProductGrid";
+import { CATEGORIES } from "@/lib/categories";
+import { getFeatured, listByCategory } from "@/lib/products";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const featuredOpts = queryOptions({ queryKey: ["featured"], queryFn: () => getFeatured(8) });
+const catOpts = (slug: string) =>
+  queryOptions({ queryKey: ["home-cat", slug], queryFn: () => listByCategory(slug) });
+
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => {
+    context.queryClient.ensureQueryData(featuredOpts);
+    CATEGORIES.forEach((c) => context.queryClient.ensureQueryData(catOpts(c.slug)));
+  },
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const featured = useQuery(featuredOpts);
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <CategoryStrip />
+      <section className="border-b border-border py-10">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-bold text-primary md:text-2xl">Trending Deals</h2>
+              <p className="text-sm text-muted-foreground">Top-rated picks across every hive</p>
+            </div>
+          </div>
+          <ProductGrid products={featured.data ?? []} loading={featured.isLoading} />
+        </div>
+      </section>
+      {CATEGORIES.map((c) => (
+        <CategoryShowcaseWrapper key={c.slug} slug={c.slug} />
+      ))}
+      <Newsletter />
+    </>
   );
 }
+
+function CategoryShowcaseWrapper({ slug }: { slug: string }) {
+  const q = useQuery(catOpts(slug));
+  const cat = CATEGORIES.find((c) => c.slug === slug)!;
+  if (!q.data?.length) return null;
+  return <CategoryShowcase category={cat} products={q.data} />;
+}
+
