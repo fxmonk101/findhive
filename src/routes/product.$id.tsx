@@ -54,7 +54,7 @@ function ProductPage() {
   const compared = useCompare((s) => (hydrated ? s.ids.includes(id) : false));
   const toggleCompare = useCompare((s) => s.toggle);
   const addToCart = useCart((s) => s.add);
-  const track = useRecentlyViewed((s) => s.push);
+  const track = useRecentlyViewed((s) => s.visit);
 
   useEffect(() => {
     if (product) track(product.id);
