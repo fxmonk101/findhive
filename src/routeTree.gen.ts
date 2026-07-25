@@ -10,11 +10,16 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
 import { Route as SearchRouteImport } from './routes/search'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CartRouteImport } from './routes/cart'
+import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -27,9 +32,19 @@ const WishlistRoute = WishlistRouteImport.update({
   path: '/wishlist',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingReturnsRoute = ShippingReturnsRouteImport.update({
+  id: '/shipping-returns',
+  path: '/shipping-returns',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SearchRoute = SearchRouteImport.update({
@@ -37,9 +52,19 @@ const SearchRoute = SearchRouteImport.update({
   path: '/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -50,6 +75,11 @@ const ContactRoute = ContactRouteImport.update({
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AffiliateDisclosureRoute = AffiliateDisclosureRouteImport.update({
+  id: '/affiliate-disclosure',
+  path: '/affiliate-disclosure',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountRoute = AccountRouteImport.update({
@@ -87,11 +117,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
+  '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
@@ -101,11 +136,16 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
+  '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
@@ -116,11 +156,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
+  '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
+  '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
+  '/terms': typeof TermsRoute
   '/wishlist': typeof WishlistRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
@@ -132,11 +177,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/account'
+    | '/affiliate-disclosure'
     | '/cart'
     | '/contact'
+    | '/cookies'
     | '/faqs'
+    | '/privacy'
     | '/search'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/category/$category'
     | '/product/$id'
@@ -146,11 +196,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/account'
+    | '/affiliate-disclosure'
     | '/cart'
     | '/contact'
+    | '/cookies'
     | '/faqs'
+    | '/privacy'
     | '/search'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/category/$category'
     | '/product/$id'
@@ -160,11 +215,16 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/account'
+    | '/affiliate-disclosure'
     | '/cart'
     | '/contact'
+    | '/cookies'
     | '/faqs'
+    | '/privacy'
     | '/search'
+    | '/shipping-returns'
     | '/shop'
+    | '/terms'
     | '/wishlist'
     | '/category/$category'
     | '/product/$id'
@@ -175,11 +235,16 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AccountRoute: typeof AccountRoute
+  AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   CartRoute: typeof CartRoute
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   FaqsRoute: typeof FaqsRoute
+  PrivacyRoute: typeof PrivacyRoute
   SearchRoute: typeof SearchRoute
+  ShippingReturnsRoute: typeof ShippingReturnsRoute
   ShopRoute: typeof ShopRoute
+  TermsRoute: typeof TermsRoute
   WishlistRoute: typeof WishlistRoute
   CategoryCategoryRoute: typeof CategoryCategoryRouteWithChildren
   ProductIdRoute: typeof ProductIdRoute
@@ -194,11 +259,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WishlistRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping-returns': {
+      id: '/shipping-returns'
+      path: '/shipping-returns'
+      fullPath: '/shipping-returns'
+      preLoaderRoute: typeof ShippingReturnsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/search': {
@@ -208,11 +287,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -227,6 +320,13 @@ declare module '@tanstack/react-router' {
       path: '/cart'
       fullPath: '/cart'
       preLoaderRoute: typeof CartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/affiliate-disclosure': {
+      id: '/affiliate-disclosure'
+      path: '/affiliate-disclosure'
+      fullPath: '/affiliate-disclosure'
+      preLoaderRoute: typeof AffiliateDisclosureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account': {
@@ -289,11 +389,16 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AccountRoute: AccountRoute,
+  AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   CartRoute: CartRoute,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   FaqsRoute: FaqsRoute,
+  PrivacyRoute: PrivacyRoute,
   SearchRoute: SearchRoute,
+  ShippingReturnsRoute: ShippingReturnsRoute,
   ShopRoute: ShopRoute,
+  TermsRoute: TermsRoute,
   WishlistRoute: WishlistRoute,
   CategoryCategoryRoute: CategoryCategoryRouteWithChildren,
   ProductIdRoute: ProductIdRoute,
