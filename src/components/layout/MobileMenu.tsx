@@ -20,6 +20,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <Link to="/about" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">About Us</Link>
           <Link to="/contact" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Contact Us</Link>
           <Link to="/faqs" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">FAQs</Link>
+          <Link to="/reviews" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Reviews</Link>
           <Link to="/account" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">My Account</Link>
         </nav>
         <div className="px-4 pb-8">

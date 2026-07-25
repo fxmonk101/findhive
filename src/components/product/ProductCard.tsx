@@ -1,11 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { Heart, GitCompareArrows, ExternalLink } from "lucide-react";
+import { Heart, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "./RatingStars";
 import { PriceTag } from "./PriceTag";
 import { useWishlist } from "@/lib/stores/wishlist";
-import { useCompare } from "@/lib/stores/compare";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
 import type { Product } from "@/lib/products";
@@ -14,8 +13,6 @@ export function ProductCard({ product }: { product: Product }) {
   const hydrated = useHydrated();
   const wishlisted = useWishlist((s) => (hydrated ? s.ids.includes(product.id) : false));
   const toggleWish = useWishlist((s) => s.toggle);
-  const compared = useCompare((s) => (hydrated ? s.ids.includes(product.id) : false));
-  const toggleCompare = useCompare((s) => s.toggle);
   const addToCart = useCart((s) => s.add);
 
   return (
@@ -50,25 +47,7 @@ export function ProductCard({ product }: { product: Product }) {
               strokeWidth={2}
             />
           </button>
-          <button
-            type="button"
-            aria-label={compared ? "Remove from compare" : "Add to compare"}
-            aria-pressed={compared}
-            onClick={(e) => {
-              e.preventDefault();
-              const res = toggleCompare(product.id);
-              if (!res.ok && res.reason) toast.error(res.reason);
-            }}
-            className={`grid h-8 w-8 place-items-center rounded-full shadow-sm backdrop-blur transition ${
-              compared ? "bg-accent text-accent-foreground" : "bg-white/90 text-primary hover:bg-white"
-            }`}
-          >
-            <GitCompareArrows size={16} strokeWidth={2} />
-          </button>
         </div>
-        <span className="absolute left-2 top-2 rounded bg-primary/90 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary-foreground backdrop-blur">
-          {product.source_retailer}
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-3">
@@ -81,22 +60,10 @@ export function ProductCard({ product }: { product: Product }) {
         </Link>
         <RatingStars rating={product.rating} reviewCount={product.review_count} />
         <PriceTag price={product.price} original={product.original_price} />
-        <div className="mt-auto flex gap-1.5 pt-1">
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 text-xs"
-            onClick={() => {
-              const res = toggleCompare(product.id);
-              if (!res.ok && res.reason) toast.error(res.reason);
-            }}
-          >
-            <GitCompareArrows size={12} className="mr-1" />
-            {compared ? "Comparing" : "Compare"}
-          </Button>
+        <div className="mt-auto pt-1">
           <Button
             size="sm"
-            className="flex-1 bg-accent text-xs text-accent-foreground hover:bg-accent/90"
+            className="w-full bg-accent text-xs text-accent-foreground hover:bg-accent/90"
             onClick={() => {
               addToCart({
                 id: product.id,

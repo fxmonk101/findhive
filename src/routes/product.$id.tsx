@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useQuery, queryOptions } from "@tanstack/react-query";
 import { useEffect } from "react";
-import { ChevronRight, Heart, GitCompareArrows, ExternalLink, Truck, ShieldCheck, RotateCcw } from "lucide-react";
+import { ChevronRight, Heart, ExternalLink, Truck, ShieldCheck, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { getProduct, getRelated } from "@/lib/products";
 import { getCategory, getSubcategory } from "@/lib/categories";
@@ -10,7 +10,6 @@ import { PriceTag } from "@/components/product/PriceTag";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { Button } from "@/components/ui/button";
 import { useWishlist } from "@/lib/stores/wishlist";
-import { useCompare } from "@/lib/stores/compare";
 import { useCart } from "@/lib/stores/cart";
 import { useRecentlyViewed } from "@/lib/stores/recently-viewed";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -51,8 +50,6 @@ function ProductPage() {
   const hydrated = useHydrated();
   const wishlisted = useWishlist((s) => (hydrated ? s.ids.includes(id) : false));
   const toggleWish = useWishlist((s) => s.toggle);
-  const compared = useCompare((s) => (hydrated ? s.ids.includes(id) : false));
-  const toggleCompare = useCompare((s) => s.toggle);
   const addToCart = useCart((s) => s.add);
   const track = useRecentlyViewed((s) => s.visit);
 
@@ -80,12 +77,7 @@ function ProductPage() {
           <img src={product.image_url} alt={product.title} className="aspect-square w-full object-cover" />
         </div>
         <div>
-          <div className="mb-2 flex items-center gap-2 text-xs">
-            <span className="rounded bg-primary px-2 py-0.5 font-semibold uppercase tracking-wider text-primary-foreground">
-              {product.source_retailer}
-            </span>
-            {sub && <span className="text-muted-foreground">{sub.name}</span>}
-          </div>
+          {sub && <div className="mb-2 text-xs text-muted-foreground">{sub.name}</div>}
           <h1 className="text-2xl font-bold text-primary md:text-3xl">{product.title}</h1>
           <div className="mt-3">
             <RatingStars rating={product.rating} reviewCount={product.review_count} />
@@ -123,17 +115,6 @@ function ProductPage() {
             >
               <Heart size={16} className={wishlisted ? "fill-accent text-accent" : ""} /> {wishlisted ? "Saved" : "Wishlist"}
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => {
-                const r = toggleCompare(product.id);
-                if (!r.ok && r.reason) toast.error(r.reason);
-              }}
-              aria-pressed={compared}
-            >
-              <GitCompareArrows size={16} /> {compared ? "Comparing" : "Compare"}
-            </Button>
           </div>
 
           <a
@@ -142,7 +123,7 @@ function ProductPage() {
             rel="noopener noreferrer"
             className="mt-3 inline-flex text-sm font-semibold text-accent hover:underline"
           >
-            View on {product.source_retailer} ↗
+            Go to Store ↗
           </a>
 
           <ul className="mt-6 grid grid-cols-1 gap-3 border-t border-border pt-6 text-sm sm:grid-cols-3">

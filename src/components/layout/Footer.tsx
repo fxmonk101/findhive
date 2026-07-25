@@ -36,7 +36,16 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-accent">About Us</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact Us</Link></li>
             <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
+            <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
             <li><Link to="/shop" className="hover:text-accent">Special Offers</Link></li>
+          </ul>
+          <h4 className="mb-4 mt-6 text-sm font-bold uppercase tracking-wide text-accent">Legal</h4>
+          <ul className="space-y-2 text-sm text-primary-foreground/80">
+            <li><Link to="/privacy" className="hover:text-accent">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-accent">Terms of Service</Link></li>
+            <li><Link to="/cookies" className="hover:text-accent">Cookie Policy</Link></li>
+            <li><Link to="/affiliate-disclosure" className="hover:text-accent">Affiliate Disclosure</Link></li>
+            <li><Link to="/shipping-returns" className="hover:text-accent">Shipping &amp; Returns</Link></li>
           </ul>
         </div>
         <div>
