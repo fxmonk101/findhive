@@ -1,9 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Heart, GitCompareArrows, ShoppingBag, User } from "lucide-react";
+import { Heart, ShoppingBag, User } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { SearchBar } from "./SearchBar";
 import { useWishlist } from "@/lib/stores/wishlist";
-import { useCompare } from "@/lib/stores/compare";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatPrice } from "@/lib/format";
@@ -20,7 +19,6 @@ function Badge({ count }: { count: number }) {
 export function MainHeader({ onMenuClick }: { onMenuClick?: () => void }) {
   const hydrated = useHydrated();
   const wishCount = useWishlist((s) => (hydrated ? s.ids.length : 0));
-  const compCount = useCompare((s) => (hydrated ? s.ids.length : 0));
   const cartCount = useCart((s) => (hydrated ? s.items.reduce((n, i) => n + i.quantity, 0) : 0));
   const subtotal = useCart((s) => (hydrated ? s.items.reduce((n, i) => n + i.quantity * i.price, 0) : 0));
 
@@ -50,10 +48,6 @@ export function MainHeader({ onMenuClick }: { onMenuClick?: () => void }) {
           <Link to="/wishlist" className="relative grid h-9 w-9 place-items-center hover:text-accent" aria-label="Wishlist">
             <Heart size={20} />
             <Badge count={wishCount} />
-          </Link>
-          <Link to="/compare" className="relative grid h-9 w-9 place-items-center hover:text-accent" aria-label="Compare">
-            <GitCompareArrows size={20} />
-            <Badge count={compCount} />
           </Link>
           <Link to="/cart" className="relative flex items-center gap-2 hover:text-accent" aria-label="Cart">
             <div className="relative grid h-9 w-9 place-items-center">
