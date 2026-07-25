@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { User, Heart, GitCompareArrows, ShoppingBag, Clock } from "lucide-react";
+import { User, Heart, Star, ShoppingBag, Clock } from "lucide-react";
 
 export const Route = createFileRoute("/account")({
   head: () => ({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/account")({
 
 const tiles = [
   { title: "Wishlist", desc: "Deals you've saved for later", icon: Heart, to: "/wishlist" as const },
-  { title: "Compare", desc: "Side-by-side comparisons", icon: GitCompareArrows, to: "/compare" as const },
+  { title: "Reviews", desc: "See what shoppers are saying", icon: Star, to: "/reviews" as const },
   { title: "Cart", desc: "Items ready to check out", icon: ShoppingBag, to: "/cart" as const },
   { title: "Recently viewed", desc: "Products you've browsed", icon: Clock, to: "/shop" as const },
 ];
