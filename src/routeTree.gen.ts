@@ -14,7 +14,6 @@ import { Route as ShopRouteImport } from './routes/shop'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CompareRouteImport } from './routes/compare'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
@@ -46,11 +45,6 @@ const FaqsRoute = FaqsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CompareRoute = CompareRouteImport.update({
-  id: '/compare',
-  path: '/compare',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CartRoute = CartRouteImport.update({
@@ -94,7 +88,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
-  '/compare': typeof CompareRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/search': typeof SearchRoute
@@ -109,7 +102,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
-  '/compare': typeof CompareRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/search': typeof SearchRoute
@@ -125,7 +117,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/account': typeof AccountRoute
   '/cart': typeof CartRoute
-  '/compare': typeof CompareRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/search': typeof SearchRoute
@@ -142,7 +133,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/account'
     | '/cart'
-    | '/compare'
     | '/contact'
     | '/faqs'
     | '/search'
@@ -157,7 +147,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/account'
     | '/cart'
-    | '/compare'
     | '/contact'
     | '/faqs'
     | '/search'
@@ -172,7 +161,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/account'
     | '/cart'
-    | '/compare'
     | '/contact'
     | '/faqs'
     | '/search'
@@ -188,7 +176,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AccountRoute: typeof AccountRoute
   CartRoute: typeof CartRoute
-  CompareRoute: typeof CompareRoute
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
   SearchRoute: typeof SearchRoute
@@ -233,13 +220,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/compare': {
-      id: '/compare'
-      path: '/compare'
-      fullPath: '/compare'
-      preLoaderRoute: typeof CompareRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cart': {
@@ -310,7 +290,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AccountRoute: AccountRoute,
   CartRoute: CartRoute,
-  CompareRoute: CompareRoute,
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
   SearchRoute: SearchRoute,
