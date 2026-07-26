@@ -19,6 +19,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as AffiliateDisclosureRouteImport } from './routes/affiliate-disclosure'
 import { Route as AccountRouteImport } from './routes/account'
@@ -78,6 +79,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CartRoute = CartRouteImport.update({
   id: '/cart',
   path: '/cart',
@@ -125,6 +131,7 @@ export interface FileRoutesByFullPath {
   '/account': typeof AccountRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
@@ -166,6 +174,7 @@ export interface FileRoutesById {
   '/account': typeof AccountRoute
   '/affiliate-disclosure': typeof AffiliateDisclosureRoute
   '/cart': typeof CartRoute
+  '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
   '/faqs': typeof FaqsRoute
@@ -188,6 +197,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/affiliate-disclosure'
     | '/cart'
+    | '/checkout'
     | '/contact'
     | '/cookies'
     | '/faqs'
@@ -208,6 +218,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/affiliate-disclosure'
     | '/cart'
+    | '/checkout'
     | '/contact'
     | '/cookies'
     | '/faqs'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/affiliate-disclosure'
     | '/cart'
+    | '/checkout'
     | '/contact'
     | '/cookies'
     | '/faqs'
@@ -249,6 +261,7 @@ export interface RootRouteChildren {
   AccountRoute: typeof AccountRoute
   AffiliateDisclosureRoute: typeof AffiliateDisclosureRoute
   CartRoute: typeof CartRoute
+  CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
   FaqsRoute: typeof FaqsRoute
@@ -335,6 +348,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cart': {
       id: '/cart'
       path: '/cart'
@@ -411,6 +431,7 @@ const rootRouteChildren: RootRouteChildren = {
   AccountRoute: AccountRoute,
   AffiliateDisclosureRoute: AffiliateDisclosureRoute,
   CartRoute: CartRoute,
+  CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
   FaqsRoute: FaqsRoute,
@@ -427,3 +448,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
