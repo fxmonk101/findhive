@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Heart, ExternalLink } from "lucide-react";
+import { Heart, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "./RatingStars";
@@ -76,8 +76,8 @@ export function ProductCard({ product }: { product: Product }) {
               toast.success("Added to cart");
             }}
           >
-            <ExternalLink size={12} className="mr-1" />
-            View Deal
+            <ShoppingBag size={12} className="mr-1" />
+            Add to Cart
           </Button>
         </div>
       </div>
