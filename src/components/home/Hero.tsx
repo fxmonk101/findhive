@@ -4,6 +4,7 @@ import { Search, Scale, CheckCircle2, ShoppingBag, ChevronLeft, ChevronRight } f
 import { Button } from "@/components/ui/button";
 import slideTcg from "@/assets/slide-tcg.jpg";
 import slideWatch from "@/assets/slide-watch.jpg";
+import slideBrand from "@/assets/about-hero.jpg";
 
 const steps = [
   { icon: Search, title: "Find", desc: "Search across trusted retailers" },
@@ -26,7 +27,7 @@ const slides: Slide[] = [
     kicker: "Trending in Trading Cards",
     title: (
       <>
-        Chase the <span className="text-accent">rare pulls</span>.
+        Chase the <span className="text-shine">rare pulls</span>.
       </>
     ),
     subtitle: "Booster boxes, graded slabs & sealed product — priced right.",
@@ -37,7 +38,7 @@ const slides: Slide[] = [
     kicker: "Timeless Deals on Watches",
     title: (
       <>
-        Every second, <span className="text-accent">on sale</span>.
+        Every second, <span className="text-shine">on sale</span>.
       </>
     ),
     subtitle: "Luxury automatics, dive watches & everyday classics.",
@@ -48,11 +49,12 @@ const slides: Slide[] = [
     kicker: "Smart Shopping Comparison",
     title: (
       <>
-        <span>find</span><span className="text-accent">hive</span>
+        <span>find</span><span className="text-shine">hive</span>
       </>
     ),
     subtitle: "Find. Compare. Shop Smart.",
     cta: { label: "Start Shopping", to: "/shop" },
+    image: slideBrand,
     brand: true,
   },
 ];
@@ -72,28 +74,42 @@ export function Hero() {
 
   return (
     <section
-      className="hex-pattern relative overflow-hidden text-primary-foreground"
+      className="hex-pattern relative overflow-hidden text-primary-foreground min-h-[560px] md:min-h-[640px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
     >
-      {s.image && (
-        <div className="absolute inset-0">
-          <img src={s.image} alt="" className="h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/40" />
+      {slides.map((sl, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${i === idx ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          aria-hidden={i !== idx}
+        >
+          {sl.image && (
+            <img
+              src={sl.image}
+              alt=""
+              className={`h-full w-full object-cover ${i === idx ? "animate-hero-ken-burns" : ""}`}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-primary/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
         </div>
-      )}
+      ))}
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 md:py-24">
-        <div key={idx} className="max-w-2xl animate-fade-in">
-          <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
+        <div key={idx} className="max-w-2xl">
+          <span className="animate-hero-kicker inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent">
             {s.kicker}
           </span>
-          <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">{s.title}</h1>
-          <p className="mt-4 text-lg font-semibold uppercase tracking-wide text-accent">
+          <h1 className="animate-hero-word mt-4 text-4xl font-black leading-tight md:text-6xl">
+            {s.title}
+            <span className="mt-3 block h-1 w-24 origin-left rounded-full bg-accent animate-hero-underline" />
+          </h1>
+          <p className="animate-hero-rise mt-5 text-lg font-semibold uppercase tracking-wide text-accent [animation-delay:250ms]" style={{ animationDelay: "250ms" }}>
             {s.subtitle}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="animate-hero-rise mt-6 flex flex-wrap gap-3" style={{ animationDelay: "450ms" }}>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:brightness-95">
               <Link to={s.cta.to} params={s.cta.params as never}>{s.cta.label}</Link>
             </Button>
@@ -104,7 +120,7 @@ export function Hero() {
         </div>
 
         {s.brand && (
-          <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 animate-fade-in">
+          <div className="animate-hero-rise mt-14 grid grid-cols-2 gap-4 md:grid-cols-4" style={{ animationDelay: "650ms" }}>
             {steps.map((step, i) => (
               <div key={step.title} className="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
                 <div className="flex items-center gap-2">

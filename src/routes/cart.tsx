@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ShoppingBag, Minus, Plus, X } from "lucide-react";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -23,6 +23,7 @@ function CartPage() {
   const setQty = useCart((s) => s.setQty);
   const remove = useCart((s) => s.remove);
   const clear = useCart((s) => s.clear);
+  const navigate = useNavigate();
   const subtotal = items.reduce((n, i) => n + i.quantity * i.price, 0);
   const shipping = subtotal > 150 || subtotal === 0 ? 0 : 12;
 
@@ -75,10 +76,15 @@ function CartPage() {
               <div className="flex justify-between"><span className="text-muted-foreground">Shipping</span><span className="font-semibold">{shipping === 0 ? "Free" : formatPrice(shipping)}</span></div>
               <div className="mt-3 flex justify-between border-t border-border pt-3 text-base"><span className="font-bold text-primary">Total</span><span className="font-bold text-primary">{formatPrice(subtotal + shipping)}</span></div>
             </div>
-            <Button className="mt-5 w-full bg-accent text-accent-foreground hover:brightness-95" size="lg">
+            <Button
+              className="mt-5 w-full bg-accent text-accent-foreground hover:brightness-95"
+              size="lg"
+              disabled={items.length === 0}
+              onClick={() => navigate({ to: "/checkout" })}
+            >
               Proceed to Checkout
             </Button>
-            <p className="mt-3 text-center text-xs text-muted-foreground">You'll be redirected to each retailer to complete your purchase.</p>
+            <p className="mt-3 text-center text-xs text-muted-foreground">Secure checkout · Zelle, Credit Card, Cash App, or Wire Transfer.</p>
           </aside>
         </div>
       )}
