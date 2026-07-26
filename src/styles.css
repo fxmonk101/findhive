@@ -183,3 +183,54 @@
 @utility no-tap-highlight {
   -webkit-tap-highlight-color: transparent;
   }
+
+@keyframes hero-ken-burns {
+  0% { transform: scale(1.05) translate3d(0,0,0); }
+  100% { transform: scale(1.18) translate3d(-2%, -1%, 0); }
+}
+@keyframes hero-word-in {
+  0% { opacity: 0; transform: translate3d(0, 40px, 0) rotate(2deg); filter: blur(8px); }
+  60% { filter: blur(0); }
+  100% { opacity: 1; transform: translate3d(0,0,0) rotate(0); filter: blur(0); }
+}
+@keyframes hero-kicker-in {
+  0% { opacity: 0; transform: translateY(-12px); letter-spacing: 0.5em; }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.15em; }
+}
+@keyframes hero-underline {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@keyframes hero-shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes hero-rise {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-hero-ken-burns {
+  animation: hero-ken-burns 8s ease-out both;
+}
+@utility animate-hero-kicker {
+  animation: hero-kicker-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@utility animate-hero-word {
+  animation: hero-word-in 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@utility animate-hero-rise {
+  animation: hero-rise 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@utility animate-hero-underline {
+  transform-origin: left center;
+  animation: hero-underline 700ms cubic-bezier(0.2, 0.8, 0.2, 1) 700ms both;
+}
+@utility text-shine {
+  background: linear-gradient(90deg, var(--gold) 0%, oklch(0.95 0.14 90) 45%, var(--gold) 60%, oklch(0.95 0.14 90) 75%, var(--gold) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-shine 3.5s linear infinite;
+}
