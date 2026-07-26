@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Search } from "lucide-react";
+import { Search, ChevronDown, Check } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
 import { autocomplete, type Product } from "@/lib/products";
 import { formatPrice } from "@/lib/format";
@@ -11,7 +11,9 @@ export function SearchBar() {
   const [category, setCategory] = useState("");
   const [open, setOpen] = useState(false);
   const [results, setResults] = useState<Product[]>([]);
+  const [catOpen, setCatOpen] = useState(false);
   const wrapRef = useRef<HTMLFormElement>(null);
+  const catRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!q.trim()) { setResults([]); return; }
@@ -24,10 +26,13 @@ export function SearchBar() {
   useEffect(() => {
     const onDoc = (e: MouseEvent) => {
       if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+      if (catRef.current && !catRef.current.contains(e.target as Node)) setCatOpen(false);
     };
     document.addEventListener("mousedown", onDoc);
     return () => document.removeEventListener("mousedown", onDoc);
   }, []);
+
+  const selectedCat = CATEGORIES.find((c) => c.slug === category);
 
   return (
     <form
@@ -48,17 +53,51 @@ export function SearchBar() {
         onFocus={() => setOpen(true)}
         className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-sm text-primary outline-none placeholder:text-muted-foreground"
       />
-      <div className="hidden items-center border-l border-border pl-3 pr-2 sm:flex">
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="bg-transparent text-xs font-semibold uppercase text-primary outline-none"
+      <div ref={catRef} className="relative hidden items-center border-l border-border sm:flex">
+        <button
+          type="button"
+          onClick={() => setCatOpen((o) => !o)}
+          aria-haspopup="listbox"
+          aria-expanded={catOpen}
+          className="flex h-full items-center gap-1.5 px-3 text-xs font-bold uppercase tracking-wide text-primary transition hover:text-accent"
         >
-          <option value="">Select Category</option>
-          {CATEGORIES.map((c) => (
-            <option key={c.slug} value={c.slug}>{c.name}</option>
-          ))}
-        </select>
+          <span className="max-w-[8rem] truncate">{selectedCat ? selectedCat.name : "All Categories"}</span>
+          <ChevronDown size={14} className={`transition-transform ${catOpen ? "rotate-180" : ""}`} />
+        </button>
+        {catOpen && (
+          <div
+            role="listbox"
+            className="absolute right-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-popover shadow-xl ring-1 ring-black/5"
+          >
+            <button
+              type="button"
+              onClick={() => { setCategory(""); setCatOpen(false); }}
+              className={`flex w-full items-center justify-between px-3 py-2.5 text-sm transition hover:bg-muted ${!category ? "font-semibold text-accent" : "text-foreground"}`}
+            >
+              All Categories
+              {!category && <Check size={14} />}
+            </button>
+            <div className="h-px bg-border" />
+            <ul className="max-h-72 overflow-auto py-1">
+              {CATEGORIES.map((c) => {
+                const active = category === c.slug;
+                return (
+                  <li key={c.slug}>
+                    <button
+                      type="button"
+                      onClick={() => { setCategory(c.slug); setCatOpen(false); }}
+                      className={`flex w-full items-center gap-2 px-3 py-2 text-sm transition hover:bg-muted ${active ? "font-semibold text-accent" : "text-foreground"}`}
+                    >
+                      <c.icon size={15} className={active ? "text-accent" : "text-muted-foreground"} />
+                      <span className="flex-1 text-left">{c.name}</span>
+                      {active && <Check size={14} />}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
       <button
         type="submit"
