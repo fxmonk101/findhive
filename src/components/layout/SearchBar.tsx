@@ -42,7 +42,7 @@ export function SearchBar() {
         setOpen(false);
         navigate({ to: "/search", search: { q, category: category || undefined } });
       }}
-      className="relative flex w-full items-stretch overflow-hidden rounded-full bg-white shadow-sm ring-1 ring-black/5"
+      className="relative flex w-full items-stretch rounded-full bg-white shadow-sm ring-1 ring-black/5"
       role="search"
     >
       <input
@@ -51,7 +51,7 @@ export function SearchBar() {
         value={q}
         onChange={(e) => { setQ(e.target.value); setOpen(true); }}
         onFocus={() => setOpen(true)}
-        className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-sm text-primary outline-none placeholder:text-muted-foreground"
+        className="min-w-0 flex-1 rounded-l-full bg-transparent px-4 py-2.5 text-sm text-primary outline-none placeholder:text-muted-foreground"
       />
       <div ref={catRef} className="relative hidden items-center border-l border-border sm:flex">
         <button
@@ -102,7 +102,7 @@ export function SearchBar() {
       <button
         type="submit"
         aria-label="Search"
-        className="grid w-12 shrink-0 place-items-center bg-accent text-accent-foreground transition hover:brightness-95"
+        className="grid w-12 shrink-0 place-items-center rounded-r-full bg-accent text-accent-foreground transition hover:brightness-95"
       >
         <Search size={18} strokeWidth={2.5} />
       </button>
