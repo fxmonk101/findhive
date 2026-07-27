@@ -86,7 +86,9 @@ function ProductPage() {
             <PriceTag price={product.price} original={product.original_price} size="lg" />
           </div>
           {product.description && (
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{product.description}</p>
+            <div className="mt-5 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+              {product.description}
+            </div>
           )}
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -128,7 +130,7 @@ function ProductPage() {
 
           <ul className="mt-6 grid grid-cols-1 gap-3 border-t border-border pt-6 text-sm sm:grid-cols-3">
             <li className="flex items-center gap-2 text-muted-foreground"><Truck size={16} className="text-accent" /> Free shipping over $150</li>
-            <li className="flex items-center gap-2 text-muted-foreground"><ShieldCheck size={16} className="text-accent" /> Verified retailer</li>
+            <li className="flex items-center gap-2 text-muted-foreground"><ShieldCheck size={16} className="text-accent" /> Ships from our warehouse</li>
             <li className="flex items-center gap-2 text-muted-foreground"><RotateCcw size={16} className="text-accent" /> Easy returns</li>
           </ul>
         </div>
