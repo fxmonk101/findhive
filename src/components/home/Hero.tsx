@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Search, Scale, CheckCircle2, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import slideTcg from "@/assets/slide-tcg.jpg";
-import slideWatch from "@/assets/slide-watch.jpg";
-import slideBrand from "@/assets/about-hero.jpg";
+import slideTcg from "@/assets/hero-slider-1.jpg";
+import slideWatch from "@/assets/hero-slider-2.jpg";
+import slideBrand from "@/assets/hero-slider-3.jpg";
 
 const steps = [
   { icon: Search, title: "Find", desc: "Search across trusted retailers" },
