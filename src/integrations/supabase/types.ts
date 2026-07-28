@@ -16,49 +16,76 @@ export type Database = {
     Tables: {
       products: {
         Row: {
+          attributes: Json
           category: string
           created_at: string
           description: string | null
           id: string
           image_url: string
+          images: Json
+          long_description: string | null
+          meta_description: string | null
+          meta_title: string | null
           original_price: number | null
           price: number
           rating: number
           review_count: number
+          short_description: string | null
+          sold_count: number
           source_retailer: string
           source_url: string
+          stock_count: number
           subcategory: string
           title: string
+          viewer_count: number
         }
         Insert: {
+          attributes?: Json
           category: string
           created_at?: string
           description?: string | null
           id?: string
           image_url: string
+          images?: Json
+          long_description?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
           original_price?: number | null
           price: number
           rating?: number
           review_count?: number
+          short_description?: string | null
+          sold_count?: number
           source_retailer: string
           source_url: string
+          stock_count?: number
           subcategory: string
           title: string
+          viewer_count?: number
         }
         Update: {
+          attributes?: Json
           category?: string
           created_at?: string
           description?: string | null
           id?: string
           image_url?: string
+          images?: Json
+          long_description?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
           original_price?: number | null
           price?: number
           rating?: number
           review_count?: number
+          short_description?: string | null
+          sold_count?: number
           source_retailer?: string
           source_url?: string
+          stock_count?: number
           subcategory?: string
           title?: string
+          viewer_count?: number
         }
         Relationships: []
       }
