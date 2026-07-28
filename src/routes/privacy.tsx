@@ -17,13 +17,13 @@ function PrivacyPage() {
   return (
     <LegalLayout title="Privacy Policy" updated="July 25, 2026">
       <p>
-        This Privacy Policy explains how findhive ("we", "us", or "our") collects, uses, and shares information about you when you use our comparison shopping website (the "Service"). By using the Service you agree to the practices described here.
+        This Privacy Policy explains how findhive ("we", "us", or "our") collects, uses, and shares information about you when you use our online store (the "Service"). By using the Service you agree to the practices described here.
       </p>
       <p><em>[Placeholder: insert full legal entity name, registered address, and jurisdiction of operation.]</em></p>
 
       <h2>1. Information we collect</h2>
       <ul>
-        <li><strong>Information you provide:</strong> email address (newsletter, reviews), name, review content, contact form submissions.</li>
+        <li><strong>Information you provide:</strong> name, email, shipping address, phone, payment details at checkout, review content, contact form submissions.</li>
         <li><strong>Usage data:</strong> pages viewed, products clicked, referring URL, device and browser type, approximate location derived from IP.</li>
         <li><strong>Cookies and similar technologies:</strong> see our <a href="/cookies">Cookie Policy</a>.</li>
       </ul>
@@ -31,18 +31,18 @@ function PrivacyPage() {
       <h2>2. How we use your information</h2>
       <ul>
         <li>To operate, maintain, and improve the Service.</li>
-        <li>To personalize product recommendations and comparisons.</li>
+        <li>To fulfil your orders, process payments, and ship your products.</li>
         <li>To send transactional and marketing communications (you can opt out any time).</li>
-        <li>To attribute affiliate referrals to partner retailers.</li>
         <li>To detect, prevent, and address fraud or abuse.</li>
       </ul>
 
       <h2>3. How we share information</h2>
       <p>
-        findhive is a comparison and affiliate service. We do <strong>not</strong> sell your personal data. We share limited information with:
+        findhive does <strong>not</strong> sell your personal data. We share limited information with:
       </p>
       <ul>
-        <li>Affiliate networks and retailers when you click a partner link.</li>
+        <li>Payment processors (to charge your card and detect fraud).</li>
+        <li>Shipping carriers (to deliver your order).</li>
         <li>Service providers (hosting, analytics, email) under written data-processing terms.</li>
         <li>Authorities when legally compelled.</li>
       </ul>

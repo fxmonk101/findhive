@@ -17,38 +17,27 @@ function ShippingPage() {
   return (
     <LegalLayout title="Shipping & Returns Policy" updated="July 25, 2026">
       <p>
-        findhive is a comparison shopping platform, not a direct retailer. We do <strong>not</strong> ship products or process returns ourselves. All orders are placed with, fulfilled by, and returned to the third-party retailer you choose from a findhive listing.
+        findhive ships every order from our own warehouse. This page explains how shipping, delivery, and returns work for products purchased on findhive.
       </p>
 
-      <h2>1. Where to find shipping details</h2>
+      <h2>1. Shipping</h2>
       <p>
-        Shipping fees, delivery windows, tracking, and international availability are set by each retailer. Please review the retailer's shipping information at checkout before completing your purchase.
+        Orders placed by 2pm ET typically ship the same business day; orders placed later ship the next business day. Free standard shipping applies to eligible orders over $75. Tracking is emailed as soon as a label is generated.
       </p>
 
       <h2>2. Returns, refunds, and exchanges</h2>
       <p>
-        Return windows, restocking fees, and refund methods vary by retailer and product category. Consult the retailer's returns page or receipt for the applicable terms. As a general guide:
+        We accept returns on eligible items within 30 days of delivery. Items must be unused and in original packaging. Some categories are non-returnable for hygiene or authenticity reasons (e.g. opened sealed trading card product). Refunds are issued to the original payment method within 5-10 business days of us receiving the return.
       </p>
-      <ul>
-        <li>Most retailers offer a 14-30 day return window for unused items in original packaging.</li>
-        <li>Some categories (e.g. graded trading cards, personalized jewelry, opened sealed product) are typically non-returnable.</li>
-        <li>Refunds are usually issued to the original payment method within 5-10 business days of the retailer receiving the return.</li>
-      </ul>
-      <p><em>[Placeholder: link to top retailers' return policies once partnerships are confirmed.]</em></p>
 
       <h2>3. Damaged or incorrect items</h2>
       <p>
-        Contact the retailer directly and, where possible, keep photos of the packaging and product. Most partner retailers have dedicated support channels for damaged or incorrect shipments.
+        If your order arrives damaged, incomplete, or incorrect, email <em>support@findhive.shop</em> within 7 days of delivery with photos of the packaging and product. We'll ship a replacement or issue a full refund.
       </p>
 
-      <h2>4. How findhive can help</h2>
+      <h2>4. Chargebacks and disputes</h2>
       <p>
-        While we cannot process refunds or ship replacements, we can help you reach the right retailer contact and follow up. Email <em>[support@findhive.example]</em> with your order details.
-      </p>
-
-      <h2>5. Chargebacks and disputes</h2>
-      <p>
-        Payment disputes should be handled with the retailer first. If unresolved, your payment provider (card issuer, PayPal, etc.) is typically the next step.
+        Please reach out to us at <em>support@findhive.shop</em> before initiating a chargeback so we can resolve the issue directly and quickly.
       </p>
     </LegalLayout>
   );

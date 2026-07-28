@@ -23,7 +23,7 @@ function TermsPage() {
 
       <h2>1. The Service</h2>
       <p>
-        findhive is a comparison shopping platform. We surface product listings, prices, and information from third-party retailers. We do <strong>not</strong> sell products directly. All purchases are transacted between you and the retailer of your choice, subject to that retailer's terms.
+        findhive is an online store operated by the findhive team. We source products directly from manufacturers, hold inventory in our warehouse, and ship orders to our customers. Purchases are transacted directly between you and findhive.
       </p>
 
       <h2>2. Eligibility</h2>
@@ -32,16 +32,16 @@ function TermsPage() {
       <h2>3. Accounts</h2>
       <p>You are responsible for maintaining the confidentiality of any account credentials and for all activity under your account.</p>
 
-      <h2>4. Third-party retailers</h2>
+      <h2>4. Orders and pricing</h2>
       <p>
-        Product availability, pricing, shipping, returns, warranty, and customer support are the sole responsibility of the third-party retailer. findhive makes no warranties about the accuracy or completeness of any listing and is not a party to any purchase transaction.
+        Prices, availability, and shipping windows are shown on each product page and confirmed at checkout. We reserve the right to correct pricing errors, cancel orders, and refund payments where an item is unavailable or a listing is inaccurate.
       </p>
 
       <h2>5. Acceptable use</h2>
       <ul>
         <li>Do not scrape, reverse-engineer, or interfere with the Service.</li>
         <li>Do not submit unlawful, misleading, or infringing content (including in reviews).</li>
-        <li>Do not misuse affiliate links or attempt to manipulate rankings.</li>
+        <li>Do not attempt fraudulent payments, chargeback abuse, or account impersonation.</li>
       </ul>
 
       <h2>6. Intellectual property</h2>
