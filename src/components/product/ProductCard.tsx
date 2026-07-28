@@ -4,9 +4,11 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { RatingStars } from "./RatingStars";
 import { PriceTag } from "./PriceTag";
+import { ViewerBadge } from "./ViewerBadge";
 import { useWishlist } from "@/lib/stores/wishlist";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
+import { percentOff } from "@/lib/format";
 import type { Product } from "@/lib/products";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -14,10 +16,11 @@ export function ProductCard({ product }: { product: Product }) {
   const wishlisted = useWishlist((s) => (hydrated ? s.ids.includes(product.id) : false));
   const toggleWish = useWishlist((s) => s.toggle);
   const addToCart = useCart((s) => s.add);
+  const off = percentOff(product.price, product.original_price);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
-      <div className="relative aspect-square overflow-hidden bg-muted">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-xl">
+      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
         <Link
           to="/product/$id"
           params={{ id: product.id }}
@@ -27,10 +30,15 @@ export function ProductCard({ product }: { product: Product }) {
             src={product.image_url}
             alt={product.title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
           />
         </Link>
-        <div className="absolute right-2 top-2 flex flex-col gap-1.5">
+        {off && (
+          <span className="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold text-accent-foreground shadow-sm">
+            -{off}% OFF
+          </span>
+        )}
+        <div className="absolute right-3 top-3 flex flex-col gap-1.5">
           <button
             type="button"
             aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
@@ -39,44 +47,52 @@ export function ProductCard({ product }: { product: Product }) {
               e.preventDefault();
               toggleWish(product.id);
             }}
-            className="grid h-8 w-8 place-items-center rounded-full bg-white/90 shadow-sm backdrop-blur transition hover:bg-white"
+            className="grid h-9 w-9 place-items-center rounded-full bg-white/95 shadow-md backdrop-blur transition hover:scale-105 hover:bg-white"
           >
             <Heart
-              size={16}
+              size={17}
               className={wishlisted ? "fill-accent text-accent" : "text-primary"}
               strokeWidth={2}
             />
           </button>
         </div>
+        {hydrated && product.viewer_count >= 3 && (
+          <div className="absolute bottom-3 left-3">
+            <ViewerBadge count={product.viewer_count} />
+          </div>
+        )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-2 p-3">
+      <div className="flex flex-1 flex-col gap-2.5 p-5">
         <Link
           to="/product/$id"
           params={{ id: product.id }}
-          className="line-clamp-2 min-h-[2.5rem] text-sm font-medium text-foreground hover:text-accent"
+          className="line-clamp-2 min-h-[3rem] text-base font-semibold text-foreground hover:text-accent"
         >
           {product.title}
         </Link>
         <RatingStars rating={product.rating} reviewCount={product.review_count} />
-        <PriceTag price={product.price} original={product.original_price} />
-        <div className="mt-auto pt-1">
+        <PriceTag price={product.price} original={product.original_price} size="lg" />
+        {hydrated && product.sold_count >= 10 && (
+          <div className="text-xs font-medium text-muted-foreground">
+            <span className="text-primary">{product.sold_count.toLocaleString()}</span> sold this month
+          </div>
+        )}
+        <div className="mt-auto pt-2">
           <Button
-            size="sm"
-            className="w-full bg-accent text-xs text-accent-foreground hover:bg-accent/90"
+            size="lg"
+            className="w-full rounded-xl bg-accent text-sm font-bold text-accent-foreground shadow-sm transition hover:brightness-95"
             onClick={() => {
               addToCart({
                 id: product.id,
                 title: product.title,
                 price: product.price,
                 image_url: product.image_url,
-                source_retailer: product.source_retailer,
-                source_url: product.source_url,
               });
               toast.success("Added to cart");
             }}
           >
-            <ShoppingBag size={12} className="mr-1" />
+            <ShoppingBag size={16} className="mr-2" />
             Add to Cart
           </Button>
         </div>
