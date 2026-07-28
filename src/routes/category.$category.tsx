@@ -22,9 +22,9 @@ export const Route = createFileRoute("/category/$category")({
     return {
       meta: [
         { title: `${name} — findhive` },
-        { name: "description", content: `Shop and compare ${name.toLowerCase()} deals from trusted retailers on findhive.` },
+        { name: "description", content: `Shop ${name.toLowerCase()} at findhive — sourced directly from manufacturers and shipped from our warehouse.` },
         { property: "og:title", content: `${name} — findhive` },
-        { property: "og:description", content: `Shop and compare ${name.toLowerCase()} deals on findhive.` },
+        { property: "og:description", content: `Authentic ${name.toLowerCase()}, restocked and shipped by findhive.` },
       ],
     };
   },
@@ -36,7 +36,7 @@ function CategoryPage() {
   const cat = getCategory(category)!;
   const { data = [], isLoading } = useQuery(opts(category));
   const [sort, setSort] = useState("rating");
-  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [], retailers: [] });
+  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [] });
   const filtered = sortProducts(applyFilters(data, filters), sort);
 
   return (

@@ -8,22 +8,23 @@ export type Review = {
   body: string;
   rating: number; // 1-5
   createdAt: number;
+  productId?: string;
 };
 
 const seed: Review[] = [
   {
     id: "r1",
     name: "Maya P.",
-    title: "Saved me hours of tab-hopping",
-    body: "I was hunting for a specific Pokémon booster box and findhive lined up every trusted retailer in one view. Bought in five minutes for the best price I found anywhere.",
+    title: "Arrived faster than expected",
+    body: "Ordered a Pokémon booster box on a Tuesday and it landed by Friday. Sealed, authentic, exactly as described. This is now my go-to store for TCG restocks.",
     rating: 5,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 3,
   },
   {
     id: "r2",
     name: "Jordan R.",
-    title: "Great for watch shopping",
-    body: "The watch category is well curated. Wish there were a few more boutique retailers, but pricing was accurate and the deal I clicked was still live.",
+    title: "Real watch, real box, real papers",
+    body: "Picked up a men's automatic. Packaging was pristine, everything documented. Customer service replied within the hour when I had a question about the movement.",
     rating: 4,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 8,
   },
@@ -31,23 +32,23 @@ const seed: Review[] = [
     id: "r3",
     name: "Priya S.",
     title: "Clean, fast, no clutter",
-    body: "Love that it's just the categories I care about. No dropshipping junk. The wishlist is genuinely useful.",
+    body: "The site is refreshingly focused. No dropshipping junk, just curated products they actually stock. Wishlist and cart both work perfectly.",
     rating: 5,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 14,
   },
   {
     id: "r4",
     name: "Tomás L.",
-    title: "Solid but could grow",
-    body: "Good deals across bags and outdoor gear. Would love price-drop alerts in the future.",
+    title: "Solid buying experience",
+    body: "Fitness gear was well packaged and arrived quickly. Would love to see more colorways in future restocks, but overall very happy.",
     rating: 4,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 22,
   },
   {
     id: "r5",
     name: "Alex K.",
-    title: "Honest affiliate site",
-    body: "Appreciate the transparent disclosure. Rankings didn't feel pay-to-play — the top deal really was the cheapest.",
+    title: "Trustworthy store",
+    body: "Everything about the checkout felt professional — secure payment, clear receipt, prompt shipping notification. I'll be back.",
     rating: 5,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 30,
   },

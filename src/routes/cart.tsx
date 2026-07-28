@@ -51,7 +51,6 @@ function CartPage() {
               <li key={i.id} className="flex gap-4 rounded-lg border border-border bg-card p-4">
                 <img src={i.image_url} alt={i.title} className="h-24 w-24 shrink-0 rounded object-cover" />
                 <div className="flex min-w-0 flex-1 flex-col">
-                  <div className="mb-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{i.source_retailer}</div>
                   <Link to="/product/$id" params={{ id: i.id }} className="line-clamp-2 text-sm font-semibold text-foreground hover:text-accent">{i.title}</Link>
                   <div className="mt-auto flex items-center justify-between gap-2 pt-2">
                     <div className="flex items-center rounded border border-border">
