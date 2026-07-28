@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Search, Scale, CheckCircle2, ShoppingBag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Sparkles, ShoppingBag, CreditCard, Truck, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import slideTcg from "@/assets/hero-slider-1.jpg";
 import slideWatch from "@/assets/hero-slider-2.jpg";
 import slideBrand from "@/assets/hero-slider-3.jpg";
 
 const steps = [
-  { icon: Search, title: "Find", desc: "Search across trusted retailers" },
-  { icon: Scale, title: "Compare", desc: "Side-by-side prices & specs" },
-  { icon: CheckCircle2, title: "Choose", desc: "Pick the best value deal" },
-  { icon: ShoppingBag, title: "Shop", desc: "Buy direct from the retailer" },
+  { icon: Sparkles, title: "Discover", desc: "Trending products, restocked weekly" },
+  { icon: ShoppingBag, title: "Add to Cart", desc: "Authentic goods, one clean checkout" },
+  { icon: CreditCard, title: "Checkout", desc: "Card, Zelle, Cash App or Wire" },
+  { icon: Truck, title: "Fast Shipping", desc: "Ships from our own warehouse" },
 ];
 
 type Slide = {
@@ -52,7 +52,7 @@ const slides: Slide[] = [
         <span>find</span><span className="text-shine">hive</span>
       </>
     ),
-    subtitle: "Find. Compare. Shop Smart.",
+    subtitle: "Trending products. Restocked & shipped by us.",
     cta: { label: "Start Shopping", to: "/shop" },
     image: slideBrand,
     brand: true,
