@@ -120,7 +120,7 @@ export function SearchBar() {
                   <img src={p.image_url} alt="" className="h-10 w-10 shrink-0 rounded object-cover" />
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-sm text-foreground">{p.title}</div>
-                    <div className="text-xs text-muted-foreground">{p.source_retailer}</div>
+                    
                   </div>
                   <span className="text-sm font-semibold text-primary">{formatPrice(p.price)}</span>
                 </Link>

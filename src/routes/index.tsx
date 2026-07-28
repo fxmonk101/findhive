@@ -4,7 +4,6 @@ import { Hero } from "@/components/home/Hero";
 import { CategoryStrip } from "@/components/home/CategoryStrip";
 import { CategoryShowcase } from "@/components/home/CategoryShowcase";
 import { Newsletter } from "@/components/home/Newsletter";
-import { Partners } from "@/components/home/Partners";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { CATEGORIES } from "@/lib/categories";
 import { getFeatured, listByCategory } from "@/lib/products";
@@ -27,13 +26,12 @@ function Index() {
     <>
       <Hero />
       <CategoryStrip />
-      <Partners />
       <section className="border-b border-border py-10">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-xl font-bold text-primary md:text-2xl">Trending Deals</h2>
-              <p className="text-sm text-muted-foreground">Top-rated picks across every hive</p>
+              <h2 className="text-xl font-bold text-primary md:text-2xl">Trending Now</h2>
+              <p className="text-sm text-muted-foreground">Restocked this week — ready to ship from our warehouse</p>
             </div>
           </div>
           <ProductGrid products={featured.data ?? []} loading={featured.isLoading} />

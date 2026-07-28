@@ -49,7 +49,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
-            Find. Compare. Shop Smart. findhive curates deals across trusted retailers.
+            findhive — trending products, restocked and shipped by us. Authentic. Fast. Secure.
           </p>
           <ShareLinks />
         </div>
@@ -79,7 +79,6 @@ export function Footer() {
             <li><Link to="/privacy" className="hover:text-accent">Privacy Policy</Link></li>
             <li><Link to="/terms" className="hover:text-accent">Terms of Service</Link></li>
             <li><Link to="/cookies" className="hover:text-accent">Cookie Policy</Link></li>
-            <li><Link to="/affiliate-disclosure" className="hover:text-accent">Affiliate Disclosure</Link></li>
             <li><Link to="/shipping-returns" className="hover:text-accent">Shipping &amp; Returns</Link></li>
           </ul>
         </div>
@@ -102,7 +101,7 @@ export function Footer() {
       <div className="border-t border-white/10 px-4 py-4">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-xs text-primary-foreground/60 sm:flex-row">
           <span>© {new Date().getFullYear()} findhive. All rights reserved.</span>
-          <span>Affiliate disclosure: We may earn a commission from qualifying purchases via retailer links.</span>
+          <span>Secure checkout · Authentic products guaranteed</span>
         </div>
       </div>
     </footer>

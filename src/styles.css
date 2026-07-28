@@ -63,7 +63,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   /* Brand */
   --navy: oklch(0.22 0.07 265);           /* #0D1B3E deep navy */
   --navy-foreground: oklch(1 0 0);

@@ -10,10 +10,10 @@ const opts = queryOptions({ queryKey: ["all-products"], queryFn: listProducts })
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop All Deals — findhive" },
-      { name: "description", content: "Browse every deal on findhive across all categories. Compare and shop the best prices." },
-      { property: "og:title", content: "Shop All — findhive" },
-      { property: "og:description", content: "Browse every deal on findhive across all categories." },
+      { title: "Shop All Products — findhive" },
+      { name: "description", content: "Browse every product findhive stocks — trading cards, watches, and fitness gear shipped from our warehouse." },
+      { property: "og:title", content: "Shop All Products — findhive" },
+      { property: "og:description", content: "Trending products, restocked and shipped by findhive." },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(opts),
@@ -23,13 +23,13 @@ export const Route = createFileRoute("/shop")({
 function Shop() {
   const { data = [], isLoading } = useQuery(opts);
   const [sort, setSort] = useState("rating");
-  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [], retailers: [] });
+  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [] });
   const filtered = sortProducts(applyFilters(data, filters), sort);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-primary md:text-3xl">Shop All Deals</h1>
+        <h1 className="text-2xl font-bold text-primary md:text-3xl">Shop All Products</h1>
         <p className="mt-1 text-sm text-muted-foreground">{filtered.length} products</p>
       </div>
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">

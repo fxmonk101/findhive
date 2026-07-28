@@ -1,138 +1,65 @@
+Big scope, so grouping into 6 workstreams. I'll implement all of them in sequence unless you want to trim.
 
-# findhive — Build Plan
+## 1. Brand messaging cleanup (comparison → owned store)
+- Delete `src/components/home/Partners.tsx` and remove its usage on the homepage.
+- Footer: replace affiliate disclosure line with "© findhive · Secure checkout · Authentic products guaranteed". Update tagline to "findhive — trending products, restocked and shipped by us". Drop the "Affiliate Disclosure" link (keep the route file but unlink, or remove entirely — I'll remove entirely).
+- About page: rewrite copy to "sourced directly from manufacturers, quality-checked in our warehouse, shipped by us". Keep hero + story images.
+- Hero brand slide steps: replace Find/Compare/Choose/Shop with Discover / Add to Cart / Checkout / Fast Shipping (new icons).
+- Grep for stray "View Deal", "Go to Store", "retailer", "compare" strings and normalize to Add to Cart / Buy Now / findhive.
 
-A modern shopping-comparison app with a navy #0D1B3E + gold #F5A623 identity, 5 top categories, and full wishlist / compare / cart flows. Product data will be database-driven with realistic seeded mocks so the UI reviews fully populated.
+## 2. Remove compare + retailer surface (final pass)
+- Delete `src/lib/stores/compare.ts` and any imports.
+- Confirm `/compare` route gone (already removed per history) and verify no lingering links.
+- Product card: remove any retailer badge, keep single Add to Cart primary CTA.
+- Product page: remove retailer badge + any comparison table remnant.
+- Header: confirm no compare icon (already done) — audit once.
 
-## Scope & assumptions
+## 3. Product schema extension + seed refresh
+DB migration adds columns to `public.products`:
+- `meta_title text`, `meta_description text`
+- `short_description text`
+- `long_description text` (backfilled from existing `description`)
+- `sold_count int default 0`
+- `stock_count int default 0`
+- `viewer_count int default 0`
+- `images jsonb default '[]'::jsonb` (array of URLs; primary still in `image_url` for back-compat)
+- `attributes jsonb default '{}'::jsonb` (spec key/value for Additional Information tab)
 
-- **Backend**: enable Lovable Cloud for a `products` table + seed data (the "database I will populate later" requirement). Wishlist / compare / cart / recently-viewed / newsletter stay client-side for now (localStorage) — call out if you'd rather have accounts.
-- **No auth yet**. "MY ACCOUNT" link renders a placeholder page. Add later if you want real logins.
-- **Cart** is a UI-only running subtotal that routes out to the retailer (as you described). No checkout.
-- **Search autocomplete** queries the products table live.
-- **Logo**: I'll render the hexagon + magnifier + package mark as an inline SVG component in navy/gold so it works on both backgrounds without an image round-trip.
-- **Fonts**: Inter via `<link>` in the root head.
+Then a data update pass:
+- Populate `meta_title` = `{title} | findhive` (trim ≤60), `meta_description` from short_description (≤160).
+- Randomize plausible `sold_count` (30–400), `stock_count` (3–40), `viewer_count` (5–35) with higher ranges for trading cards + watches.
+- Seed `images` with `[image_url]` for now (single-image → gallery shows clean single image). A handful of hero products get 2–3 duplicated variants to demonstrate the multi-image branch. Real manufacturer imagery replaces later.
+- Fill `attributes` per category (watches: movement, case size, band material, water resistance; TCG: set, language, condition; fitness: weight, material).
 
-## Design system (src/styles.css)
+Frontend `Product` type in `src/lib/products.ts` extended accordingly; select list updated.
 
-Semantic tokens only — no hardcoded colors in components.
+## 4. Redesigned product card + 2-col shop grid
+- `ProductCard`: larger image aspect (4/5), bigger padding, softer radius (`rounded-2xl`), hover elevation (`shadow-md → shadow-xl`), % off badge on sale, "🔥 {viewer_count} viewing" pill, "{sold_count} sold this month" muted line, single gold Add to Cart CTA.
+- `ProductGrid`: switch to `grid-cols-1 lg:grid-cols-2` with generous gap. Category / shop / search results routes inherit automatically.
 
-```text
---navy: #0D1B3E          → --primary / header bg
---gold: #F5A623          → --accent / CTA
---surface: #F7F8FA       → --muted
---card: #FFFFFF
---foreground: navy
-```
+## 5. Product page rebuild (`src/routes/product.$id.tsx`)
+- Two-column layout: left = image gallery (conditional: single large image w/ hover-zoom if `images.length <= 1`, else main + thumb strip + prev/next arrows); right = title, rating→#reviews anchor, price + % off, stock line ("In Stock — {stock_count} left"), viewer pill, qty selector, Add to Cart + Buy Now (Buy Now = add + navigate to /checkout), trust badges row (Secure Checkout, Authentic Guaranteed, Fast Shipping).
+- Tabs (shadcn `Tabs`): Description (`long_description`, preserved whitespace) · Additional Information (attributes table) · Reviews (per-product star breakdown + filtered list from reviews store + inline write-a-review form scoped by `product_id`).
+- "You may also like" carousel using existing `getRelated`.
+- Mobile sticky Add to Cart bar (fixed bottom, appears after scroll).
+- Head meta: title = `meta_title`, description = `meta_description`, og:title/og:description, og:image = primary product image (absolute-safe: image URLs already absolute per assets).
 
-Map to shadcn tokens via `@theme inline` so `bg-primary`, `text-accent`, `bg-muted`, etc. all follow the palette. Custom variants: `Button variant="gold"`, `Badge variant="gold"`.
+Reviews store gains `product_id?: string`; existing seed reviews stay global (shown on `/reviews`), product reviews filter by id.
 
-## Data layer
+## 6. Design system + trust polish
+- `src/styles.css`: bump `--radius` slightly (e.g. 0.5rem → 0.75rem), soften card shadow tokens, add `--surface` = #F7F8FA and use it as `body` background. Confirm gold CTA has consistent padding + subtle hover (already close).
+- Free shipping banner: thin bar above header ("Free shipping on orders over $75 · Ships from our US warehouse") — value hard-coded but centralised in `src/lib/store-config.ts` for easy edit.
+- Trust badges component reused on product page + checkout.
+- Footer keeps 5-column layout; refresh copy + payment badges retained.
 
-Lovable Cloud table `products`:
-```text
-id, title, category, subcategory, price, original_price,
-image_url, rating, review_count, source_retailer, source_url,
-description, created_at
-```
-- Public read policy (anon SELECT), no writes from client.
-- Migration seeds ~40–60 realistic rows spread across all 5 categories & their subcategories, with placeholder image URLs (Unsplash) so the UI is fully populated.
-- Query helpers in `src/lib/products.ts` (list, byCategory, bySubcategory, byId, search, featured, trending).
+## Out of scope (call out)
+- Real product photography — placeholder single image per product for now, schema is ready.
+- Real payment processor — mock checkout stays.
+- Server-side SEO for product pages already works via TanStack `head()` on the route; no sitemap change this pass.
 
-## Global state (Zustand + localStorage)
+## Technical notes
+- Migration is additive with defaults so existing rows keep working; then a `supabase--insert` UPDATE pass backfills content.
+- All changes stay client/presentation except the one schema migration.
+- No new dependencies expected (shadcn `Tabs` already available; if not, I'll add it via existing shadcn scaffolding).
 
-- `useWishlist` — add/remove/has/count
-- `useCompare` — max 4 items
-- `useCart` — items + subtotal
-- `useRecentlyViewed` — last 8
-Header badges subscribe to these stores so counts update live.
-
-## Route map (TanStack Router)
-
-```text
-/                        Home
-/shop                    All products
-/category/$category      Category listing
-/category/$category/$sub Subcategory listing
-/product/$id             Product detail
-/search                  Search results (?q=, ?category=)
-/wishlist                Wishlist
-/compare                 Side-by-side compare table
-/cart                    Cart
-/about
-/contact
-/faqs
-/account                 Placeholder
-```
-
-Each route gets its own `head()` with unique title + description + og.
-
-## Component structure
-
-```text
-src/components/
-  layout/
-    Header.tsx           (3-tier sticky header)
-    UtilityBar.tsx       (tier 1)
-    MainHeader.tsx       (tier 2 — logo, search, icons)
-    CategoryNav.tsx      (tier 3 — mega menu)
-    Footer.tsx
-    MobileMenu.tsx
-  brand/
-    Logo.tsx             (inline SVG hex+magnifier+package)
-  product/
-    ProductCard.tsx
-    ProductGrid.tsx
-    ProductCardSkeleton.tsx
-    RatingStars.tsx
-    PriceTag.tsx
-  home/
-    Hero.tsx             (4-step value prop, hex pattern bg)
-    CategoryShowcase.tsx (horizontal scroll row per category)
-    FeaturedGrid.tsx
-    Newsletter.tsx
-  filters/
-    FilterSidebar.tsx
-    SortDropdown.tsx
-  compare/
-    CompareTable.tsx
-  ui/                    (shadcn as-is)
-src/lib/
-  products.ts            (data layer)
-  categories.ts          (5-category tree + icons)
-  stores/                (zustand: wishlist, compare, cart, recent)
-```
-
-## Header behavior
-
-- Tier 1 collapses on scroll (sticky tiers 2+3 remain). Mobile: tier 1 hidden, hamburger opens a sheet with utility links + full category tree.
-- Search bar: input + category dropdown + gold square search button. Autocomplete popover shows top 6 matches with thumbnail/title/price; Enter navigates to `/search?q=`.
-- Wishlist/compare/cart icons show gold badges with live counts; cart shows running `$0.00` subtotal.
-- "BROWSE CATEGORIES" opens a mega-menu panel (5 columns of subcategories).
-
-## Product card
-
-Locked-aspect image, top-corner wishlist heart + compare checkbox (matching header icons), 2-line title clamp, star rating + review count, price with strikethrough + % off badge, retailer badge, "Add to Compare" + "View Deal" (gold) buttons.
-
-## Category / search pages
-
-Left filter sidebar (price range slider, rating, subcategory checkboxes, retailer), top sort dropdown, responsive 4/2/1 grid, skeleton loaders while querying.
-
-## Product detail
-
-Gallery (main + thumbnails from image_url — duplicated for now since seed has one image), title, rating, price, retailer, gold "Go to Store" CTA linking to `source_url`, price-comparison table (mock: same product across 2–3 retailers derived from seed variants), description/specs, related-products carousel, appends to recently-viewed.
-
-## Compare page
-
-Sticky-header side-by-side table: image row, title, price, rating, retailer, key specs. Remove buttons per column. Empty state links back to shop.
-
-## Deliverables in this build
-
-1. Enable Lovable Cloud + `products` migration with seeded rows.
-2. Design tokens in `src/styles.css` + Inter font.
-3. Logo SVG + 3-tier header + footer + mobile menu.
-4. All 13 routes with unique metadata.
-5. All components listed above.
-6. Zustand stores wired to header badges.
-7. Sitemap.xml + robots.txt covering static routes.
-
-I'll implement straight through after you approve. Reply with any tweaks (e.g., "skip cart", "use different fonts", "add auth") and I'll adjust before starting.
+Approve and I'll execute end-to-end; reply with trims if you want to stage it.

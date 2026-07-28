@@ -6,7 +6,6 @@ export type Filters = {
   priceMax: number;
   minRating: number;
   subcategories: string[];
-  retailers: string[];
 };
 
 export function FilterSidebar({
@@ -20,10 +19,9 @@ export function FilterSidebar({
 }) {
   const maxPrice = Math.max(1000, ...allProducts.map((p) => p.price));
   const subs = Array.from(new Set(allProducts.map((p) => p.subcategory)));
-  const retailers = Array.from(new Set(allProducts.map((p) => p.source_retailer)));
 
   return (
-    <aside className="space-y-6 rounded-lg border border-border bg-card p-5">
+    <aside className="space-y-6 rounded-2xl border border-border bg-card p-5 shadow-sm">
       <div>
         <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Price</h3>
         <Slider
@@ -81,34 +79,8 @@ export function FilterSidebar({
         </div>
       )}
 
-      {retailers.length > 1 && (
-        <div>
-          <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-primary">Retailer</h3>
-          <ul className="max-h-48 space-y-2 overflow-auto">
-            {retailers.map((r) => {
-              const checked = filters.retailers.includes(r);
-              return (
-                <li key={r} className="flex items-center gap-2">
-                  <Checkbox
-                    id={`ret-${r}`}
-                    checked={checked}
-                    onCheckedChange={(v) =>
-                      onChange({
-                        ...filters,
-                        retailers: v ? [...filters.retailers, r] : filters.retailers.filter((x) => x !== r),
-                      })
-                    }
-                  />
-                  <label htmlFor={`ret-${r}`} className="text-sm text-foreground">{r}</label>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
-
       <button
-        onClick={() => onChange({ priceMax: Math.ceil(maxPrice), minRating: 0, subcategories: [], retailers: [] })}
+        onClick={() => onChange({ priceMax: Math.ceil(maxPrice), minRating: 0, subcategories: [] })}
         className="w-full rounded border border-border py-2 text-sm font-semibold text-primary hover:bg-muted"
       >
         Reset filters
@@ -122,7 +94,6 @@ export function applyFilters(products: Product[], f: Filters): Product[] {
     if (p.price > f.priceMax) return false;
     if (f.minRating && p.rating < f.minRating) return false;
     if (f.subcategories.length && !f.subcategories.includes(p.subcategory)) return false;
-    if (f.retailers.length && !f.retailers.includes(p.source_retailer)) return false;
     return true;
   });
 }

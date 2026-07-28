@@ -14,9 +14,19 @@ export type Product = {
   source_url: string;
   description: string | null;
   created_at: string;
+  meta_title: string | null;
+  meta_description: string | null;
+  short_description: string | null;
+  long_description: string | null;
+  sold_count: number;
+  stock_count: number;
+  viewer_count: number;
+  images: string[];
+  attributes: Record<string, string>;
 };
 
-const SELECT = "id,title,category,subcategory,price,original_price,image_url,rating,review_count,source_retailer,source_url,description,created_at";
+const SELECT =
+  "id,title,category,subcategory,price,original_price,image_url,rating,review_count,source_retailer,source_url,description,created_at,meta_title,meta_description,short_description,long_description,sold_count,stock_count,viewer_count,images,attributes";
 
 export async function listProducts(): Promise<Product[]> {
   const { data, error } = await supabase

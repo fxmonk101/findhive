@@ -21,9 +21,9 @@ export const Route = createFileRoute("/category/$category/$sub")({
     return {
       meta: [
         { title: `${name} — findhive` },
-        { name: "description", content: `Compare and shop ${name.toLowerCase()} deals on findhive.` },
+        { name: "description", content: `Shop ${name.toLowerCase()} at findhive — authentic products, shipped from our warehouse.` },
         { property: "og:title", content: `${name} — findhive` },
-        { property: "og:description", content: `Compare and shop ${name.toLowerCase()} on findhive.` },
+        { property: "og:description", content: `Authentic ${name.toLowerCase()}, shipped fast by findhive.` },
       ],
     };
   },
@@ -36,7 +36,7 @@ function SubPage() {
   const subCat = getSubcategory(category, sub)!;
   const { data = [], isLoading } = useQuery(opts(category, sub));
   const [sort, setSort] = useState("rating");
-  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [], retailers: [] });
+  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [] });
   const filtered = sortProducts(applyFilters(data, filters), sort);
 
   return (

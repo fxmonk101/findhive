@@ -33,7 +33,7 @@ function Search() {
   const { q, category } = Route.useSearch();
   const { data = [], isLoading } = useQuery(opts(q, category));
   const [sort, setSort] = useState("rating");
-  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [], retailers: [] });
+  const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [] });
   const filtered = sortProducts(applyFilters(data, filters), sort);
 
   return (

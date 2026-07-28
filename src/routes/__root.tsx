@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
+import { FreeShipBanner } from "@/components/layout/FreeShipBanner";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -80,16 +81,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "findhive — Find. Compare. Shop Smart." },
-      { name: "description", content: "FindHive is your smart shopping platform for the best deals on trading cards, watches, jewelry, bags, and outdoor gear — all in one place. Shop smarter, save mo" },
+      { title: "findhive — Trending products, restocked & shipped by us" },
+      { name: "description", content: "findhive stocks trending trading cards, watches and fitness gear — sourced directly from manufacturers, quality-checked in our warehouse, and shipped fast." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "findhive — Find. Compare. Shop Smart." },
-      { property: "og:description", content: "FindHive is your smart shopping platform for the best deals on trading cards, watches, jewelry, bags, and outdoor gear — all in one place. Shop smarter, save mo" },
+      { property: "og:title", content: "findhive — Trending products, shipped by us" },
+      { property: "og:description", content: "Authentic trading cards, watches and fitness gear — sourced direct, shipped fast." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "findhive — Find. Compare. Shop Smart." },
-      { name: "twitter:description", content: "FindHive is your smart shopping platform for the best deals on trading cards, watches, jewelry, bags, and outdoor gear — all in one place. Shop smarter, save mo" },
+      { name: "twitter:title", content: "findhive — Trending products, shipped by us" },
+      { name: "twitter:description", content: "Authentic trading cards, watches and fitness gear — sourced direct, shipped fast." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BvRpobmKt6OuUZUnUa4jPeS4sB23/social-images/social-1784915369270-cheri.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/BvRpobmKt6OuUZUnUa4jPeS4sB23/social-images/social-1784915369270-cheri.webp" },
     ],
@@ -127,6 +128,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background">
+        <FreeShipBanner />
         <Header />
         <main className="flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
