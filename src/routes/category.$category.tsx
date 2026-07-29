@@ -5,6 +5,7 @@ import { listByCategory } from "@/lib/products";
 import { getCategory, CATEGORIES } from "@/lib/categories";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { FilterSidebar, applyFilters, sortProducts, type Filters } from "@/components/filters/FilterSidebar";
+import { CategoryWidget } from "@/components/filters/CategoryWidget";
 import { ChevronRight } from "lucide-react";
 
 const opts = (slug: string) =>
@@ -70,7 +71,10 @@ function CategoryPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
-        <FilterSidebar allProducts={data} filters={filters} onChange={setFilters} />
+        <div className="space-y-5">
+          <CategoryWidget activeCategory={category} />
+          <FilterSidebar allProducts={data} filters={filters} onChange={setFilters} />
+        </div>
         <div>
           <div className="mb-4 flex items-center justify-end">
             <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Sort:</label>
