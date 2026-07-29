@@ -7,7 +7,7 @@ export function FreeShipBanner() {
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-1.5 text-center text-xs font-medium">
         <Truck size={14} className="text-accent" />
         <span>
-          Free shipping on orders over ${STORE_CONFIG.freeShippingThreshold} · Ships from {STORE_CONFIG.warehouseLocation} · Authentic products guaranteed
+          Free shipping on orders over ${STORE_CONFIG.freeShippingThreshold} · Authentic products guaranteed
         </span>
       </div>
     </div>

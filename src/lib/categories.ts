@@ -71,6 +71,7 @@ export const CATEGORIES: Category[] = [
     subcategories: [
       { slug: "camping-hiking", name: "Camping & Hiking" },
       { slug: "fitness-equipment", name: "Fitness Equipment" },
+      { slug: "vibration-plates", name: "Vibration Plate Machines" },
       { slug: "cycling", name: "Cycling Gear" },
       { slug: "sports-recreation", name: "Sports & Recreation" },
     ],

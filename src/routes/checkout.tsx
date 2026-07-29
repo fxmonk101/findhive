@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { CheckCircle2, CreditCard, Wallet, Building2, Smartphone, ShieldCheck, Lock } from "lucide-react";
+import { CheckCircle2, CreditCard, Wallet, Building2, Smartphone, Lock } from "lucide-react";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
+import { PaymentIcons } from "@/components/product/PaymentIcons";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/checkout")({
@@ -57,7 +58,7 @@ function CheckoutPage() {
   const [wire, setWire] = useState({ bankName: "", accountName: "", reference: "" });
 
   const subtotal = items.reduce((n, i) => n + i.quantity * i.price, 0);
-  const shipping = subtotal > 150 || subtotal === 0 ? 0 : 12;
+  const shipping = subtotal >= 150 || subtotal === 0 ? 0 : 12;
   const tax = +(subtotal * 0.07).toFixed(2);
   const total = subtotal + shipping + tax;
 
@@ -266,8 +267,12 @@ function CheckoutPage() {
             </div>
           </div>
           <div className="rounded-lg border border-border bg-card p-4 text-xs text-muted-foreground">
-            <div className="flex items-center gap-2 font-semibold text-primary"><ShieldCheck size={14} className="text-accent" /> Buyer protection</div>
-            <p className="mt-1">Encrypted checkout, order tracking, and easy returns within 30 days on eligible items.</p>
+            <div className="flex items-center gap-2 font-semibold text-primary"><Lock size={14} className="text-accent" /> SSL Secured · 256-bit encryption</div>
+            <p className="mt-1">Your payment details are protected in transit with industry-standard TLS/SSL encryption.</p>
+            <div className="mt-3">
+              <div className="mb-1.5 text-[10px] font-bold uppercase tracking-wide text-muted-foreground">Accepted payments</div>
+              <PaymentIcons tone="dark" />
+            </div>
           </div>
         </aside>
       </div>
