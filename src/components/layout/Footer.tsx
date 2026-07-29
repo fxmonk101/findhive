@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Twitter, Linkedin, Send, Instagram, CreditCard, Banknote, Wallet, Landmark } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { CATEGORIES } from "@/lib/categories";
+import { PaymentIcons } from "@/components/product/PaymentIcons";
 
 function ShareLinks() {
   const shareUrl = typeof window !== "undefined" ? window.location.href : "https://findhive.lovable.app";
@@ -30,15 +31,6 @@ function ShareLinks() {
         </a>
       ))}
     </div>
-  );
-}
-
-function PaymentBadge({ icon: Icon, label }: { icon: typeof CreditCard; label: string }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-2.5 py-1.5 text-[11px] font-bold uppercase tracking-wide text-primary-foreground/90">
-      <Icon size={14} className="text-accent" />
-      {label}
-    </span>
   );
 }
 
@@ -90,12 +82,7 @@ export function Footer() {
             <button className="rounded-r bg-accent px-4 text-sm font-bold text-accent-foreground hover:brightness-95">Join</button>
           </form>
           <h4 className="mb-3 mt-6 text-sm font-bold uppercase tracking-wide text-accent">We Accept</h4>
-          <div className="flex flex-wrap gap-2">
-            <PaymentBadge icon={CreditCard} label="Card" />
-            <PaymentBadge icon={Wallet} label="Zelle" />
-            <PaymentBadge icon={Banknote} label="Cash App" />
-            <PaymentBadge icon={Landmark} label="Wire" />
-          </div>
+          <PaymentIcons />
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-4">
