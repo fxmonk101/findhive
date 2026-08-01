@@ -12,6 +12,8 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { ImageGallery } from "@/components/product/ImageGallery";
 import { ViewerBadge } from "@/components/product/ViewerBadge";
 import { TrustBadges } from "@/components/product/TrustBadges";
+import { ProductDescription } from "@/components/product/ProductDescription";
+import { NotifyMeForm } from "@/components/product/NotifyMeForm";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useWishlist } from "@/lib/stores/wishlist";
@@ -133,9 +135,15 @@ function ProductPage() {
             {sub && <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent">{sub.name}</div>}
             <h1 className="text-3xl font-black leading-tight text-primary md:text-4xl">{product.title}</h1>
 
-            <a href="#reviews" className="mt-3 inline-flex w-fit items-center gap-2 hover:opacity-90">
-              <RatingStars rating={product.rating} reviewCount={product.review_count} />
-            </a>
+            {product.review_count > 0 ? (
+              <a href="#reviews" className="mt-3 inline-flex w-fit items-center gap-2 hover:opacity-90">
+                <RatingStars rating={product.rating} reviewCount={product.review_count} />
+              </a>
+            ) : (
+              <a href="#reviews" className="mt-3 w-fit text-sm text-muted-foreground hover:text-accent">
+                No reviews yet — be the first to review this product
+              </a>
+            )}
 
             <div className="mt-5 flex flex-wrap items-baseline gap-4">
               <PriceTag price={product.price} original={product.original_price} size="lg" />
@@ -150,8 +158,8 @@ function ProductPage() {
               ) : (
                 <span className="font-semibold text-destructive">Out of stock</span>
               )}
-              {hydrated && <ViewerBadge count={product.viewer_count} size="md" />}
-              {product.sold_count >= 20 && (
+              {hydrated && inStock && <ViewerBadge count={product.viewer_count} size="md" />}
+              {product.sold_count > 5 && (
                 <span className="text-xs text-muted-foreground">
                   <span className="font-semibold text-primary">{product.sold_count.toLocaleString()}</span> sold this month
                 </span>
@@ -164,6 +172,14 @@ function ProductPage() {
               </p>
             )}
 
+            {!inStock ? (
+              <div className="mt-7 space-y-4">
+                <Button size="lg" disabled variant="secondary" className="w-full rounded-xl sm:w-auto sm:min-w-[220px]">
+                  Out of Stock
+                </Button>
+                <NotifyMeForm productTitle={product.title} />
+              </div>
+            ) : (
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center rounded-xl border border-border bg-card">
                 <button
@@ -209,6 +225,17 @@ function ProductPage() {
                 <Heart size={18} className={wishlisted ? "fill-accent text-accent" : ""} />
               </Button>
             </div>
+            )}
+            {!inStock && (
+              <Button
+                variant="ghost"
+                onClick={() => toggleWish(product.id)}
+                aria-pressed={wishlisted}
+                className="mt-3 w-fit rounded-xl px-2"
+              >
+                <Heart size={18} className={wishlisted ? "mr-2 fill-accent text-accent" : "mr-2"} /> Save for later
+              </Button>
+            )}
 
             <div className="mt-8">
               <TrustBadges compact />
@@ -232,9 +259,9 @@ function ProductPage() {
             </TabsList>
 
             <TabsContent value="description" className="rounded-2xl border border-border bg-card p-6 md:p-8">
-              <div className="prose prose-sm max-w-none whitespace-pre-line leading-relaxed text-muted-foreground">
-                {product.long_description || product.description || product.short_description || "No description available."}
-              </div>
+              <ProductDescription
+                content={product.long_description || product.description || product.short_description || ""}
+              />
             </TabsContent>
 
             <TabsContent value="info" className="rounded-2xl border border-border bg-card p-6 md:p-8">

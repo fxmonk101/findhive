@@ -17,6 +17,8 @@ export function ProductCard({ product }: { product: Product }) {
   const toggleWish = useWishlist((s) => s.toggle);
   const addToCart = useCart((s) => s.add);
   const off = percentOff(product.price, product.original_price);
+  const outOfStock = product.stock_count === 0;
+  const hasReviews = product.review_count > 0;
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-xl">
@@ -38,6 +40,11 @@ export function ProductCard({ product }: { product: Product }) {
             -{off}% OFF
           </span>
         )}
+        {outOfStock && (
+          <span className="absolute inset-x-0 bottom-0 bg-primary/85 py-1.5 text-center text-[11px] font-bold uppercase tracking-wide text-primary-foreground">
+            Out of Stock
+          </span>
+        )}
         <div className="absolute right-3 top-3 flex flex-col gap-1.5">
           <button
             type="button"
@@ -56,45 +63,54 @@ export function ProductCard({ product }: { product: Product }) {
             />
           </button>
         </div>
-        {hydrated && product.viewer_count >= 3 && (
+        {hydrated && !outOfStock && product.viewer_count >= 3 && (
           <div className="absolute bottom-3 left-3">
             <ViewerBadge count={product.viewer_count} />
           </div>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-2.5 p-5">
+      <div className="flex flex-1 flex-col gap-2 p-4">
         <Link
           to="/product/$id"
           params={{ id: product.id }}
-          className="line-clamp-2 min-h-[3rem] text-base font-semibold text-foreground hover:text-accent"
+          className="line-clamp-2 min-h-[2.6rem] text-sm font-semibold leading-snug text-foreground hover:text-accent md:text-base"
         >
           {product.title}
         </Link>
-        <RatingStars rating={product.rating} reviewCount={product.review_count} />
-        <PriceTag price={product.price} original={product.original_price} size="lg" />
-        {hydrated && product.sold_count >= 10 && (
+        {hasReviews ? (
+          <RatingStars rating={product.rating} reviewCount={product.review_count} />
+        ) : (
+          <span className="text-xs text-muted-foreground">No reviews yet</span>
+        )}
+        <PriceTag price={product.price} original={product.original_price} />
+        {hydrated && !outOfStock && product.sold_count > 5 && (
           <div className="text-xs font-medium text-muted-foreground">
             <span className="text-primary">{product.sold_count.toLocaleString()}</span> sold this month
           </div>
         )}
         <div className="mt-auto pt-2">
-          <Button
-            size="lg"
-            className="w-full rounded-xl bg-accent text-sm font-bold text-accent-foreground shadow-sm transition hover:brightness-95"
-            onClick={() => {
-              addToCart({
-                id: product.id,
-                title: product.title,
-                price: product.price,
-                image_url: product.image_url,
-              });
-              toast.success("Added to cart");
-            }}
-          >
-            <ShoppingBag size={16} className="mr-2" />
-            Add to Cart
-          </Button>
+          {outOfStock ? (
+            <Button disabled className="w-full rounded-xl text-sm font-bold" variant="secondary">
+              Out of Stock
+            </Button>
+          ) : (
+            <Button
+              className="w-full rounded-xl bg-accent text-sm font-bold text-accent-foreground shadow-sm transition hover:brightness-95"
+              onClick={() => {
+                addToCart({
+                  id: product.id,
+                  title: product.title,
+                  price: product.price,
+                  image_url: product.image_url,
+                });
+                toast.success("Added to cart");
+              }}
+            >
+              <ShoppingBag size={16} className="mr-2" />
+              Add to Cart
+            </Button>
+          )}
         </div>
       </div>
     </article>

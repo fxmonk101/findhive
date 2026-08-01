@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
+import { MobileLocaleRow } from "./LocaleSwitcher";
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
   if (!open) return null;
@@ -13,6 +14,9 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <button onClick={onClose} aria-label="Close" className="grid h-8 w-8 place-items-center">
             <X size={20} />
           </button>
+        </div>
+        <div className="px-4 pt-4">
+          <MobileLocaleRow />
         </div>
         <nav className="flex flex-col p-4 text-sm font-semibold">
           <Link to="/" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Home</Link>
