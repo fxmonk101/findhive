@@ -83,7 +83,7 @@ function CartPage() {
             >
               Proceed to Checkout
             </Button>
-            <p className="mt-3 text-center text-xs text-muted-foreground">Secure checkout · Payment link sent after order confirmation.</p>
+            <p className="mt-3 text-center text-xs text-muted-foreground">Secure checkout · Zelle, Credit Card, Cash App, or Wire Transfer.</p>
           </aside>
         </div>
       )}

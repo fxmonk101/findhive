@@ -15,10 +15,6 @@ export function Newsletter() {
           onSubmit={(e) => {
             e.preventDefault();
             if (!email.includes("@")) return toast.error("Enter a valid email");
-            const saved = JSON.parse(localStorage.getItem("findhive-newsletter") ?? "[]");
-            const next = Array.isArray(saved) ? saved : [];
-            if (!next.includes(email.toLowerCase())) next.push(email.toLowerCase());
-            localStorage.setItem("findhive-newsletter", JSON.stringify(next));
             toast.success("Subscribed! Check your inbox.");
             setEmail("");
           }}

@@ -2,18 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const FAQS = [
-  { q: "How do orders work on findhive?", a: "You place your order on findhive, then receive a secure payment link to complete the transaction. Alternate options like Zelle, Cash App, and wire transfer are also available." },
-  { q: "Are the prices on findhive up to date?", a: "Prices are refreshed regularly and shown clearly on each product page before checkout." },
-  { q: "What payment methods are available?", a: "Customers can complete payment through the secure link sent after checkout, or choose Zelle, Cash App, or bank transfer if they prefer." },
-  { q: "Do I need an account?", a: "No — your wishlist and cart are saved locally in your browser, and you can shop without creating an account." },
-  { q: "How do I contact support?", a: "Visit the Contact page or email support@findhive.shop. We usually reply within one business day." },
+  { q: "How does findhive make money?", a: "We earn a small affiliate commission when you buy through our retailer links. It doesn't cost you anything extra and helps keep findhive free." },
+  { q: "Are the prices on findhive up to date?", a: "Prices are refreshed regularly, but the final price is always shown on the retailer's site. Always confirm before checking out." },
+  { q: "Can I trust the retailers listed?", a: "We only list deals from verified retailers with public return, warranty and support policies." },
+  { q: "How many products can I compare at once?", a: "You can compare up to 4 products side by side. Add or remove items via the compare icon on any product card." },
+  { q: "Do I need an account?", a: "No — your wishlist, cart and comparisons are saved locally in your browser. You can shop freely without signing up." },
+  { q: "How do I contact support?", a: "Visit the Contact page or email support@findhive.com. We usually reply within one business day." },
 ];
 
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
       { title: "FAQs — findhive" },
-      { name: "description", content: "Answers to common questions about ordering, shipping, and payment on findhive." },
+      { name: "description", content: "Answers to common questions about findhive, price comparison, retailers and returns." },
       { property: "og:title", content: "FAQs — findhive" },
       { property: "og:description", content: "Answers to common questions about findhive." },
     ],
