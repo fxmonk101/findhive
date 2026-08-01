@@ -31,14 +31,19 @@ export const Route = createFileRoute("/category/$category/$sub")({
   component: SubPage,
 });
 
+const PAGE_SIZE = 24;
+
 function SubPage() {
   const { category, sub } = Route.useParams();
   const cat = getCategory(category)!;
   const subCat = getSubcategory(category, sub)!;
   const { data = [], isLoading } = useQuery(opts(category, sub));
   const [sort, setSort] = useState("rating");
+  const [page, setPage] = useState(1);
   const [filters, setFilters] = useState<Filters>({ priceMax: 10000, minRating: 0, subcategories: [] });
   const filtered = sortProducts(applyFilters(data, filters), sort);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pageItems = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
@@ -68,7 +73,14 @@ function SubPage() {
               <option value="newest">Newest</option>
             </select>
           </div>
-          <ProductGrid products={filtered} loading={isLoading} />
+          <ProductGrid products={pageItems} loading={isLoading} />
+          {!isLoading && filtered.length > PAGE_SIZE && (
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <button type="button" disabled={page === 1} onClick={() => setPage((p) => Math.max(1, p - 1))} className="rounded border border-border px-3 py-2 text-sm disabled:opacity-40">Prev</button>
+              <span className="text-sm text-muted-foreground">Page {page} of {totalPages}</span>
+              <button type="button" disabled={page === totalPages} onClick={() => setPage((p) => Math.min(totalPages, p + 1))} className="rounded border border-border px-3 py-2 text-sm disabled:opacity-40">Next</button>
+            </div>
+          )}
         </div>
       </div>
     </div>

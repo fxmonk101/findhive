@@ -3,10 +3,11 @@ import { Facebook, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { CATEGORIES } from "@/lib/categories";
 import { PaymentIcons } from "@/components/product/PaymentIcons";
+import { STORE_CONFIG } from "@/lib/store-config";
 
 function ShareLinks() {
   const shareUrl = typeof window !== "undefined" ? window.location.href : "https://findhive.lovable.app";
-  const text = "Find. Compare. Shop Smart. — findhive";
+  const text = "Discover. Add to Cart. Checkout. Fast Shipping. — findhive";
   const enc = encodeURIComponent;
   const links = [
     { I: Facebook, label: "Share on Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${enc(shareUrl)}` },
@@ -41,7 +42,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-primary-foreground/70">
-            findhive — trending products, restocked and shipped by us. Authentic. Fast. Secure.
+            findhive — curated products, quick checkout, and trusted service from a simple online storefront.
           </p>
           <ShareLinks />
         </div>
@@ -62,7 +63,7 @@ export function Footer() {
             <li><Link to="/contact" className="hover:text-accent">Contact Us</Link></li>
             <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
             <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
-            <li><Link to="/shop" className="hover:text-accent">Special Offers</Link></li>
+            <li><Link to="/shop" className="hover:text-accent">Browse Deals</Link></li>
           </ul>
         </div>
         <div>
@@ -82,13 +83,19 @@ export function Footer() {
             <button className="rounded-r bg-accent px-4 text-sm font-bold text-accent-foreground hover:brightness-95">Join</button>
           </form>
           <h4 className="mb-3 mt-6 text-sm font-bold uppercase tracking-wide text-accent">We Accept</h4>
-          <PaymentIcons />
+          <PaymentIcons tone="dark" />
+          <div className="mt-4 rounded-lg border border-white/10 bg-white/5 p-3 text-xs text-primary-foreground/80">
+            <div className="font-semibold text-white">{STORE_CONFIG.businessName}</div>
+            <div>{STORE_CONFIG.businessAddress}</div>
+            <div className="mt-1">Email: {STORE_CONFIG.supportEmail}</div>
+            <div>Phone: {STORE_CONFIG.businessPhone}</div>
+          </div>
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-4">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 text-xs text-primary-foreground/60 sm:flex-row">
           <span>© {new Date().getFullYear()} findhive. All rights reserved.</span>
-          <span>Secure checkout · Authentic products guaranteed</span>
+          <span>{STORE_CONFIG.freeShippingMessage}</span>
         </div>
       </div>
     </footer>

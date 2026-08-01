@@ -57,6 +57,16 @@ function ReviewsPage() {
     }));
     return { avg: a, dist: d, total: t };
   }, [list]);
+  const [sort, setSort] = useState<"newest" | "highest" | "lowest" | "helpful">("newest");
+  const sortedList = useMemo(() => {
+    const next = [...list];
+    switch (sort) {
+      case "highest": return next.sort((a, b) => b.rating - a.rating || b.createdAt - a.createdAt);
+      case "lowest": return next.sort((a, b) => a.rating - b.rating || b.createdAt - a.createdAt);
+      case "helpful": return next.sort((a, b) => (b.helpful ?? 0) - (a.helpful ?? 0));
+      default: return next.sort((a, b) => b.createdAt - a.createdAt);
+    }
+  }, [list, sort]);
 
   const [form, setForm] = useState({ name: "", title: "", body: "", rating: 0 });
   const [errors, setErrors] = useState<Partial<Record<keyof typeof form, string>>>({});
@@ -92,44 +102,65 @@ function ReviewsPage() {
 
       {/* Summary */}
       <section className="mt-8 grid gap-6 rounded-2xl border border-border bg-card p-6 md:grid-cols-3">
-        <div className="flex flex-col items-center justify-center border-b border-border pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-6">
-          <div className="text-5xl font-black text-primary">{avg.toFixed(1)}</div>
-          <Stars value={Math.round(avg)} size={22} />
-          <div className="mt-1 text-sm text-muted-foreground">Based on {total} review{total === 1 ? "" : "s"}</div>
-        </div>
-        <div className="md:col-span-2">
-          <ul className="space-y-2">
-            {dist.map((d) => {
-              const pct = total ? (d.count / total) * 100 : 0;
-              return (
-                <li key={d.star} className="flex items-center gap-3 text-sm">
-                  <span className="w-8 shrink-0 text-muted-foreground">{d.star}★</span>
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-                    <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
-                  </div>
-                  <span className="w-8 shrink-0 text-right text-muted-foreground">{d.count}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        {total === 0 ? (
+          <div className="md:col-span-3 text-center">
+            <div className="text-2xl font-bold text-primary">Be the first to share your experience with findhive</div>
+            <p className="mt-2 text-sm text-muted-foreground">Add a review and help shoppers make a confident choice.</p>
+          </div>
+        ) : (
+          <>
+            <div className="flex flex-col items-center justify-center border-b border-border pb-4 md:border-b-0 md:border-r md:pb-0 md:pr-6">
+              <div className="text-5xl font-black text-primary">{avg.toFixed(1)}</div>
+              <Stars value={Math.round(avg)} size={22} />
+              <div className="mt-1 text-sm text-muted-foreground">Based on {total} review{total === 1 ? "" : "s"}</div>
+            </div>
+            <div className="md:col-span-2">
+              <ul className="space-y-2">
+                {dist.map((d) => {
+                  const pct = total ? (d.count / total) * 100 : 0;
+                  return (
+                    <li key={d.star} className="flex items-center gap-3 text-sm">
+                      <span className="w-8 shrink-0 text-muted-foreground">{d.star}★</span>
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+                        <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
+                      </div>
+                      <span className="w-8 shrink-0 text-right text-muted-foreground">{d.count}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </>
+        )}
       </section>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
         {/* Reviews list */}
         <section>
-          <h2 className="mb-4 text-xl font-bold text-primary">All reviews</h2>
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <h2 className="text-xl font-bold text-primary">All reviews</h2>
+            <div className="flex items-center gap-2">
+              <label className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Sort:</label>
+              <select value={sort} onChange={(e) => setSort(e.target.value as any)} className="rounded border border-border bg-background px-2 py-1.5 text-sm">
+                <option value="newest">Most recent</option>
+                <option value="highest">Highest rated</option>
+                <option value="lowest">Lowest rated</option>
+                <option value="helpful">Most helpful</option>
+              </select>
+            </div>
+          </div>
           {list.length === 0 ? (
             <p className="text-sm text-muted-foreground">No reviews yet — be the first!</p>
           ) : (
             <ul className="space-y-4">
-              {list.map((r) => (
+              {sortedList.map((r) => (
                 <li key={r.id} className="rounded-xl border border-border bg-card p-5">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <h3 className="font-bold text-primary">{r.title}</h3>
                       <div className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
                         <span className="font-semibold text-foreground">{r.name}</span>
+                        {r.verified && <span className="rounded-full bg-emerald-100 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">Verified</span>}
                         <span>·</span>
                         <span>{new Date(r.createdAt).toLocaleDateString()}</span>
                       </div>
@@ -137,6 +168,10 @@ function ReviewsPage() {
                     <Stars value={r.rating} />
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">{r.body}</p>
+                  <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
+                    <button type="button" className="rounded-full border border-border px-2 py-1 hover:bg-muted">Helpful ({r.helpful ?? 0})</button>
+                    <button type="button" className="rounded-full border border-border px-2 py-1 hover:bg-muted">Not helpful</button>
+                  </div>
                 </li>
               ))}
             </ul>
