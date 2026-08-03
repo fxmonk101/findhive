@@ -117,3 +117,49 @@ export async function autocomplete(q: string, limit = 6): Promise<Product[]> {
   if (error) throw error;
   return (data ?? []) as Product[];
 }
+
+export async function listNewArrivals(limit = 8): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("products")
+    .select(SELECT)
+    .gt("stock_count", 0)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as Product[];
+}
+
+export async function listBestSellers(limit = 8): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("products")
+    .select(SELECT)
+    .gt("stock_count", 0)
+    .order("sold_count", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as Product[];
+}
+
+export async function listStaffPicks(limit = 8): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("products")
+    .select(SELECT)
+    .gt("stock_count", 0)
+    .gte("rating", 4.5)
+    .order("review_count", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as Product[];
+}
+
+export async function listDeals(limit = 8): Promise<Product[]> {
+  const { data, error } = await supabase
+    .from("products")
+    .select(SELECT)
+    .not("original_price", "is", null)
+    .gt("stock_count", 0)
+    .order("sold_count", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as Product[];
+}
