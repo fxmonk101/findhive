@@ -25,8 +25,10 @@ import { Route as CartRouteImport } from './routes/cart'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductIdRouteImport } from './routes/product.$id'
 import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CollectionsRouteImport } from './routes/collections.'
 import { Route as CategoryCategorySubRouteImport } from './routes/category.$category.$sub'
 
@@ -110,6 +112,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductIdRoute = ProductIdRouteImport.update({
   id: '/product/$id',
   path: '/product/$id',
@@ -118,6 +125,11 @@ const ProductIdRoute = ProductIdRouteImport.update({
 const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
   id: '/category/$category',
   path: '/category/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CollectionsRoute = CollectionsRouteImport.update({
@@ -149,8 +161,10 @@ export interface FileRoutesByFullPath {
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
   '/collections/': typeof CollectionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRoutesByTo {
@@ -171,8 +185,10 @@ export interface FileRoutesByTo {
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
   '/collections': typeof CollectionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/blog': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRoutesById {
@@ -194,8 +210,10 @@ export interface FileRoutesById {
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
   '/collections/': typeof CollectionsRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRouteTypes {
@@ -218,8 +236,10 @@ export interface FileRouteTypes {
     | '/track-order'
     | '/wishlist'
     | '/collections/'
+    | '/blog/$slug'
     | '/category/$category'
     | '/product/$id'
+    | '/blog/'
     | '/category/$category/$sub'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -240,8 +260,10 @@ export interface FileRouteTypes {
     | '/track-order'
     | '/wishlist'
     | '/collections'
+    | '/blog/$slug'
     | '/category/$category'
     | '/product/$id'
+    | '/blog'
     | '/category/$category/$sub'
   id:
     | '__root__'
@@ -262,8 +284,10 @@ export interface FileRouteTypes {
     | '/track-order'
     | '/wishlist'
     | '/collections/'
+    | '/blog/$slug'
     | '/category/$category'
     | '/product/$id'
+    | '/blog/'
     | '/category/$category/$sub'
   fileRoutesById: FileRoutesById
 }
@@ -285,8 +309,10 @@ export interface RootRouteChildren {
   TrackOrderRoute: typeof TrackOrderRoute
   WishlistRoute: typeof WishlistRoute
   CollectionsRoute: typeof CollectionsRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   CategoryCategoryRoute: typeof CategoryCategoryRouteWithChildren
   ProductIdRoute: typeof ProductIdRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -403,6 +429,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/$id': {
       id: '/product/$id'
       path: '/product/$id'
@@ -415,6 +448,13 @@ declare module '@tanstack/react-router' {
       path: '/category/$category'
       fullPath: '/category/$category'
       preLoaderRoute: typeof CategoryCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/collections/': {
@@ -463,8 +503,10 @@ const rootRouteChildren: RootRouteChildren = {
   TrackOrderRoute: TrackOrderRoute,
   WishlistRoute: WishlistRoute,
   CollectionsRoute: CollectionsRoute,
+  BlogSlugRoute: BlogSlugRoute,
   CategoryCategoryRoute: CategoryCategoryRouteWithChildren,
   ProductIdRoute: ProductIdRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
