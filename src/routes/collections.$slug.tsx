@@ -8,7 +8,7 @@ import { abs, breadcrumbLd, collectionPageLd, ldScript } from "@/lib/seo";
 const opts = (slug: string) =>
   queryOptions({ queryKey: ["collection", slug], queryFn: () => listCollection(slug) });
 
-export const Route = createFileRoute("/collections/")({
+export const Route = createFileRoute("/collections/$slug")({
   loader: async ({ params, context }) => {
     const collection = getCollection(params.slug);
     if (!collection) throw notFound();

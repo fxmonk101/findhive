@@ -27,9 +27,9 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductIdRouteImport } from './routes/product.$id'
+import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
 import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as CollectionsRouteImport } from './routes/collections.'
 import { Route as CategoryCategorySubRouteImport } from './routes/category.$category.$sub'
 
 const WishlistRoute = WishlistRouteImport.update({
@@ -122,6 +122,11 @@ const ProductIdRoute = ProductIdRouteImport.update({
   path: '/product/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
+  id: '/collections/$slug',
+  path: '/collections/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
   id: '/category/$category',
   path: '/category/$category',
@@ -130,11 +135,6 @@ const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CollectionsRoute = CollectionsRouteImport.update({
-  id: '/collections/',
-  path: '/collections/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoryCategorySubRoute = CategoryCategorySubRouteImport.update({
@@ -160,9 +160,9 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
-  '/collections/': typeof CollectionsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
   '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -184,9 +184,9 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
-  '/collections': typeof CollectionsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
   '/blog': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -209,9 +209,9 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
-  '/collections/': typeof CollectionsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
   '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -235,9 +235,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
-    | '/collections/'
     | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
     | '/blog/'
     | '/category/$category/$sub'
@@ -259,9 +259,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
-    | '/collections'
     | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
     | '/blog'
     | '/category/$category/$sub'
@@ -283,9 +283,9 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
-    | '/collections/'
     | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
     | '/blog/'
     | '/category/$category/$sub'
@@ -308,9 +308,9 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TrackOrderRoute: typeof TrackOrderRoute
   WishlistRoute: typeof WishlistRoute
-  CollectionsRoute: typeof CollectionsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CategoryCategoryRoute: typeof CategoryCategoryRouteWithChildren
+  CollectionsSlugRoute: typeof CollectionsSlugRoute
   ProductIdRoute: typeof ProductIdRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -443,6 +443,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections/$slug': {
+      id: '/collections/$slug'
+      path: '/collections/$slug'
+      fullPath: '/collections/$slug'
+      preLoaderRoute: typeof CollectionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$category': {
       id: '/category/$category'
       path: '/category/$category'
@@ -455,13 +462,6 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/collections/': {
-      id: '/collections/'
-      path: '/collections'
-      fullPath: '/collections/'
-      preLoaderRoute: typeof CollectionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/category/$category/$sub': {
@@ -502,9 +502,9 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TrackOrderRoute: TrackOrderRoute,
   WishlistRoute: WishlistRoute,
-  CollectionsRoute: CollectionsRoute,
   BlogSlugRoute: BlogSlugRoute,
   CategoryCategoryRoute: CategoryCategoryRouteWithChildren,
+  CollectionsSlugRoute: CollectionsSlugRoute,
   ProductIdRoute: ProductIdRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
