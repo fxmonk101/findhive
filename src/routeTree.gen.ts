@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as TrackOrderRouteImport } from './routes/track-order'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
@@ -24,13 +25,21 @@ import { Route as CartRouteImport } from './routes/cart'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductIdRouteImport } from './routes/product.$id'
+import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
 import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CategoryCategorySubRouteImport } from './routes/category.$category.$sub'
 
 const WishlistRoute = WishlistRouteImport.update({
   id: '/wishlist',
   path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackOrderRoute = TrackOrderRouteImport.update({
+  id: '/track-order',
+  path: '/track-order',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -103,14 +112,29 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductIdRoute = ProductIdRouteImport.update({
   id: '/product/$id',
   path: '/product/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
+  id: '/collections/$slug',
+  path: '/collections/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
   id: '/category/$category',
   path: '/category/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoryCategorySubRoute = CategoryCategorySubRouteImport.update({
@@ -134,9 +158,13 @@ export interface FileRoutesByFullPath {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
+  '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRoutesByTo {
@@ -154,9 +182,13 @@ export interface FileRoutesByTo {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
+  '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
+  '/blog': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRoutesById {
@@ -175,9 +207,13 @@ export interface FileRoutesById {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRoute
   '/terms': typeof TermsRoute
+  '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/product/$id': typeof ProductIdRoute
+  '/blog/': typeof BlogIndexRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
 }
 export interface FileRouteTypes {
@@ -197,9 +233,13 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/terms'
+    | '/track-order'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
+    | '/blog/'
     | '/category/$category/$sub'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -217,9 +257,13 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/terms'
+    | '/track-order'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
+    | '/blog'
     | '/category/$category/$sub'
   id:
     | '__root__'
@@ -237,9 +281,13 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/terms'
+    | '/track-order'
     | '/wishlist'
+    | '/blog/$slug'
     | '/category/$category'
+    | '/collections/$slug'
     | '/product/$id'
+    | '/blog/'
     | '/category/$category/$sub'
   fileRoutesById: FileRoutesById
 }
@@ -258,9 +306,13 @@ export interface RootRouteChildren {
   ShippingReturnsRoute: typeof ShippingReturnsRoute
   ShopRoute: typeof ShopRoute
   TermsRoute: typeof TermsRoute
+  TrackOrderRoute: typeof TrackOrderRoute
   WishlistRoute: typeof WishlistRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   CategoryCategoryRoute: typeof CategoryCategoryRouteWithChildren
+  CollectionsSlugRoute: typeof CollectionsSlugRoute
   ProductIdRoute: typeof ProductIdRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -270,6 +322,13 @@ declare module '@tanstack/react-router' {
       path: '/wishlist'
       fullPath: '/wishlist'
       preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/track-order': {
+      id: '/track-order'
+      path: '/track-order'
+      fullPath: '/track-order'
+      preLoaderRoute: typeof TrackOrderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -370,6 +429,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/$id': {
       id: '/product/$id'
       path: '/product/$id'
@@ -377,11 +443,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections/$slug': {
+      id: '/collections/$slug'
+      path: '/collections/$slug'
+      fullPath: '/collections/$slug'
+      preLoaderRoute: typeof CollectionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$category': {
       id: '/category/$category'
       path: '/category/$category'
       fullPath: '/category/$category'
       preLoaderRoute: typeof CategoryCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/category/$category/$sub': {
@@ -420,20 +500,14 @@ const rootRouteChildren: RootRouteChildren = {
   ShippingReturnsRoute: ShippingReturnsRoute,
   ShopRoute: ShopRoute,
   TermsRoute: TermsRoute,
+  TrackOrderRoute: TrackOrderRoute,
   WishlistRoute: WishlistRoute,
+  BlogSlugRoute: BlogSlugRoute,
   CategoryCategoryRoute: CategoryCategoryRouteWithChildren,
+  CollectionsSlugRoute: CollectionsSlugRoute,
   ProductIdRoute: ProductIdRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
