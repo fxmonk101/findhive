@@ -22,17 +22,17 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-border hover:shadow-xl">
-      <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+      <div className="relative aspect-square overflow-hidden bg-white">
         <Link
           to="/product/$id"
           params={{ id: product.id }}
-          className="block h-full w-full"
+          className="block h-full w-full p-3"
         >
           <img
             src={product.image_url}
             alt={product.title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06]"
+            className="h-full w-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.04]"
           />
         </Link>
         {off && (

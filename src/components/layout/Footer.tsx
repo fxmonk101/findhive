@@ -3,10 +3,12 @@ import { Facebook, Twitter, Linkedin, Send, Instagram } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { CATEGORIES } from "@/lib/categories";
 import { PaymentIcons } from "@/components/product/PaymentIcons";
+import { useHydrated } from "@/lib/use-hydrated";
 
 function ShareLinks() {
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "https://findhive.lovable.app";
-  const text = "Find. Compare. Shop Smart. — findhive";
+  const hydrated = useHydrated();
+  const shareUrl = hydrated ? window.location.href : "https://findhive.lovable.app";
+  const text = "findhive — trending products, restocked and shipped by us";
   const enc = encodeURIComponent;
   const links = [
     { I: Facebook, label: "Share on Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${enc(shareUrl)}` },
@@ -61,6 +63,7 @@ export function Footer() {
             <li><Link to="/about" className="hover:text-accent">About Us</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact Us</Link></li>
             <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
+            <li><Link to="/track-order" className="hover:text-accent">Track Order</Link></li>
             <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
             <li><Link to="/shop" className="hover:text-accent">Special Offers</Link></li>
           </ul>

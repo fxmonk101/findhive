@@ -14,6 +14,47 @@ export type Database = {
   }
   public: {
     Tables: {
+      product_reviews: {
+        Row: {
+          author_name: string
+          body: string
+          created_at: string
+          id: string
+          product_id: string
+          rating: number
+          title: string
+          verified_purchase: boolean
+        }
+        Insert: {
+          author_name: string
+          body: string
+          created_at?: string
+          id?: string
+          product_id: string
+          rating: number
+          title: string
+          verified_purchase?: boolean
+        }
+        Update: {
+          author_name?: string
+          body?: string
+          created_at?: string
+          id?: string
+          product_id?: string
+          rating?: number
+          title?: string
+          verified_purchase?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "product_reviews_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       products: {
         Row: {
           attributes: Json
