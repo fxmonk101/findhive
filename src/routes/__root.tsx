@@ -12,9 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
+import { FreeShipBanner } from "@/components/layout/FreeShipBanner";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
-import { ldScript, organizationLd, webSiteLd } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -99,15 +99,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
-      },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
-    scripts: [ldScript(webSiteLd()), ldScript(organizationLd())],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -135,6 +128,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col bg-background">
+        <FreeShipBanner />
         <Header />
         <main className="flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
