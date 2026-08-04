@@ -37,18 +37,18 @@ function Index() {
           <ProductGrid products={featured.data ?? []} loading={featured.isLoading} />
         </div>
       </section>
-      {CATEGORIES.map((c) => (
-        <CategoryShowcaseWrapper key={c.slug} slug={c.slug} />
+      {CATEGORIES.map((c, i) => (
+        <CategoryShowcaseWrapper key={c.slug} slug={c.slug} index={i} />
       ))}
       <Newsletter />
     </>
   );
 }
 
-function CategoryShowcaseWrapper({ slug }: { slug: string }) {
+function CategoryShowcaseWrapper({ slug, index }: { slug: string; index: number }) {
   const q = useQuery(catOpts(slug));
   const cat = CATEGORIES.find((c) => c.slug === slug)!;
   if (!q.data?.length) return null;
-  return <CategoryShowcase category={cat} products={q.data} />;
+  return <CategoryShowcase category={cat} products={q.data} index={index} />;
 }
 
