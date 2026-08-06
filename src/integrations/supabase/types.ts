@@ -787,6 +787,45 @@ export type Database = {
           },
         ]
       }
+      site_reviews: {
+        Row: {
+          author_name: string
+          body: string
+          created_at: string
+          featured: boolean
+          id: string
+          rating: number
+          status: string
+          title: string
+          topic: string
+          updated_at: string
+        }
+        Insert: {
+          author_name: string
+          body: string
+          created_at?: string
+          featured?: boolean
+          id?: string
+          rating: number
+          status?: string
+          title: string
+          topic?: string
+          updated_at?: string
+        }
+        Update: {
+          author_name?: string
+          body?: string
+          created_at?: string
+          featured?: boolean
+          id?: string
+          rating?: number
+          status?: string
+          title?: string
+          topic?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       store_settings: {
         Row: {
           key: string
