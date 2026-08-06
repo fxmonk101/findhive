@@ -17,6 +17,25 @@ export type ProductReviewWithProduct = ProductReview & {
 
 const SELECT = "id,product_id,author_name,rating,title,body,verified_purchase,created_at";
 
+export type SiteReviewTopic = "support" | "shipping" | "reliability" | "experience";
+
+export type SiteReview = {
+  id: string;
+  author_name: string;
+  topic: SiteReviewTopic;
+  rating: number;
+  title: string;
+  body: string;
+  created_at: string;
+};
+
+export const SITE_TOPIC_LABELS: Record<SiteReviewTopic, string> = {
+  support: "Customer support",
+  shipping: "Shipping & packing",
+  reliability: "Site reliability",
+  experience: "Shopping experience",
+};
+
 export async function listProductReviews(productId: string): Promise<ProductReview[]> {
   const { data, error } = await supabase
     .from("product_reviews")
@@ -47,5 +66,26 @@ export async function submitProductReview(input: {
   const { error } = await supabase
     .from("product_reviews")
     .insert({ ...input, verified_purchase: false });
+  if (error) throw error;
+}
+
+export async function listSiteReviews(limit = 24): Promise<SiteReview[]> {
+  const { data, error } = await supabase
+    .from("site_reviews")
+    .select("id,author_name,topic,rating,title,body,created_at")
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data ?? []) as SiteReview[];
+}
+
+export async function submitSiteReview(input: {
+  author_name: string;
+  topic: SiteReviewTopic;
+  rating: number;
+  title: string;
+  body: string;
+}): Promise<void> {
+  const { error } = await supabase.from("site_reviews").insert(input);
   if (error) throw error;
 }
