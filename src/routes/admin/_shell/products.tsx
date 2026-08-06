@@ -6,7 +6,7 @@ import { Copy, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CATEGORIES } from "@/lib/categories";
-import { formatUsd } from "@/lib/format";
+import { formatPrice } from "@/lib/format";
 import {
   listAdminProducts,
   duplicateProduct,
@@ -127,7 +127,7 @@ function AdminProducts() {
                 <td className="px-4 py-3 capitalize text-muted-foreground">
                   {p.subcategory.replace(/-/g, " ")}
                 </td>
-                <td className="px-4 py-3 font-semibold">{formatUsd(Number(p.price))}</td>
+                <td className="px-4 py-3 font-semibold">{formatPrice(Number(p.price))}</td>
                 <td className="px-4 py-3">
                   <span
                     className={

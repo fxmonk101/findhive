@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { getDashboardStats } from "@/lib/admin/dashboard";
-import { formatUsd } from "@/lib/format";
+import { formatPrice } from "@/lib/format";
 
 export const Route = createFileRoute("/admin/_shell/")({
   component: AdminDashboard,
@@ -34,8 +34,8 @@ function AdminDashboard() {
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             <Card
               label="Revenue (all time)"
-              value={formatUsd(data.revenue.total)}
-              hint={`${formatUsd(data.revenue.last30)} in the last 30 days`}
+              value={formatPrice(data.revenue.total)}
+              hint={`${formatPrice(data.revenue.last30)} in the last 30 days`}
             />
             <Card
               label="Orders"
