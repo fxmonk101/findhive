@@ -26,16 +26,24 @@ export const Route = createFileRoute("/admin/_shell")({
   component: AdminShell,
 });
 
-const NAV = [
+type NavItem = {
+  to: "/admin" | "/admin/products";
+  label: string;
+  icon: typeof LayoutDashboard;
+  exact: boolean;
+  soon?: boolean;
+};
+
+const NAV: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/admin/products", label: "Products", icon: Package, exact: false },
-  { to: "/admin/orders", label: "Orders", icon: ShoppingCart, exact: false, soon: true },
-  { to: "/admin/customers", label: "Customers", icon: Users, exact: false, soon: true },
-  { to: "/admin/reviews", label: "Reviews", icon: Star, exact: false, soon: true },
-  { to: "/admin/promotions", label: "Promotions", icon: Tag, exact: false, soon: true },
-  { to: "/admin/blog", label: "Blog", icon: FileText, exact: false, soon: true },
-  { to: "/admin/settings", label: "Settings", icon: Settings, exact: false, soon: true },
-] as const;
+  { to: "/admin", label: "Orders", icon: ShoppingCart, exact: false, soon: true },
+  { to: "/admin", label: "Customers", icon: Users, exact: false, soon: true },
+  { to: "/admin", label: "Reviews", icon: Star, exact: false, soon: true },
+  { to: "/admin", label: "Promotions", icon: Tag, exact: false, soon: true },
+  { to: "/admin", label: "Blog", icon: FileText, exact: false, soon: true },
+  { to: "/admin", label: "Settings", icon: Settings, exact: false, soon: true },
+];
 
 function AdminShell() {
   const { admin } = Route.useRouteContext();
@@ -63,8 +71,8 @@ function AdminShell() {
         <nav className="flex-1 space-y-1 px-2 py-3">
           {NAV.map((item) => (
             <Link
-              key={item.to}
-              to={item.soon ? "/admin" : item.to}
+              key={item.label}
+              to={item.to}
               activeOptions={{ exact: item.exact }}
               activeProps={{ className: "bg-accent text-accent-foreground" }}
               inactiveProps={{ className: "text-primary-foreground/75 hover:bg-white/10" }}

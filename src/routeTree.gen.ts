@@ -27,6 +27,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductIdRouteImport } from './routes/product.$id'
 import { Route as CategoryCategoryRouteImport } from './routes/category.$category'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
+import { Route as AdminShellRouteImport } from './routes/admin/_shell'
 import { Route as CategoryCategorySubRouteImport } from './routes/category.$category.$sub'
 
 const WishlistRoute = WishlistRouteImport.update({
@@ -119,6 +121,16 @@ const CategoryCategoryRoute = CategoryCategoryRouteImport.update({
   path: '/category/$category',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminShellRoute = AdminShellRouteImport.update({
+  id: '/admin/_shell',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategoryCategorySubRoute = CategoryCategorySubRouteImport.update({
   id: '/$sub',
   path: '/$sub',
@@ -142,6 +154,8 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/admin': typeof AdminShellRoute
+  '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -163,6 +177,8 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/admin': typeof AdminShellRoute
+  '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -185,6 +201,8 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/track-order': typeof TrackOrderRoute
   '/wishlist': typeof WishlistRoute
+  '/admin/_shell': typeof AdminShellRoute
+  '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
@@ -208,6 +226,8 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
+    | '/admin'
+    | '/admin/login'
     | '/category/$category'
     | '/product/$id'
     | '/category/$category/$sub'
@@ -229,6 +249,8 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
+    | '/admin'
+    | '/admin/login'
     | '/category/$category'
     | '/product/$id'
     | '/category/$category/$sub'
@@ -250,6 +272,8 @@ export interface FileRouteTypes {
     | '/terms'
     | '/track-order'
     | '/wishlist'
+    | '/admin/_shell'
+    | '/admin/login'
     | '/category/$category'
     | '/product/$id'
     | '/category/$category/$sub'
@@ -272,6 +296,8 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TrackOrderRoute: typeof TrackOrderRoute
   WishlistRoute: typeof WishlistRoute
+  AdminShellRoute: typeof AdminShellRoute
+  AdminLoginRoute: typeof AdminLoginRoute
   CategoryCategoryRoute: typeof CategoryCategoryRouteWithChildren
   ProductIdRoute: typeof ProductIdRoute
 }
@@ -404,6 +430,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoryCategoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/_shell': {
+      id: '/admin/_shell'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminShellRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$category/$sub': {
       id: '/category/$category/$sub'
       path: '/$sub'
@@ -442,6 +482,8 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TrackOrderRoute: TrackOrderRoute,
   WishlistRoute: WishlistRoute,
+  AdminShellRoute: AdminShellRoute,
+  AdminLoginRoute: AdminLoginRoute,
   CategoryCategoryRoute: CategoryCategoryRouteWithChildren,
   ProductIdRoute: ProductIdRoute,
 }
