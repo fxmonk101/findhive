@@ -4,8 +4,10 @@ import { Search, ChevronDown, Check } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
 import { autocomplete, type Product } from "@/lib/products";
 import { formatPrice } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 
 export function SearchBar() {
+  const tr = useT();
   const navigate = useNavigate();
   const [q, setQ] = useState("");
   const [category, setCategory] = useState("");
@@ -47,7 +49,7 @@ export function SearchBar() {
     >
       <input
         type="search"
-        placeholder={t("search.placeholder")}
+        placeholder={tr("search.placeholder")}
         value={q}
         onChange={(e) => { setQ(e.target.value); setOpen(true); }}
         onFocus={() => setOpen(true)}

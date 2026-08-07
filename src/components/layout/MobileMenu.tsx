@@ -21,7 +21,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
         <nav className="flex flex-col p-4 text-sm font-semibold">
           <Link to="/" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Home</Link>
           <Link to="/shop" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Shop</Link>
-          <Link to="/about" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">About Us</Link>
+          <Link to="/about" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">{t("nav.about")}</Link>
           <Link to="/contact" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Contact Us</Link>
           <Link to="/faqs" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">FAQs</Link>
           <Link to="/track-order" onClick={onClose} className="border-b border-border py-3 text-primary hover:text-accent">Track Order</Link>
