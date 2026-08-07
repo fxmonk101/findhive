@@ -9,6 +9,7 @@ export const LANGUAGES: Language[] = [
   { code: "es", label: "Español" },
   { code: "fr", label: "Français" },
   { code: "de", label: "Deutsch" },
+  { code: "pt", label: "Português" },
 ];
 
 export const COUNTRIES: Country[] = [

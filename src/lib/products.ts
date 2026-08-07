@@ -78,14 +78,32 @@ export async function searchProducts(query: string, category?: string, limit = 4
 }
 
 export async function getFeatured(limit = 8): Promise<Product[]> {
+  // Trending leads with sealed Pokémon boxes/bundles, then fills with top-rated stock.
+  const sealed = await supabase
+    .from("products")
+    .select(SELECT)
+    .eq("subcategory", "pokemon-tcg")
+    .gt("stock_count", 0)
+    .or(
+      "title.ilike.%booster box%,title.ilike.%elite trainer box%,title.ilike.%booster bundle%,title.ilike.%display%,title.ilike.%collection box%,title.ilike.%premium collection%,title.ilike.%tin%,title.ilike.%bundle%",
+    )
+    .order("sold_count", { ascending: false })
+    .order("rating", { ascending: false })
+    .limit(limit);
+  if (sealed.error) throw sealed.error;
+  const boxes = (sealed.data ?? []) as Product[];
+  if (boxes.length >= limit) return boxes.slice(0, limit);
+
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
+    .gt("stock_count", 0)
     .order("rating", { ascending: false })
     .order("review_count", { ascending: false })
-    .limit(limit);
+    .limit(limit * 2);
   if (error) throw error;
-  return (data ?? []) as Product[];
+  const rest = ((data ?? []) as Product[]).filter((p) => !boxes.some((b) => b.id === p.id));
+  return [...boxes, ...rest].slice(0, limit);
 }
 
 export async function getRelated(category: string, excludeId: string, limit = 8): Promise<Product[]> {
