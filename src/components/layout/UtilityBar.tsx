@@ -1,8 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Twitter, Linkedin, Send } from "lucide-react";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { useT } from "@/lib/i18n";
 
 export function UtilityBar() {
+  const t = useT();
   return (
     <div className="hidden bg-primary text-primary-foreground md:block">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 text-xs">
@@ -16,9 +18,9 @@ export function UtilityBar() {
             <a href="#" aria-label="Telegram" className="hover:text-accent"><Send size={13} /></a>
           </div>
           <span className="opacity-30">|</span>
-          <Link to="/faqs" className="hover:text-accent">Newsletter</Link>
-          <Link to="/contact" className="hover:text-accent">Contact Us</Link>
-          <Link to="/faqs" className="hover:text-accent">FAQs</Link>
+          <Link to="/faqs" className="hover:text-accent">{t("nav.newsletter")}</Link>
+          <Link to="/contact" className="hover:text-accent">{t("nav.contact")}</Link>
+          <Link to="/faqs" className="hover:text-accent">{t("nav.faqs")}</Link>
         </div>
       </div>
     </div>

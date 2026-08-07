@@ -11,15 +11,26 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { COUNTRIES, LANGUAGES, countryOf, languageLabel, useLocale } from "@/lib/stores/locale";
 import { useHydrated } from "@/lib/use-hydrated";
+import { useT } from "@/lib/i18n";
+import { useEffect } from "react";
+
+/** Keeps <html lang> in sync with the selected language. */
+function useHtmlLang(lang: string) {
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+}
 
 /** Compact inline switchers for the desktop utility bar. */
 export function LocaleSwitcher() {
+  const t = useT();
   const hydrated = useHydrated();
   const language = useLocale((s) => s.language);
   const country = useLocale((s) => s.country);
   const setLanguage = useLocale((s) => s.setLanguage);
   const setCountry = useLocale((s) => s.setCountry);
   const c = countryOf(hydrated ? country : "US");
+  useHtmlLang(hydrated ? language : "en");
 
   return (
     <div className="flex items-center gap-3">
@@ -28,7 +39,7 @@ export function LocaleSwitcher() {
           <Globe size={12} /> {hydrated ? languageLabel(language) : "English"} <span aria-hidden>⌄</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" className="z-[60] w-44">
-          <DropdownMenuLabel>Language</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("locale.language")}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
             {LANGUAGES.map((l) => (
@@ -43,7 +54,7 @@ export function LocaleSwitcher() {
           <span aria-hidden>{c.flag}</span> {c.label} <span aria-hidden>⌄</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" className="z-[60] w-52">
-          <DropdownMenuLabel>Ship to / currency</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("locale.shipTo")}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuRadioGroup value={country} onValueChange={setCountry}>
             {COUNTRIES.map((x) => (
@@ -62,6 +73,7 @@ export function LocaleSwitcher() {
 
 /** Amazon-style single row for the mobile slide-out menu. */
 export function MobileLocaleRow() {
+  const t = useT();
   const hydrated = useHydrated();
   const language = useLocale((s) => s.language);
   const country = useLocale((s) => s.country);
@@ -81,14 +93,14 @@ export function MobileLocaleRow() {
         <span aria-hidden className="text-muted-foreground">⌄</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="z-[60] w-64">
-        <DropdownMenuLabel>Language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("locale.language")}</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
           {LANGUAGES.map((l) => (
             <DropdownMenuRadioItem key={l.code} value={l.code}>{l.label}</DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel>Ship to / currency</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("locale.shipTo")}</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={country} onValueChange={setCountry}>
           {COUNTRIES.map((x) => (
             <DropdownMenuRadioItem key={x.code} value={x.code}>
@@ -100,7 +112,7 @@ export function MobileLocaleRow() {
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem disabled className="text-xs text-muted-foreground">
-          Prices shown in {c.currency}
+          {t("locale.pricesIn")} {c.currency}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

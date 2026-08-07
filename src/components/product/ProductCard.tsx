@@ -9,9 +9,11 @@ import { useWishlist } from "@/lib/stores/wishlist";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
 import { percentOff } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 import type { Product } from "@/lib/products";
 
 export function ProductCard({ product }: { product: Product }) {
+  const t = useT();
   const hydrated = useHydrated();
   const wishlisted = useWishlist((s) => (hydrated ? s.ids.includes(product.id) : false));
   const toggleWish = useWishlist((s) => s.toggle);
@@ -37,12 +39,12 @@ export function ProductCard({ product }: { product: Product }) {
         </Link>
         {off && (
           <span className="absolute left-3 top-3 rounded-full bg-accent px-2.5 py-1 text-[11px] font-bold text-accent-foreground shadow-sm">
-            -{off}% OFF
+            -{off}% {t("product.off")}
           </span>
         )}
         {outOfStock && (
           <span className="absolute inset-x-0 bottom-0 bg-primary/85 py-1.5 text-center text-[11px] font-bold uppercase tracking-wide text-primary-foreground">
-            Out of Stock
+            {t("product.outOfStock")}
           </span>
         )}
         <div className="absolute right-3 top-3 flex flex-col gap-1.5">
@@ -81,18 +83,19 @@ export function ProductCard({ product }: { product: Product }) {
         {hasReviews ? (
           <RatingStars rating={product.rating} reviewCount={product.review_count} />
         ) : (
-          <span className="text-xs text-muted-foreground">No reviews yet</span>
+          <span className="text-xs text-muted-foreground">{t("product.noReviews")}</span>
         )}
         <PriceTag price={product.price} original={product.original_price} />
         {hydrated && !outOfStock && product.sold_count > 5 && (
           <div className="text-xs font-medium text-muted-foreground">
-            <span className="text-primary">{product.sold_count.toLocaleString()}</span> sold this month
+            <span className="text-primary">{product.sold_count.toLocaleString()}</span>{" "}
+            {t("product.soldThisMonth")}
           </div>
         )}
         <div className="mt-auto pt-2">
           {outOfStock ? (
             <Button disabled className="w-full rounded-xl text-sm font-bold" variant="secondary">
-              Out of Stock
+              {t("product.outOfStock")}
             </Button>
           ) : (
             <Button
@@ -104,11 +107,11 @@ export function ProductCard({ product }: { product: Product }) {
                   price: product.price,
                   image_url: product.image_url,
                 });
-                toast.success("Added to cart");
+                toast.success(t("product.addedToCart"));
               }}
             >
               <ShoppingBag size={16} className="mr-2" />
-              Add to Cart
+              {t("product.addToCart")}
             </Button>
           )}
         </div>
