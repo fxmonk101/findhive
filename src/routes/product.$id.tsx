@@ -203,7 +203,7 @@ function ProductPage() {
                 className="min-w-[180px] flex-1 rounded-xl bg-accent text-accent-foreground shadow-sm hover:brightness-95 sm:flex-none"
                 onClick={() => doAdd()}
               >
-                <ShoppingBag size={18} className="mr-2" /> Add to Cart
+                <ShoppingBag size={18} className="mr-2" /> {t("product.addToCart")}
               </Button>
               <Button
                 size="lg"
@@ -212,7 +212,7 @@ function ProductPage() {
                 className="min-w-[140px] flex-1 rounded-xl border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground sm:flex-none"
                 onClick={buyNow}
               >
-                <Zap size={18} className="mr-2" /> Buy Now
+                <Zap size={18} className="mr-2" /> {t("product.buyNow")}
               </Button>
               <Button
                 variant="ghost"
@@ -247,13 +247,13 @@ function ProductPage() {
           <Tabs defaultValue="description">
             <TabsList className="mb-4 h-auto flex-wrap bg-transparent p-0">
               <TabsTrigger value="description" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Description
+                {t("product.description")}
               </TabsTrigger>
               <TabsTrigger value="info" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Additional Information
               </TabsTrigger>
               <TabsTrigger value="reviews" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Reviews ({product.review_count})
+                {t("product.reviewsTab")} ({product.review_count})
               </TabsTrigger>
             </TabsList>
 
