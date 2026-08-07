@@ -21,6 +21,7 @@ import { useCart } from "@/lib/stores/cart";
 import { useRecentlyViewed } from "@/lib/stores/recently-viewed";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatPrice } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 
 const productOpts = (id: string) =>
   queryOptions({ queryKey: ["product", id], queryFn: () => getProduct(id) });
@@ -62,6 +63,7 @@ export const Route = createFileRoute("/product/$id")({
 });
 
 function ProductPage() {
+  const t = useT();
   const { id } = Route.useParams();
   const { data: product } = useQuery(productOpts(id));
   const related = useQuery({
