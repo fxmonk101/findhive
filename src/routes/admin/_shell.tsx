@@ -27,7 +27,7 @@ export const Route = createFileRoute("/admin/_shell")({
 });
 
 type NavItem = {
-  to: "/admin" | "/admin/products";
+  to: "/admin" | "/admin/products" | "/admin/orders";
   label: string;
   icon: typeof LayoutDashboard;
   exact: boolean;
@@ -37,7 +37,7 @@ type NavItem = {
 const NAV: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/admin/products", label: "Products", icon: Package, exact: false },
-  { to: "/admin", label: "Orders", icon: ShoppingCart, exact: false, soon: true },
+  { to: "/admin/orders", label: "Orders", icon: ShoppingCart, exact: false },
   { to: "/admin", label: "Customers", icon: Users, exact: false, soon: true },
   { to: "/admin", label: "Reviews", icon: Star, exact: false, soon: true },
   { to: "/admin", label: "Promotions", icon: Tag, exact: false, soon: true },

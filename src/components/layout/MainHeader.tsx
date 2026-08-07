@@ -6,6 +6,7 @@ import { useWishlist } from "@/lib/stores/wishlist";
 import { useCart } from "@/lib/stores/cart";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatPrice } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 
 function Badge({ count }: { count: number }) {
   if (!count) return null;
@@ -17,6 +18,7 @@ function Badge({ count }: { count: number }) {
 }
 
 export function MainHeader({ onMenuClick }: { onMenuClick?: () => void }) {
+  const t = useT();
   const hydrated = useHydrated();
   const wishCount = useWishlist((s) => (hydrated ? s.ids.length : 0));
   const cartCount = useCart((s) => (hydrated ? s.items.reduce((n, i) => n + i.quantity, 0) : 0));
@@ -43,13 +45,13 @@ export function MainHeader({ onMenuClick }: { onMenuClick?: () => void }) {
         </div>
         <div className="ml-auto flex items-center gap-3 md:gap-5">
           <Link to="/account" className="hidden items-center gap-1.5 text-sm font-semibold uppercase tracking-wide hover:text-accent lg:flex">
-            <User size={16} /> My Account
+            <User size={16} /> {t("nav.account")}
           </Link>
-          <Link to="/wishlist" className="relative grid h-9 w-9 place-items-center hover:text-accent" aria-label="Wishlist">
+          <Link to="/wishlist" className="relative grid h-9 w-9 place-items-center hover:text-accent" aria-label={t("nav.wishlist")}>
             <Heart size={20} />
             <Badge count={wishCount} />
           </Link>
-          <Link to="/cart" className="relative flex items-center gap-2 hover:text-accent" aria-label="Cart">
+          <Link to="/cart" className="relative flex items-center gap-2 hover:text-accent" aria-label={t("nav.cart")}>
             <div className="relative grid h-9 w-9 place-items-center">
               <ShoppingBag size={20} />
               <Badge count={cartCount} />

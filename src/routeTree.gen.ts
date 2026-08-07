@@ -32,6 +32,7 @@ import { Route as AdminShellRouteImport } from './routes/admin/_shell'
 import { Route as AdminShellIndexRouteImport } from './routes/admin/_shell/index'
 import { Route as CategoryCategorySubRouteImport } from './routes/category.$category.$sub'
 import { Route as AdminShellProductsRouteImport } from './routes/admin/_shell/products'
+import { Route as AdminShellOrdersRouteImport } from './routes/admin/_shell/orders'
 
 const WishlistRoute = WishlistRouteImport.update({
   id: '/wishlist',
@@ -148,6 +149,11 @@ const AdminShellProductsRoute = AdminShellProductsRouteImport.update({
   path: '/products',
   getParentRoute: () => AdminShellRoute,
 } as any)
+const AdminShellOrdersRoute = AdminShellOrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => AdminShellRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -170,6 +176,7 @@ export interface FileRoutesByFullPath {
   '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/admin/orders': typeof AdminShellOrdersRoute
   '/admin/products': typeof AdminShellProductsRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
   '/admin/': typeof AdminShellIndexRoute
@@ -194,6 +201,7 @@ export interface FileRoutesByTo {
   '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/admin/orders': typeof AdminShellOrdersRoute
   '/admin/products': typeof AdminShellProductsRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
   '/admin': typeof AdminShellIndexRoute
@@ -220,6 +228,7 @@ export interface FileRoutesById {
   '/admin/login': typeof AdminLoginRoute
   '/category/$category': typeof CategoryCategoryRouteWithChildren
   '/product/$id': typeof ProductIdRoute
+  '/admin/_shell/orders': typeof AdminShellOrdersRoute
   '/admin/_shell/products': typeof AdminShellProductsRoute
   '/category/$category/$sub': typeof CategoryCategorySubRoute
   '/admin/_shell/': typeof AdminShellIndexRoute
@@ -247,6 +256,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/category/$category'
     | '/product/$id'
+    | '/admin/orders'
     | '/admin/products'
     | '/category/$category/$sub'
     | '/admin/'
@@ -271,6 +281,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/category/$category'
     | '/product/$id'
+    | '/admin/orders'
     | '/admin/products'
     | '/category/$category/$sub'
     | '/admin'
@@ -296,6 +307,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/category/$category'
     | '/product/$id'
+    | '/admin/_shell/orders'
     | '/admin/_shell/products'
     | '/category/$category/$sub'
     | '/admin/_shell/'
@@ -487,15 +499,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminShellProductsRouteImport
       parentRoute: typeof AdminShellRoute
     }
+    '/admin/_shell/orders': {
+      id: '/admin/_shell/orders'
+      path: '/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminShellOrdersRouteImport
+      parentRoute: typeof AdminShellRoute
+    }
   }
 }
 
 interface AdminShellRouteChildren {
+  AdminShellOrdersRoute: typeof AdminShellOrdersRoute
   AdminShellProductsRoute: typeof AdminShellProductsRoute
   AdminShellIndexRoute: typeof AdminShellIndexRoute
 }
 
 const AdminShellRouteChildren: AdminShellRouteChildren = {
+  AdminShellOrdersRoute: AdminShellOrdersRoute,
   AdminShellProductsRoute: AdminShellProductsRoute,
   AdminShellIndexRoute: AdminShellIndexRoute,
 }
