@@ -47,7 +47,7 @@ export function SearchBar() {
     >
       <input
         type="search"
-        placeholder="Search for products"
+        placeholder={t("search.placeholder")}
         value={q}
         onChange={(e) => { setQ(e.target.value); setOpen(true); }}
         onFocus={() => setOpen(true)}
