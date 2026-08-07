@@ -105,21 +105,42 @@ function CheckoutPage() {
         </span>
         <h1 className="mt-5 text-3xl font-bold text-primary">Order confirmed</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Thanks {contact.firstName || "friend"} — a receipt has been sent to <span className="font-semibold text-foreground">{contact.email}</span>.
+          Thanks {contact.firstName || "friend"} — your order has been placed successfully.
         </p>
+        
+        {/* Order Details Card */}
         <div className="mx-auto mt-6 max-w-sm rounded-lg border border-border bg-card p-5 text-left">
+          <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-muted-foreground">Order Details</h3>
           <div className="flex justify-between text-sm"><span className="text-muted-foreground">Order ID</span><span className="font-mono font-bold text-primary">{orderId}</span></div>
-          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Payment</span><span className="font-semibold capitalize">{method === "cashapp" ? "Cash App" : method}</span></div>
-          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Total</span><span className="font-bold text-primary">{formatPrice(total)}</span></div>
-        </div>
-        {method !== "card" && (
-          <div className="mx-auto mt-4 max-w-sm rounded-lg border border-accent/40 bg-accent/10 p-4 text-left text-sm text-foreground">
-            <p className="font-semibold text-primary">Next step</p>
-            {method === "zelle" && <p className="mt-1">Send {formatPrice(total)} via Zelle to <b>payments@findhive.shop</b> with memo <b>{orderId}</b>.</p>}
-            {method === "cashapp" && <p className="mt-1">Send {formatPrice(total)} to <b>$findhive</b> on Cash App and include <b>{orderId}</b> in the note.</p>}
-            {method === "wire" && <p className="mt-1">Wire instructions and reference <b>{orderId}</b> will arrive by email within a few minutes.</p>}
+          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Payment Method</span><span className="font-semibold capitalize">{method === "cashapp" ? "Cash App" : method === "card" ? "Credit/Debit Card" : method}</span></div>
+          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Email</span><span className="font-semibold text-foreground">{contact.email}</span></div>
+          <div className="mt-3 flex justify-between border-t border-border pt-3 text-base">
+            <span className="font-bold text-primary">Total Amount</span>
+            <span className="font-bold text-xl text-primary">{formatPrice(total)}</span>
           </div>
-        )}
+        </div>
+
+        {/* Payment Instructions */}
+        <div className="mx-auto mt-4 max-w-sm rounded-lg border border-accent/40 bg-accent/10 p-4 text-left text-sm text-foreground">
+          <p className="font-semibold text-primary">Payment Instructions</p>
+          {method === "card" && <p className="mt-1">Your card has been charged {formatPrice(total)}. An invoice will be sent to <b>{contact.email}</b> shortly.</p>}
+          {method === "zelle" && <p className="mt-1">Send <b>{formatPrice(total)}</b> via Zelle to <b>payments@findhive.shop</b> with memo <b>{orderId}</b>. An invoice will be sent to <b>{contact.email}</b> once payment is received.</p>}
+          {method === "cashapp" && <p className="mt-1">Send <b>{formatPrice(total)}</b> to <b>$findhive</b> on Cash App and include <b>{orderId}</b> in the note. An invoice will be sent to <b>{contact.email}</b> once payment is received.</p>}
+          {method === "wire" && <p className="mt-1">Wire transfer details and reference <b>{orderId}</b> will be sent to <b>{contact.email}</b> within a few minutes. Please complete the wire transfer to finalize your order. An invoice will be sent after payment is confirmed.</p>}
+        </div>
+
+        {/* Order Summary */}
+        <div className="mx-auto mt-4 max-w-sm rounded-lg border border-border bg-card p-4 text-left">
+          <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">Order Summary</h3>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Subtotal</span><span className="font-semibold">{formatPrice(subtotal)}</span></div>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Shipping</span><span className="font-semibold">{shipping === 0 ? "Free" : formatPrice(shipping)}</span></div>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Tax (est.)</span><span className="font-semibold">{formatPrice(tax)}</span></div>
+          <div className="mt-2 flex justify-between border-t border-border pt-2 text-base">
+            <span className="font-bold text-primary">Total</span>
+            <span className="font-bold text-primary">{formatPrice(total)}</span>
+          </div>
+        </div>
+
         <div className="mt-8 flex justify-center gap-3">
           <Button variant="outline" onClick={() => navigate({ to: "/account" })}>View account</Button>
           <Button className="bg-accent text-accent-foreground hover:brightness-95" onClick={() => navigate({ to: "/shop" })}>Keep shopping</Button>
