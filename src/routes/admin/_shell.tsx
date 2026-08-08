@@ -13,6 +13,8 @@ import {
   PanelLeftClose,
   PanelLeft,
   Store,
+  Warehouse,
+  Percent,
 } from "lucide-react";
 import { getAdminContext, adminSignOut } from "@/lib/admin/auth";
 
@@ -27,7 +29,7 @@ export const Route = createFileRoute("/admin/_shell")({
 });
 
 type NavItem = {
-  to: "/admin" | "/admin/products" | "/admin/orders";
+  to: "/admin" | "/admin/products" | "/admin/orders" | "/admin/categories" | "/admin/customers" | "/admin/inventory" | "/admin/reviews" | "/admin/promotions";
   label: string;
   icon: typeof LayoutDashboard;
   exact: boolean;
@@ -38,9 +40,11 @@ const NAV: NavItem[] = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
   { to: "/admin/products", label: "Products", icon: Package, exact: false },
   { to: "/admin/orders", label: "Orders", icon: ShoppingCart, exact: false },
-  { to: "/admin", label: "Customers", icon: Users, exact: false, soon: true },
-  { to: "/admin", label: "Reviews", icon: Star, exact: false, soon: true },
-  { to: "/admin", label: "Promotions", icon: Tag, exact: false, soon: true },
+  { to: "/admin/categories", label: "Categories", icon: Tag, exact: false },
+  { to: "/admin/inventory", label: "Inventory", icon: Warehouse, exact: false },
+  { to: "/admin/customers", label: "Customers", icon: Users, exact: false },
+  { to: "/admin/reviews", label: "Reviews", icon: Star, exact: false },
+  { to: "/admin/promotions", label: "Promotions", icon: Percent, exact: false },
   { to: "/admin", label: "Blog", icon: FileText, exact: false, soon: true },
   { to: "/admin", label: "Settings", icon: Settings, exact: false, soon: true },
 ];

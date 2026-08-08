@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { Copy, Trash2 } from "lucide-react";
+import { Copy, Trash2, Plus, Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CATEGORIES } from "@/lib/categories";
@@ -44,6 +44,12 @@ function AdminProducts() {
           <h1 className="text-2xl font-black text-foreground">Products</h1>
           <p className="text-sm text-muted-foreground">{data?.length ?? 0} products in catalog</p>
         </div>
+        <Link to="/admin/product-form">
+          <Button className="rounded-xl font-bold">
+            <Plus size={16} className="mr-2" />
+            Add Product
+          </Button>
+        </Link>
       </div>
 
       <div className="flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-3 shadow-sm">
@@ -159,6 +165,15 @@ function AdminProducts() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex justify-end gap-1">
+                    <Link to="/admin/product-form" search={{ id: p.id }}>
+                      <Button
+                        size="icon"
+                        variant="ghost"
+                        aria-label="Edit product"
+                      >
+                        <Edit size={15} />
+                      </Button>
+                    </Link>
                     <Button
                       size="icon"
                       variant="ghost"

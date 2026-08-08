@@ -14,10 +14,15 @@ export async function getAdminContext(): Promise<AdminContext | null> {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user) return null;
 
-  const { data: roleRows } = await supabase
+  const { data: roleRows, error: roleError } = await supabase
     .from("user_roles")
     .select("role")
     .eq("user_id", data.user.id);
+
+  if (roleError) {
+    console.error("Error fetching user roles:", roleError);
+    return null;
+  }
 
   const roles = (roleRows ?? []).map((r) => r.role as AdminRole);
   if (roles.length === 0) return null;
