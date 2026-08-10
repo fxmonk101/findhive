@@ -330,41 +330,38 @@ export type Database = {
       order_items: {
         Row: {
           created_at: string
-          discount: number
           id: string
           image_url: string | null
-          line_total: number
-          order_id: string
+          order_id: string | null
           product_id: string | null
+          product_name: string
+          product_sku: string | null
           quantity: number
-          sku: string | null
-          title: string
+          total_price: number
           unit_price: number
         }
         Insert: {
           created_at?: string
-          discount?: number
           id?: string
           image_url?: string | null
-          line_total?: number
-          order_id: string
+          order_id?: string | null
           product_id?: string | null
+          product_name: string
+          product_sku?: string | null
           quantity?: number
-          sku?: string | null
-          title: string
+          total_price?: number
           unit_price?: number
         }
         Update: {
           created_at?: string
-          discount?: number
           id?: string
           image_url?: string | null
-          line_total?: number
-          order_id?: string
+          order_id?: string | null
           product_id?: string | null
+          product_name?: string
+          product_sku?: string | null
           quantity?: number
-          sku?: string | null
-          title?: string
+          total_price?: number
           unit_price?: number
         }
         Relationships: [
@@ -427,78 +424,84 @@ export type Database = {
       }
       orders: {
         Row: {
-          billing_address: Json
+          billing_address: Json | null
+          coupon_code: string | null
           created_at: string
           currency: string
           customer_email: string
           customer_id: string | null
           customer_name: string | null
           customer_phone: string | null
-          discount_total: number
+          discount: number
           id: string
           internal_notes: string | null
+          invoice_number: string | null
+          notes: string | null
           order_number: string
           payment_method: string | null
           payment_status: string
-          shipping_address: Json
-          shipping_method: string | null
+          shipping: number
+          shipping_address: Json | null
           shipping_status: string
-          shipping_total: number
           status: string
           subtotal: number
-          tax_total: number
+          tax: number
           total: number
           tracking_number: string | null
           transaction_reference: string | null
           updated_at: string
         }
         Insert: {
-          billing_address?: Json
+          billing_address?: Json | null
+          coupon_code?: string | null
           created_at?: string
           currency?: string
           customer_email: string
           customer_id?: string | null
           customer_name?: string | null
           customer_phone?: string | null
-          discount_total?: number
+          discount?: number
           id?: string
           internal_notes?: string | null
+          invoice_number?: string | null
+          notes?: string | null
           order_number?: string
           payment_method?: string | null
           payment_status?: string
-          shipping_address?: Json
-          shipping_method?: string | null
+          shipping?: number
+          shipping_address?: Json | null
           shipping_status?: string
-          shipping_total?: number
           status?: string
           subtotal?: number
-          tax_total?: number
+          tax?: number
           total?: number
           tracking_number?: string | null
           transaction_reference?: string | null
           updated_at?: string
         }
         Update: {
-          billing_address?: Json
+          billing_address?: Json | null
+          coupon_code?: string | null
           created_at?: string
           currency?: string
           customer_email?: string
           customer_id?: string | null
           customer_name?: string | null
           customer_phone?: string | null
-          discount_total?: number
+          discount?: number
           id?: string
           internal_notes?: string | null
+          invoice_number?: string | null
+          notes?: string | null
           order_number?: string
           payment_method?: string | null
           payment_status?: string
-          shipping_address?: Json
-          shipping_method?: string | null
+          shipping?: number
+          shipping_address?: Json | null
           shipping_status?: string
-          shipping_total?: number
           status?: string
           subtotal?: number
-          tax_total?: number
+          tax?: number
           total?: number
           tracking_number?: string | null
           transaction_reference?: string | null
