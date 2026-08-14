@@ -32,6 +32,7 @@ export async function listProducts(): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
+    .eq("status", "published")
     .order("created_at", { ascending: false });
   if (error) throw error;
   return (data ?? []) as Product[];
@@ -42,6 +43,7 @@ export async function listByCategory(category: string): Promise<Product[]> {
     .from("products")
     .select(SELECT)
     .eq("category", category)
+    .eq("status", "published")
     .order("rating", { ascending: false });
   if (error) throw error;
   return (data ?? []) as Product[];
@@ -53,6 +55,7 @@ export async function listBySubcategory(category: string, subcategory: string): 
     .select(SELECT)
     .eq("category", category)
     .eq("subcategory", subcategory)
+    .eq("status", "published")
     .order("rating", { ascending: false });
   if (error) throw error;
   return (data ?? []) as Product[];
@@ -69,7 +72,7 @@ export async function getProduct(id: string): Promise<Product | null> {
 }
 
 export async function searchProducts(query: string, category?: string, limit = 40): Promise<Product[]> {
-  let q = supabase.from("products").select(SELECT).limit(limit);
+  let q = supabase.from("products").select(SELECT).eq("status", "published").limit(limit);
   if (query.trim()) q = q.ilike("title", `%${query.trim()}%`);
   if (category) q = q.eq("category", category);
   const { data, error } = await q.order("rating", { ascending: false });
@@ -82,6 +85,7 @@ export async function getFeatured(limit = 8): Promise<Product[]> {
   const sealed = await supabase
     .from("products")
     .select(SELECT)
+    .eq("status", "published")
     .eq("subcategory", "pokemon-tcg")
     .gt("stock_count", 0)
     .or(
@@ -97,6 +101,7 @@ export async function getFeatured(limit = 8): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
+    .eq("status", "published")
     .gt("stock_count", 0)
     .order("rating", { ascending: false })
     .order("review_count", { ascending: false })
@@ -111,6 +116,7 @@ export async function getRelated(category: string, excludeId: string, limit = 8)
     .from("products")
     .select(SELECT)
     .eq("category", category)
+    .eq("status", "published")
     .neq("id", excludeId)
     .order("rating", { ascending: false })
     .limit(limit);
@@ -130,6 +136,7 @@ export async function autocomplete(q: string, limit = 6): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
+    .eq("status", "published")
     .ilike("title", `%${q.trim()}%`)
     .limit(limit);
   if (error) throw error;
