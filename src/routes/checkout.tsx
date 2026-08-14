@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { PaymentIcons } from "@/components/product/PaymentIcons";
 import { toast } from "sonner";
+import { sendOrderNotification } from "@/lib/email";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({
@@ -83,6 +84,33 @@ function CheckoutPage() {
       setStep(3);
       clear();
       setPlacing(false);
+      
+      // Send email notification
+      sendOrderNotification({
+        orderNumber: id,
+        customerName: `${contact.firstName} ${contact.lastName}`,
+        customerEmail: contact.email,
+        customerPhone: contact.phone,
+        total: total,
+        paymentMethod: method === "link" ? "Secure Payment Link" : method === "cashapp" ? "Cash App" : method,
+        items: items.map(i => ({
+          title: i.title,
+          quantity: i.quantity,
+          unit_price: i.price
+        })),
+        shippingAddress: {
+          first_name: contact.firstName,
+          last_name: contact.lastName,
+          address_line1: contact.address1,
+          address_line2: contact.address2,
+          city: contact.city,
+          state: contact.state,
+          postal_code: contact.zip,
+          country: contact.country
+        }
+      }).catch(err => {
+        console.error("Failed to send notification:", err);
+      });
     }, 900);
   }
 
