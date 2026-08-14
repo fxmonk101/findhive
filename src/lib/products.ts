@@ -32,9 +32,12 @@ export async function listProducts(): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
-    .eq("status", "published")
     .order("created_at", { ascending: false });
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+  console.log("Fetched products:", data?.length);
   return (data ?? []) as Product[];
 }
 
@@ -43,9 +46,11 @@ export async function listByCategory(category: string): Promise<Product[]> {
     .from("products")
     .select(SELECT)
     .eq("category", category)
-    .eq("status", "published")
     .order("rating", { ascending: false });
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching category products:", error);
+    throw error;
+  }
   return (data ?? []) as Product[];
 }
 
@@ -55,9 +60,11 @@ export async function listBySubcategory(category: string, subcategory: string): 
     .select(SELECT)
     .eq("category", category)
     .eq("subcategory", subcategory)
-    .eq("status", "published")
     .order("rating", { ascending: false });
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching subcategory products:", error);
+    throw error;
+  }
   return (data ?? []) as Product[];
 }
 
@@ -72,11 +79,14 @@ export async function getProduct(id: string): Promise<Product | null> {
 }
 
 export async function searchProducts(query: string, category?: string, limit = 40): Promise<Product[]> {
-  let q = supabase.from("products").select(SELECT).eq("status", "published").limit(limit);
+  let q = supabase.from("products").select(SELECT).limit(limit);
   if (query.trim()) q = q.ilike("title", `%${query.trim()}%`);
   if (category) q = q.eq("category", category);
   const { data, error } = await q.order("rating", { ascending: false });
-  if (error) throw error;
+  if (error) {
+    console.error("Error searching products:", error);
+    throw error;
+  }
   return (data ?? []) as Product[];
 }
 
@@ -85,7 +95,6 @@ export async function getFeatured(limit = 8): Promise<Product[]> {
   const sealed = await supabase
     .from("products")
     .select(SELECT)
-    .eq("status", "published")
     .eq("subcategory", "pokemon-tcg")
     .gt("stock_count", 0)
     .or(
@@ -94,19 +103,22 @@ export async function getFeatured(limit = 8): Promise<Product[]> {
     .order("sold_count", { ascending: false })
     .order("rating", { ascending: false })
     .limit(limit);
-  if (sealed.error) throw sealed.error;
+  if (sealed.error) {
+    console.error("Error fetching featured sealed products:", sealed.error);
+  }
   const boxes = (sealed.data ?? []) as Product[];
   if (boxes.length >= limit) return boxes.slice(0, limit);
 
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
-    .eq("status", "published")
     .gt("stock_count", 0)
     .order("rating", { ascending: false })
     .order("review_count", { ascending: false })
     .limit(limit * 2);
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching featured products:", error);
+  }
   const rest = ((data ?? []) as Product[]).filter((p) => !boxes.some((b) => b.id === p.id));
   return [...boxes, ...rest].slice(0, limit);
 }
@@ -116,11 +128,13 @@ export async function getRelated(category: string, excludeId: string, limit = 8)
     .from("products")
     .select(SELECT)
     .eq("category", category)
-    .eq("status", "published")
     .neq("id", excludeId)
     .order("rating", { ascending: false })
     .limit(limit);
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching related products:", error);
+    throw error;
+  }
   return (data ?? []) as Product[];
 }
 
@@ -136,9 +150,11 @@ export async function autocomplete(q: string, limit = 6): Promise<Product[]> {
   const { data, error } = await supabase
     .from("products")
     .select(SELECT)
-    .eq("status", "published")
     .ilike("title", `%${q.trim()}%`)
     .limit(limit);
-  if (error) throw error;
+  if (error) {
+    console.error("Error fetching autocomplete products:", error);
+    throw error;
+  }
   return (data ?? []) as Product[];
 }

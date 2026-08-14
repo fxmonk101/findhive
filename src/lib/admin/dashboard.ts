@@ -13,7 +13,7 @@ export type DashboardStats = {
 };
 
 export async function getDashboardStats(): Promise<DashboardStats> {
-  const [{ data: products, error: pErr }, { data: orders }, { data: reviews }] = await Promise.all([
+  const [{ data: products, error: pErr }, { data: orders, error: oErr }, { data: reviews, error: rErr }] = await Promise.all([
     supabase
       .from("products")
       .select("id,title,category,status,stock_count,low_stock_threshold,price")
@@ -21,7 +21,19 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     supabase.from("orders").select("*").order("created_at", { ascending: false }).limit(200),
     supabase.from("product_reviews").select("id,status").limit(2000),
   ]);
-  if (pErr) throw pErr;
+  
+  if (pErr) {
+    console.error("Error fetching products:", pErr);
+    throw pErr;
+  }
+  if (oErr) {
+    console.error("Error fetching orders:", oErr);
+    // Don't throw for orders - it might not exist yet
+  }
+  if (rErr) {
+    console.error("Error fetching reviews:", rErr);
+    // Don't throw for reviews - it might not exist yet
+  }
 
   const rows = products ?? [];
   const orderRows = orders ?? [];
