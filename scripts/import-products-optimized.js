@@ -54,7 +54,12 @@ function generateTags(title, category) {
   const categoryTags = category.toLowerCase().split(' ');
   const titleWords = title.toLowerCase().split(' ').filter(word => word.length > 3);
   
-  return [...new Set([...baseTags, ...categoryTags, ...titleWords.slice(0, 3)])];
+  // Remove apostrophes and special characters from tags
+  const cleanTags = [...new Set([...baseTags, ...categoryTags, ...titleWords.slice(0, 3)])]
+    .map(tag => tag.replace(/[^a-z0-9-]/g, ''))
+    .filter(tag => tag.length > 0);
+  
+  return cleanTags;
 }
 
 function parsePrice(price) {
@@ -99,7 +104,7 @@ importData.forEach((product, index) => {
   const stockCount = Math.floor(Math.random() * 50) + 10;
   const viewerCount = Math.floor(Math.random() * 1000) + 100;
   
-  const sql = `INSERT INTO products (
+  const sql = `INSERT INTO public.products (
   id,
   title,
   category,
@@ -163,10 +168,10 @@ importData.forEach((product, index) => {
 
 // Add verification query
 sqlStatements.push('-- Verify import');
-sqlStatements.push('SELECT COUNT(*) as total_products FROM products WHERE status = \'published\';');
+sqlStatements.push('SELECT COUNT(*) as total_products FROM public.products WHERE status = \'published\';');
 sqlStatements.push('');
 sqlStatements.push('-- Check products by category');
-sqlStatements.push('SELECT category, COUNT(*) as count FROM products GROUP BY category ORDER BY count DESC;');
+sqlStatements.push('SELECT category, COUNT(*) as count FROM public.products GROUP BY category ORDER BY count DESC;');
 
 // Write to file
 const outputPath = 'scripts/products-import-optimized.sql';

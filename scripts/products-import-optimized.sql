@@ -1,8 +1,8 @@
 -- SEO-Optimized Product Import for FindHive
--- Generated on 2026-08-14T01:40:09.989Z
+-- Generated on 2026-08-14T02:02:27.588Z
 -- This script bypasses RLS and runs as database owner
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -31,7 +31,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '852193ef-9699-4d33-9170-81f1ec50906d',
+  '79dd58d7-a317-48ef-b185-56dc3ca71aeb',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -45,12 +45,12 @@ INSERT INTO products (
   '(27 new offers)',
   NOW(),
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
-  'TCG: Mega Evolution—Pitch Black Booster Bundle available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop TCG: Mega Evolution—Pitch Black Booster Bundle - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
-  5,
-  41,
-  746,
+  14,
+  34,
+  821,
   ARRAY['https://m.media-amazon.com/images/I/81ANtTqGJVL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-1","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -60,7 +60,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -89,7 +89,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ee4a53df-2e05-46dc-b4b3-79768e2572c4',
+  '3d361e49-7c27-408e-838d-053916f5ede7',
   'Pokemon 25th Anniversary Celebrations Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -106,9 +106,9 @@ INSERT INTO products (
   'Pokemon 25th Anniversary Celebrations Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon 25th Anniversary Celebrations Elite Trainer Box',
   'Pokemon 25th Anniversary Celebrations Elite Trainer Box',
-  10,
-  56,
-  848,
+  2,
+  30,
+  745,
   ARRAY['https://m.media-amazon.com/images/I/61Yb2nb6B8L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-2","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -118,7 +118,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -147,7 +147,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'e761d2da-2ccd-43c2-9051-d84fe86290d4',
+  '2f796cae-2c7a-48bf-869a-0dd08fd88f41',
   'TCG: First Partner Illustration Collection —Series 2',
   'trading-cards',
   'pokémon-tcg',
@@ -161,12 +161,12 @@ INSERT INTO products (
   '(26 new offers)',
   NOW(),
   'TCG: First Partner Illustration Collection —Series 2',
-  'Shop TCG: First Partner Illustration Collection —Series 2 - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy TCG: First Partner Illustration Collection —Series 2 at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: First Partner Illustration Collection —Series 2',
   'TCG: First Partner Illustration Collection —Series 2',
-  3,
-  38,
-  335,
+  19,
+  18,
+  186,
   ARRAY['https://m.media-amazon.com/images/I/81ve1KtO-pL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-3","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -176,7 +176,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -205,7 +205,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '372ef813-e0cb-4ccc-bbee-e81e795bf60e',
+  'ca466227-9680-4acd-9455-f98f36bb3469',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -222,9 +222,9 @@ INSERT INTO products (
   'Shop TCG: Mega Evolution—Chaos Rising Elite Trainer Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
-  17,
-  53,
-  919,
+  4,
+  31,
+  459,
   ARRAY['https://m.media-amazon.com/images/I/81EPbaDcgQL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-4","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -234,7 +234,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -263,7 +263,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a0ee9e22-b873-4c8c-bbe6-9ccc211d7aa7',
+  '42c4822f-b462-4e12-9dd3-48aa8a86f134',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection',
   'trading-cards',
   'pokémon-tcg',
@@ -277,12 +277,12 @@ INSERT INTO products (
   '$52.42 delivery Tue, Aug 18',
   NOW(),
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-...',
-  'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection',
-  9,
+  1,
   28,
-  290,
+  730,
   ARRAY['https://m.media-amazon.com/images/I/811hyPaG+OL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-5","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -292,7 +292,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -321,7 +321,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'cf7b2017-92dd-44a9-88df-c4437357b057',
+  'c910b094-9842-4ebc-96eb-39d405d5d120',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -335,12 +335,12 @@ INSERT INTO products (
   '$41.64 delivery',
   NOW(),
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
-  'Buy TCG: Mega Evolution—Ascended Heroes Booster Bundle at FindHive - Authentic Trading Cards at competitive prices.',
+  'TCG: Mega Evolution—Ascended Heroes Booster Bundle available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
-  12,
-  10,
-  557,
+  13,
+  27,
+  468,
   ARRAY['https://m.media-amazon.com/images/I/81sZheTQIhL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-6","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -350,7 +350,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -379,7 +379,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'e4fe2c55-2c77-4735-aa99-d37b416c1669',
+  'addacc92-8813-4fdc-b138-b26a563893e2',
   'TCG: Mega Evolution—Ascended Heroes Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -396,9 +396,9 @@ INSERT INTO products (
   'Shop TCG: Mega Evolution—Ascended Heroes Elite Trainer Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Ascended Heroes Elite Trainer Box',
   'TCG: Mega Evolution—Ascended Heroes Elite Trainer Box',
-  15,
-  17,
-  590,
+  3,
+  25,
+  261,
   ARRAY['https://m.media-amazon.com/images/I/817IjH3kGvL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-7","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -408,7 +408,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -437,7 +437,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '6d648457-4e97-4b98-9c92-67fa53b74aaa',
+  '88ec7c8a-ef1a-4f23-bc6f-70f8ce39c4f7',
   'TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -451,12 +451,12 @@ INSERT INTO products (
   '(8 new offers)',
   NOW(),
   'TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box',
-  'Buy TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box at FindHive - Authentic Trading Cards at competitive prices.',
+  'TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box',
   'TCG: Mega Evolution—Phantasmal Flames Elite Trainer Box',
-  5,
-  52,
-  165,
+  6,
+  35,
+  560,
   ARRAY['https://m.media-amazon.com/images/I/810uEzv7stL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-8","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -466,7 +466,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -495,7 +495,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'bbf777eb-0bb5-4b12-ab59-da883cdc5402',
+  'fb816eb2-f391-4eac-b9fa-050432be235e',
   'TCG: First Partner Illustration Collection—Series 3',
   'trading-cards',
   'pokémon-tcg',
@@ -509,12 +509,12 @@ INSERT INTO products (
   '(1 new offer)',
   NOW(),
   'TCG: First Partner Illustration Collection—Series 3',
-  'Shop TCG: First Partner Illustration Collection—Series 3 - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy TCG: First Partner Illustration Collection—Series 3 at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: First Partner Illustration Collection—Series 3',
   'TCG: First Partner Illustration Collection—Series 3',
-  10,
-  29,
-  645,
+  2,
+  36,
+  117,
   ARRAY['https://m.media-amazon.com/images/I/81LQc5zS0+L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-9","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -524,7 +524,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -553,7 +553,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'bb711e8f-c7e4-49a4-8e69-3cf43dbe7458',
+  '1f732f5f-5ad5-405b-904c-89bccc6d8bb3',
   'TCG: Pokémon Day 2026 Collection',
   'trading-cards',
   'pokémon-tcg',
@@ -570,9 +570,9 @@ INSERT INTO products (
   'Buy TCG: Pokémon Day 2026 Collection at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Pokémon Day 2026 Collection',
   'TCG: Pokémon Day 2026 Collection',
-  0,
-  53,
-  384,
+  7,
+  10,
+  498,
   ARRAY['https://m.media-amazon.com/images/I/91YHLxggDmL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-10","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -582,7 +582,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -611,7 +611,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '161a50a4-4855-499e-b8f6-cf983c097242',
+  'e03268b5-b8aa-46d6-a590-e63c4e3307aa',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
   'trading-cards',
   'pokémon-tcg',
@@ -625,12 +625,12 @@ INSERT INTO products (
   '$49.69 delivery Tue, Aug 18',
   NOW(),
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/...',
-  'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
-  19,
-  20,
-  499,
+  2,
+  46,
+  483,
   ARRAY['https://m.media-amazon.com/images/I/91hWD1tF0KL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-11","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -640,7 +640,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -669,7 +669,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ca7055af-ff5f-4e1d-8267-4ac16c33cb51',
+  '5c50216e-9007-49fd-90e1-e4726c334874',
   'Scarlet & Purple Elite Trainer Set - Prismatic Evolutions of the Pokémon TCG (1 Fully Illustrated Promo Card, 9 Booster Packs & Premium Game Accessories)',
   'trading-cards',
   'pokémon-tcg',
@@ -683,12 +683,12 @@ INSERT INTO products (
   '(8 new offers)',
   NOW(),
   'Scarlet & Purple Elite Trainer Set - Prismatic Evolutions...',
-  'Buy Scarlet & Purple Elite Trainer Set - Prismatic Evolutions of the Pokémon TCG (1 Fully Illustrated Promo Card, 9 Booster Packs & Premium Game Accessories)...',
+  'Scarlet & Purple Elite Trainer Set - Prismatic Evolutions of the Pokémon TCG (1 Fully Illustrated Promo Card, 9 Booster Packs & Premium Game Accessories) ava...',
   'Scarlet & Purple Elite Trainer Set - Prismatic Evolutions of the Pokémon TCG (1 Fully Illustrated Promo Card, 9 Booster Packs & Premium Game Access...',
   'Scarlet & Purple Elite Trainer Set - Prismatic Evolutions of the Pokémon TCG (1 Fully Illustrated Promo Card, 9 Booster Packs & Premium Game Accessories)',
-  18,
-  29,
-  151,
+  6,
+  17,
+  1068,
   ARRAY['https://m.media-amazon.com/images/I/813K6KtVTML._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-12","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -698,7 +698,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -727,7 +727,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '468422bd-3125-46e9-a224-c1c88f53de8c',
+  'a8ab5381-833f-49f0-a838-901f2d31ccbf',
   '5 Pack Clear PKMN ETB Protector Case, 0.5mm Thick PET | PKMN Elite Trainer Box Protector, PET Plastic Display Box Protector for Collectors Gifts Elite Trainer Boxes',
   'trading-cards',
   'pokémon-tcg',
@@ -744,9 +744,9 @@ INSERT INTO products (
   'Buy 5 Pack Clear PKMN ETB Protector Case, 0.5mm Thick PET | PKMN Elite Trainer Box Protector, PET Plastic Display Box Protector for Collectors Gifts Elite Tr...',
   '5 Pack Clear PKMN ETB Protector Case, 0.5mm Thick PET | PKMN Elite Trainer Box Protector, PET Plastic Display Box Protector for Collectors Gifts El...',
   '5 Pack Clear PKMN ETB Protector Case, 0.5mm Thick PET | PKMN Elite Trainer Box Protector, PET Plastic Display Box Protector for Collectors Gifts Elite Trainer Boxes',
-  11,
-  57,
-  837,
+  16,
+  22,
+  164,
   ARRAY['https://m.media-amazon.com/images/I/61GJbnN2eoL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-13","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -756,7 +756,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -785,7 +785,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '67d2a190-3b52-40d0-8a9f-7261056810c1',
+  '5ddeb7c9-960f-4906-8857-851f7be14a83',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
   'trading-cards',
   'pokémon-tcg',
@@ -799,12 +799,12 @@ INSERT INTO products (
   '(20 new offers)',
   NOW(),
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack ...',
-  'Buy Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
-  10,
-  54,
-  670,
+  6,
+  17,
+  545,
   ARRAY['https://m.media-amazon.com/images/I/91xodh9yAqL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-14","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -814,7 +814,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -843,7 +843,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '8f5061f0-d2e7-4314-9f66-51d5e1fcae64',
+  '4a6624ac-4869-4dd0-ba5f-9f9475468ff1',
   'Pokemon TCG: Scarlet & Violet—Journey Together Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -860,9 +860,9 @@ INSERT INTO products (
   'Pokemon TCG: Scarlet & Violet—Journey Together Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon TCG: Scarlet & Violet—Journey Together Elite Trainer Box',
   'Pokemon TCG: Scarlet & Violet—Journey Together Elite Trainer Box',
-  19,
-  59,
-  869,
+  15,
+  26,
+  310,
   ARRAY['https://m.media-amazon.com/images/I/817Nd3hqAVL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-15","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -872,7 +872,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -901,7 +901,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'f81145e1-464b-4185-bfc3-c86febaaedb0',
+  '21d6c151-8d71-4296-9f06-b9e277bbdfc4',
   'Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita)',
   'trading-cards',
   'pokémon-tcg',
@@ -915,12 +915,12 @@ INSERT INTO products (
   '$41.09 delivery Tue, Aug 18',
   NOW(),
   'Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blist...',
-  'Buy Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita)',
   'Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita)',
-  1,
-  47,
-  1063,
+  5,
+  33,
+  1034,
   ARRAY['https://m.media-amazon.com/images/I/91vaIBXmuZL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-16","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -930,7 +930,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -959,7 +959,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '977f356b-d8a2-44c4-a160-a2e47b2efb56',
+  '774b27f2-73ad-47a0-a92c-1933839d6950',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
   'trading-cards',
   'pokémon-tcg',
@@ -973,12 +973,12 @@ INSERT INTO products (
   '(3 new offers)',
   NOW(),
   'Pokemon Trading Card Game | First Partner Holo Card Set |...',
-  'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years available now - Authentic Trading Car...',
+  'Buy Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years at FindHive - Authentic Trading C...',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
-  13,
-  23,
-  633,
+  14,
+  24,
+  130,
   ARRAY['https://m.media-amazon.com/images/I/61cWSgPfbUL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-17","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -988,7 +988,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1017,7 +1017,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0d6fd52f-6967-481a-a4dd-1cbe72ac71a2',
+  'abf185fa-9059-45a6-87cc-cc6479d1235f',
   'Pokémon Day of 2026 Collection (1 Holographic Promo Card, 1 Coin and 3 Booster Packs)',
   'trading-cards',
   'pokémon-tcg',
@@ -1034,9 +1034,9 @@ INSERT INTO products (
   'Buy Pokémon Day of 2026 Collection (1 Holographic Promo Card, 1 Coin and 3 Booster Packs) at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokémon Day of 2026 Collection (1 Holographic Promo Card, 1 Coin and 3 Booster Packs)',
   'Pokémon Day of 2026 Collection (1 Holographic Promo Card, 1 Coin and 3 Booster Packs)',
-  3,
-  13,
-  882,
+  11,
+  59,
+  770,
   ARRAY['https://m.media-amazon.com/images/I/81IbecJ1vYL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-18","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1046,7 +1046,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1075,7 +1075,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ce43b386-6eb4-4b61-9aa6-e9ddb4cbbf3c',
+  '297a1042-ff9d-41b7-a872-be0ef9d9d3d5',
   'Pokemon Shoulder Bag Cross Body Bag for Kids - Adjustable Strap Kids Pikachu Small Travel Bag - Gamer Gifts',
   'trading-cards',
   'pokémon-tcg',
@@ -1092,9 +1092,9 @@ INSERT INTO products (
   'Shop Pokemon Shoulder Bag Cross Body Bag for Kids - Adjustable Strap Kids Pikachu Small Travel Bag - Gamer Gifts - Premium Trading Cards with fast shipping. ...',
   'Pokemon Shoulder Bag Cross Body Bag for Kids - Adjustable Strap Kids Pikachu Small Travel Bag - Gamer Gifts',
   'Pokemon Shoulder Bag Cross Body Bag for Kids - Adjustable Strap Kids Pikachu Small Travel Bag - Gamer Gifts',
-  12,
-  41,
-  1090,
+  18,
+  28,
+  251,
   ARRAY['https://m.media-amazon.com/images/I/81+jV86ac-L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-19","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1104,7 +1104,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1133,7 +1133,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'e5f8d5c3-2f76-43fb-b703-85cdf86daac6',
+  'a3907133-1772-4596-beb1-508920c018fd',
   '(1 Pack) Pokemon Card Game Japanese 25th Anniversary Collection S8a Booster Pack (5 Cards Enclosed)',
   'trading-cards',
   'pokémon-tcg',
@@ -1150,9 +1150,9 @@ INSERT INTO products (
   'Buy (1 Pack) Pokemon Card Game Japanese 25th Anniversary Collection S8a Booster Pack (5 Cards Enclosed) at FindHive - Authentic Trading Cards at competitive ...',
   '(1 Pack) Pokemon Card Game Japanese 25th Anniversary Collection S8a Booster Pack (5 Cards Enclosed)',
   '(1 Pack) Pokemon Card Game Japanese 25th Anniversary Collection S8a Booster Pack (5 Cards Enclosed)',
-  5,
-  32,
-  1021,
+  3,
+  46,
+  394,
   ARRAY['https://m.media-amazon.com/images/I/71xq3vjgLlL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-20","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1162,7 +1162,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1191,7 +1191,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'bf7b8102-9aaf-43c8-86c4-5a7679c3b594',
+  'cf1287df-06af-4186-a3e6-cb075084aa0a',
   'Pokemon - Espeon 034/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
   'trading-cards',
   'pokémon-tcg',
@@ -1205,12 +1205,12 @@ INSERT INTO products (
   '(2 new offers)',
   NOW(),
   'Pokemon - Espeon 034/131 – Prismatic Evolutions – Double ...',
-  'Pokemon - Espeon 034/131 – Prismatic Evolutions – Double Rare – Foil Single Card available now - Authentic Trading Cards sourced directly. Order today.',
+  'Buy Pokemon - Espeon 034/131 – Prismatic Evolutions – Double Rare – Foil Single Card at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon - Espeon 034/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
   'Pokemon - Espeon 034/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
   17,
-  46,
-  970,
+  44,
+  931,
   ARRAY['https://m.media-amazon.com/images/I/519VTNL4M9L._AC_UL836_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-21","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1220,7 +1220,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1249,7 +1249,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a98ff20c-d216-43cd-9c60-bb5d16dfe0b1',
+  'a7c7d2aa-af82-41ba-bb0c-c0efbe13cf5c',
   'TCG: Mega Evolution—Pitch Black Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1266,9 +1266,9 @@ INSERT INTO products (
   'Buy TCG: Mega Evolution—Pitch Black Elite Trainer Box at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Evolution—Pitch Black Elite Trainer Box',
   'TCG: Mega Evolution—Pitch Black Elite Trainer Box',
-  11,
-  28,
-  115,
+  3,
+  45,
+  955,
   ARRAY['https://m.media-amazon.com/images/I/81nYHGhNIOL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-22","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1278,7 +1278,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1307,7 +1307,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '8a4c0a51-e39a-4dcd-9888-30333c01a003',
+  '6f3a2bfe-7bbd-474e-b88b-7ab22c4f04d5',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1321,12 +1321,12 @@ INSERT INTO products (
   '(46 new offers)',
   NOW(),
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
-  'Buy TCG: Mega Evolution—Pitch Black Booster Display Box at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop TCG: Mega Evolution—Pitch Black Booster Display Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
-  18,
-  11,
-  790,
+  10,
+  45,
+  658,
   ARRAY['https://m.media-amazon.com/images/I/81oV7PbLhBL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-23","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1336,7 +1336,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1365,7 +1365,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'd9f0e6ba-9121-42ae-a169-47c4af39a5f2',
+  'ad01b01f-d38e-4905-8199-167be559e721',
   'Pokemon TCG: Scarlet & Violet - Destined Rivals Elite Trainer Box - 9 Packs, Accessories, Promo',
   'trading-cards',
   'pokémon-tcg',
@@ -1382,9 +1382,9 @@ INSERT INTO products (
   'Buy Pokemon TCG: Scarlet & Violet - Destined Rivals Elite Trainer Box - 9 Packs, Accessories, Promo at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Scarlet & Violet - Destined Rivals Elite Trainer Box - 9 Packs, Accessories, Promo',
   'Pokemon TCG: Scarlet & Violet - Destined Rivals Elite Trainer Box - 9 Packs, Accessories, Promo',
-  16,
-  49,
-  388,
+  8,
+  28,
+  520,
   ARRAY['https://m.media-amazon.com/images/I/814hNCBQClL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-24","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1394,7 +1394,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1423,7 +1423,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '73ae4a47-f7ab-411b-a50a-1ade5cf578c4',
+  'f50f9526-16fb-4bc1-b7a7-3e836b322fbb',
   'Pokemon TCG: Celebrations Pokemon Center Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1440,9 +1440,9 @@ INSERT INTO products (
   'Buy Pokemon TCG: Celebrations Pokemon Center Elite Trainer Box at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Celebrations Pokemon Center Elite Trainer Box',
   'Pokemon TCG: Celebrations Pokemon Center Elite Trainer Box',
-  11,
-  55,
-  158,
+  12,
+  16,
+  556,
   ARRAY['https://m.media-amazon.com/images/I/31+1ZwyhGKL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-25","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1452,7 +1452,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1481,7 +1481,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '3f003317-c1ff-4a2f-a6f8-14d5990e1f98',
+  '108153e1-089a-4eab-aa0d-9ff3adaec853',
   'Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Surprise Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1495,12 +1495,12 @@ INSERT INTO products (
   '$48.18 delivery Tue, Aug 18',
   NOW(),
   'Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Sur...',
-  'Buy Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Surprise Box at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Surprise Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Surprise Box',
   'Pokemon TCG Scarlet & Violet 8.5 Prismatic Evolutions Surprise Box',
-  9,
-  13,
-  866,
+  14,
+  57,
+  852,
   ARRAY['https://m.media-amazon.com/images/I/81BNEHsbn+L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-26","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1510,7 +1510,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1539,7 +1539,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a44faa56-4943-428f-9665-216fe6227d79',
+  '46a77dc6-8052-4cc9-af91-2dec1c550955',
   'Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center Elite Trainer Box | PO PKC ETB | Exclusive Tyrunt Promo | 11 Booster Packs',
   'trading-cards',
   'pokémon-tcg',
@@ -1553,12 +1553,12 @@ INSERT INTO products (
   '$47.87 delivery Tue, Aug 18',
   NOW(),
   'Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center ...',
-  'Shop Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center Elite Trainer Box | PO PKC ETB | Exclusive Tyrunt Promo | 11 Booster Packs - Premium Trading Ca...',
+  'Buy Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center Elite Trainer Box | PO PKC ETB | Exclusive Tyrunt Promo | 11 Booster Packs at FindHive - Authent...',
   'Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center Elite Trainer Box | PO PKC ETB | Exclusive Tyrunt Promo | 11 Booster Packs',
   'Pokemon TCG: Mega Evolution-Perfect Order Pokemon Center Elite Trainer Box | PO PKC ETB | Exclusive Tyrunt Promo | 11 Booster Packs',
-  9,
-  19,
-  659,
+  12,
+  55,
+  780,
   ARRAY['https://m.media-amazon.com/images/I/71SSzoANfpL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-27","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1568,7 +1568,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1597,7 +1597,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '9911e1ea-5cad-48ed-a216-7de7d89d8fca',
+  'ddc24d92-e553-4d2b-aa6b-644ed799cf14',
   'Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1611,12 +1611,12 @@ INSERT INTO products (
   '(8 new offers)',
   NOW(),
   'Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box',
-  'Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box',
   'Pokemon TCG: Sword & Shield Silver Tempest Elite Trainer Box',
-  4,
-  46,
-  359,
+  11,
+  27,
+  289,
   ARRAY['https://m.media-amazon.com/images/I/81usxOAo6DL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-28","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1626,7 +1626,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1655,7 +1655,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ecc232af-5879-4e8a-971c-cb0c5a6aba78',
+  'f1d8f313-e9cb-46bf-a3df-319baa7f3899',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1669,12 +1669,12 @@ INSERT INTO products (
   '(28 new offers)',
   NOW(),
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite ...',
-  'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
+  'Buy Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite Trainer Box at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite Trainer Box',
   'Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Elite Trainer Box',
-  16,
-  54,
-  213,
+  17,
+  39,
+  285,
   ARRAY['https://m.media-amazon.com/images/I/81qfGweCdDL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-29","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1684,7 +1684,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1713,7 +1713,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '834eb828-a968-49d6-b903-9761a190d58a',
+  'c157fa68-60a3-4947-8480-34e02ceccd71',
   'Pokemon TCG: Mega Evolution - Ascended Heroes - Premium Poster Collection - Mega Gardevoir',
   'trading-cards',
   'pokémon-tcg',
@@ -1727,12 +1727,12 @@ INSERT INTO products (
   '(21 new offers)',
   NOW(),
   'Pokemon TCG: Mega Evolution - Ascended Heroes - Premium P...',
-  'Shop Pokemon TCG: Mega Evolution - Ascended Heroes - Premium Poster Collection - Mega Gardevoir - Premium Trading Cards with fast shipping. Best deals at Fin...',
+  'Pokemon TCG: Mega Evolution - Ascended Heroes - Premium Poster Collection - Mega Gardevoir available now - Authentic Trading Cards sourced directly. Order to...',
   'Pokemon TCG: Mega Evolution - Ascended Heroes - Premium Poster Collection - Mega Gardevoir',
   'Pokemon TCG: Mega Evolution - Ascended Heroes - Premium Poster Collection - Mega Gardevoir',
-  17,
-  14,
-  267,
+  9,
+  55,
+  594,
   ARRAY['https://m.media-amazon.com/images/I/91v1CF1K0nL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-30","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1742,7 +1742,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1771,7 +1771,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '5b1a618a-5bcf-4391-ba74-3c70acb4cdf8',
+  '8f5ede4e-7453-4635-8075-d9a403e6e1c4',
   'Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -1785,12 +1785,12 @@ INSERT INTO products (
   '(1 new offer)',
   NOW(),
   'Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box',
-  'Shop Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box',
   'Pokemon TCG: SAS11 —Lost Origin Elite Trainer Box',
-  14,
-  14,
-  408,
+  19,
+  26,
+  1050,
   ARRAY['https://m.media-amazon.com/images/I/61qb5NSapnL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-31","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1800,7 +1800,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1829,7 +1829,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '775bc0b6-4db2-4986-a26d-f6e0e06c133e',
+  'b55d889a-1178-49cc-8b59-5da8c3e0a555',
   'TCG: First Partner Illustration Collection—Series 1',
   'trading-cards',
   'pokémon-tcg',
@@ -1846,9 +1846,9 @@ INSERT INTO products (
   'TCG: First Partner Illustration Collection—Series 1 available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: First Partner Illustration Collection—Series 1',
   'TCG: First Partner Illustration Collection—Series 1',
-  4,
-  51,
-  441,
+  7,
+  27,
+  424,
   ARRAY['https://m.media-amazon.com/images/I/81-Itu0Uz8L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-32","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1858,7 +1858,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1887,7 +1887,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '8043b50c-c8f5-4010-a99a-302364988f97',
+  'd05c6034-fc84-40c0-84ba-8fa32d19cdad',
   'One Piece TCG English Booster Pack Bundle – (4 Pack English) - Perfect for One Piece Cards Game Fans, Anime Collectors, and TCG Enthusiasts',
   'trading-cards',
   'pokémon-tcg',
@@ -1904,9 +1904,9 @@ INSERT INTO products (
   'One Piece TCG English Booster Pack Bundle – (4 Pack English) - Perfect for One Piece Cards Game Fans, Anime Collectors, and TCG Enthusiasts available now - A...',
   'One Piece TCG English Booster Pack Bundle – (4 Pack English) - Perfect for One Piece Cards Game Fans, Anime Collectors, and TCG Enthusiasts',
   'One Piece TCG English Booster Pack Bundle – (4 Pack English) - Perfect for One Piece Cards Game Fans, Anime Collectors, and TCG Enthusiasts',
-  14,
-  56,
-  284,
+  11,
+  49,
+  838,
   ARRAY['https://m.media-amazon.com/images/I/71D7G9Mlq+L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-33","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1916,7 +1916,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -1945,7 +1945,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '48d047d8-08d4-40f2-90c4-4b855157eeb6',
+  '1ea4d376-facf-4694-ac7d-90579687b775',
   'Pokemon TCG: Celebrations Premium Figure Collection Pikachu VMAX, Multicolor',
   'trading-cards',
   'pokémon-tcg',
@@ -1962,9 +1962,9 @@ INSERT INTO products (
   'Shop Pokemon TCG: Celebrations Premium Figure Collection Pikachu VMAX, Multicolor - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Celebrations Premium Figure Collection Pikachu VMAX, Multicolor',
   'Pokemon TCG: Celebrations Premium Figure Collection Pikachu VMAX, Multicolor',
-  8,
-  34,
-  788,
+  11,
+  46,
+  711,
   ARRAY['https://m.media-amazon.com/images/I/81Tq8ec3Y8L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-34","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -1974,7 +1974,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2003,7 +2003,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a978f73c-078f-4693-bc60-0b0ba317f865',
+  '4b15d341-d6af-4b75-8560-5693ddee4b19',
   'Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes for Kids',
   'trading-cards',
   'pokémon-tcg',
@@ -2017,12 +2017,12 @@ INSERT INTO products (
   '$41.79 delivery Tue, Aug 18',
   NOW(),
   'Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes f...',
-  'Shop Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes for Kids - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes for Kids available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes for Kids',
   'Pokemon Tshirt | Pikachu Boys Tshirts | Pokémon Clothes for Kids',
-  17,
-  29,
-  487,
+  9,
+  52,
+  1035,
   ARRAY['https://m.media-amazon.com/images/I/91dBJhi4T-L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-35","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2032,7 +2032,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2061,7 +2061,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0a38bfdb-d141-40ab-822b-edecfe5288f2',
+  'cc8acf54-2bdf-4a8f-8d95-5793c32df6c1',
   'Pokemon Trading Card Games: 25th Anniversary Celebrations Collection - Lance''s Charizard V',
   'trading-cards',
   'pokémon-tcg',
@@ -2078,9 +2078,9 @@ INSERT INTO products (
   'Buy Pokemon Trading Card Games: 25th Anniversary Celebrations Collection - Lance''s Charizard V at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon Trading Card Games: 25th Anniversary Celebrations Collection - Lance''s Charizard V',
   'Pokemon Trading Card Games: 25th Anniversary Celebrations Collection - Lance''s Charizard V',
-  5,
-  23,
-  479,
+  19,
+  51,
+  560,
   ARRAY['https://m.media-amazon.com/images/I/81ZrKSiao+L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-36","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2090,7 +2090,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2119,7 +2119,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'd1223c8f-4dcb-418c-b1e2-5f542617b9a6',
+  'c2b63d25-30dd-464b-83b8-0e1c006def54',
   'PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box Protector - ETB Case Compatible with Elite Trainer Boxes (Pack of 5)',
   'trading-cards',
   'pokémon-tcg',
@@ -2133,12 +2133,12 @@ INSERT INTO products (
   '(2+ used & new offers)',
   NOW(),
   'PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box...',
-  'PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box Protector - ETB Case Compatible with Elite Trainer Boxes (Pack of 5) available now - Authentic Trad...',
+  'Shop PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box Protector - ETB Case Compatible with Elite Trainer Boxes (Pack of 5) - Premium Trading Cards w...',
   'PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box Protector - ETB Case Compatible with Elite Trainer Boxes (Pack of 5)',
   'PET Plastic ETB Protector Case 5 Pack - Elite Trainer Box Protector - ETB Case Compatible with Elite Trainer Boxes (Pack of 5)',
-  14,
-  23,
-  880,
+  7,
+  20,
+  825,
   ARRAY['https://m.media-amazon.com/images/I/71IHbKwxy6L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-37","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2148,7 +2148,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2177,7 +2177,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '47162a74-4ded-4881-b3fe-e11db86289b8',
+  '9a2a9d27-db97-4293-86a5-24e08cfab609',
   'Pokemon TCG 25th Anniversary Celebrations Booster Pack',
   'trading-cards',
   'pokémon-tcg',
@@ -2194,9 +2194,9 @@ INSERT INTO products (
   'Shop Pokemon TCG 25th Anniversary Celebrations Booster Pack - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG 25th Anniversary Celebrations Booster Pack',
   'Pokemon TCG 25th Anniversary Celebrations Booster Pack',
-  8,
-  24,
-  515,
+  11,
+  55,
+  980,
   ARRAY['https://m.media-amazon.com/images/I/51SrKOcGhjL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-38","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2206,7 +2206,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2235,7 +2235,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '502ca026-fdbb-4521-af5c-1a1ab8663629',
+  'e7af5474-36af-4100-b4a4-c0a69685950d',
   'TCG: Pokémon Day 2026 Collection (1 laminated promotional card, 1 coin and 3 envelopes)',
   'trading-cards',
   'pokémon-tcg',
@@ -2249,12 +2249,12 @@ INSERT INTO products (
   '(1 new offer)',
   NOW(),
   'TCG: Pokémon Day 2026 Collection (1 laminated promotional...',
-  'Shop TCG: Pokémon Day 2026 Collection (1 laminated promotional card, 1 coin and 3 envelopes) - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'TCG: Pokémon Day 2026 Collection (1 laminated promotional card, 1 coin and 3 envelopes) available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Pokémon Day 2026 Collection (1 laminated promotional card, 1 coin and 3 envelopes)',
   'TCG: Pokémon Day 2026 Collection (1 laminated promotional card, 1 coin and 3 envelopes)',
-  15,
-  23,
-  815,
+  5,
+  28,
+  891,
   ARRAY['https://m.media-amazon.com/images/I/81ISBv45PbL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-39","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2264,7 +2264,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2293,7 +2293,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ee8c9663-3e41-454f-9e2e-4091fdfa8060',
+  '6cade893-2437-4481-946d-5dc5181e94b6',
   'Pokemon 30th Anniversary Moncore Travel Moncore Travel Taka Taka Tomo (Singing Region)',
   'trading-cards',
   'pokémon-tcg',
@@ -2310,9 +2310,9 @@ INSERT INTO products (
   'Pokemon 30th Anniversary Moncore Travel Moncore Travel Taka Taka Tomo (Singing Region) available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon 30th Anniversary Moncore Travel Moncore Travel Taka Taka Tomo (Singing Region)',
   'Pokemon 30th Anniversary Moncore Travel Moncore Travel Taka Taka Tomo (Singing Region)',
+  5,
   19,
-  25,
-  116,
+  198,
   ARRAY['https://m.media-amazon.com/images/I/61jWVxVedwL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-40","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2322,7 +2322,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2351,7 +2351,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '65176196-523d-4fc9-9ac2-74cea17d08f0',
+  '9a650e16-340a-4319-bd14-de2d1043088d',
   'Acrylic Display Case for Elite Trainer Box (ETB) – Stackable Closure Storage Box for Pokemon TCG, Trading Cards, Booster Box – Clear Protector with Locking Lid for Collectible Display & Organizing',
   'trading-cards',
   'pokémon-tcg',
@@ -2365,12 +2365,12 @@ INSERT INTO products (
   '$54.63 delivery Tue, Aug 18',
   NOW(),
   'Acrylic Display Case for Elite Trainer Box (ETB) – Stacka...',
-  'Acrylic Display Case for Elite Trainer Box (ETB) – Stackable Closure Storage Box for Pokemon TCG, Trading Cards, Booster Box – Clear Protector with Locking L...',
+  'Buy Acrylic Display Case for Elite Trainer Box (ETB) – Stackable Closure Storage Box for Pokemon TCG, Trading Cards, Booster Box – Clear Protector with Locki...',
   'Acrylic Display Case for Elite Trainer Box (ETB) – Stackable Closure Storage Box for Pokemon TCG, Trading Cards, Booster Box – Clear Protector with...',
   'Acrylic Display Case for Elite Trainer Box (ETB) – Stackable Closure Storage Box for Pokemon TCG, Trading Cards, Booster Box – Clear Protector with Locking Lid for Collectible Display & Organizing',
-  5,
-  40,
-  494,
+  7,
+  22,
+  752,
   ARRAY['https://m.media-amazon.com/images/I/61NtOrdW-CL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-41","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2380,7 +2380,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2409,7 +2409,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0d3b9749-1bd8-4828-9b76-45606958f8f1',
+  '76a54268-8e82-4a00-b879-fc722d0218bd',
   'Pokemon TCG Chinese 30th Anniversary Celebration First Partner Vol. 1',
   'trading-cards',
   'pokémon-tcg',
@@ -2423,12 +2423,12 @@ INSERT INTO products (
   '(1 new offer)',
   NOW(),
   'Pokemon TCG Chinese 30th Anniversary Celebration First Pa...',
-  'Buy Pokemon TCG Chinese 30th Anniversary Celebration First Partner Vol. 1 at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop Pokemon TCG Chinese 30th Anniversary Celebration First Partner Vol. 1 - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG Chinese 30th Anniversary Celebration First Partner Vol. 1',
   'Pokemon TCG Chinese 30th Anniversary Celebration First Partner Vol. 1',
-  18,
-  39,
-  881,
+  6,
+  30,
+  640,
   ARRAY['https://m.media-amazon.com/images/I/61PbQ8k4KZL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-42","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2438,7 +2438,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2467,7 +2467,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '5a70a51b-efa3-4e67-b30c-5ade5fda53ef',
+  'ec482e90-7a13-429f-9197-505841e29dc3',
   'Pokemon Card Binder 9 Pocket Full-View with Poke Ball Design – Trading Card Binder Holds 360 Cards Side Loading – Organizer for TCG Collectors with Elastic Strap for Sleeved Cards',
   'trading-cards',
   'pokémon-tcg',
@@ -2481,12 +2481,12 @@ INSERT INTO products (
   '$45.38 delivery Aug 12 - 20',
   NOW(),
   'Pokemon Card Binder 9 Pocket Full-View with Poke Ball Des...',
-  'Shop Pokemon Card Binder 9 Pocket Full-View with Poke Ball Design – Trading Card Binder Holds 360 Cards Side Loading – Organizer for TCG Collectors with Elas...',
+  'Pokemon Card Binder 9 Pocket Full-View with Poke Ball Design – Trading Card Binder Holds 360 Cards Side Loading – Organizer for TCG Collectors with Elastic S...',
   'Pokemon Card Binder 9 Pocket Full-View with Poke Ball Design – Trading Card Binder Holds 360 Cards Side Loading – Organizer for TCG Collectors with...',
   'Pokemon Card Binder 9 Pocket Full-View with Poke Ball Design – Trading Card Binder Holds 360 Cards Side Loading – Organizer for TCG Collectors with Elastic Strap for Sleeved Cards',
-  4,
-  48,
-  226,
+  0,
+  57,
+  375,
   ARRAY['https://m.media-amazon.com/images/I/810iy+-fHnL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-43","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2496,7 +2496,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2525,7 +2525,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '31dbf227-4c15-4ffa-9edb-5145d43ed599',
+  'f274fe4c-f132-4070-9f70-d909fb0a82c3',
   'Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
   'trading-cards',
   'pokémon-tcg',
@@ -2539,12 +2539,12 @@ INSERT INTO products (
   '(11 new offers)',
   NOW(),
   'Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Dou...',
-  'Shop Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Double Rare – Foil Single Card - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Double Rare – Foil Single Card at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
   'Pokemon - Umbreon ex 060/131 – Prismatic Evolutions – Double Rare – Foil Single Card',
-  8,
+  13,
   52,
-  421,
+  338,
   ARRAY['https://m.media-amazon.com/images/I/51mb20d8UmL._AC_UL836_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-44","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2554,7 +2554,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2583,7 +2583,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'd90d929d-9484-4b30-8b82-0e68f5ad22c2',
+  '23581a7d-a729-439b-8c42-0cd9357d774a',
   'Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team Rocket) - Common & Uncommon - Excellent Condition',
   'trading-cards',
   'pokémon-tcg',
@@ -2597,12 +2597,12 @@ INSERT INTO products (
   '$40.64 delivery Aug 17 - 21',
   NOW(),
   'Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team...',
-  'Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team Rocket) - Common & Uncommon - Excellent Condition available now - Authentic Trading Cards sourced d...',
+  'Buy Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team Rocket) - Common & Uncommon - Excellent Condition at FindHive - Authentic Trading Cards at comp...',
   'Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team Rocket) - Common & Uncommon - Excellent Condition',
   'Pokemon Lot 40: 1st Gen Cards (Base, Jungle, Fossil, Team Rocket) - Common & Uncommon - Excellent Condition',
   4,
-  47,
-  343,
+  46,
+  949,
   ARRAY['https://m.media-amazon.com/images/I/8107Wl7qIlL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-45","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2612,7 +2612,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2641,7 +2641,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '93f2493d-53bd-4620-85fd-a70423f2a98b',
+  'd850f7e9-eaaa-4971-b229-e66ae9fda559',
   'Pokemon TCG: Scarlet And Violet: Shrouded Fable Kingdra Ex Special Illustration Collection',
   'trading-cards',
   'pokémon-tcg',
@@ -2658,9 +2658,9 @@ INSERT INTO products (
   'Pokemon TCG: Scarlet And Violet: Shrouded Fable Kingdra Ex Special Illustration Collection available now - Authentic Trading Cards sourced directly. Order to...',
   'Pokemon TCG: Scarlet And Violet: Shrouded Fable Kingdra Ex Special Illustration Collection',
   'Pokemon TCG: Scarlet And Violet: Shrouded Fable Kingdra Ex Special Illustration Collection',
-  17,
-  33,
-  803,
+  13,
+  43,
+  185,
   ARRAY['https://m.media-amazon.com/images/I/91DVCdjpG3L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-46","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2670,7 +2670,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2699,7 +2699,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '40c35d52-24da-400f-a79b-83be564e69bb',
+  '697dd322-7226-4440-9792-e5b4e72723e1',
   'Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takara Tomo Tommy',
   'trading-cards',
   'pokémon-tcg',
@@ -2713,12 +2713,12 @@ INSERT INTO products (
   '$41.25 delivery Aug 26 - Sep 17',
   NOW(),
   'Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takar...',
-  'Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takara Tomo Tommy available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takara Tomo Tommy - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takara Tomo Tommy',
   'Pokemon 30th Anniversary of Moncore Pikachu Pokemon Takara Tomo Tommy',
-  12,
-  26,
-  725,
+  7,
+  13,
+  429,
   ARRAY['https://m.media-amazon.com/images/I/61k+Y2YFWQL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-47","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2728,7 +2728,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2757,7 +2757,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '728ba984-c1db-4676-bd15-492a7009b5e6',
+  'b143a0ee-20e2-4c9e-8156-7925f82e6ce0',
   'ETB Protector Case for Pokemon, Elite Trainer Box Case, 5 Pack | 0.50mm Clear PET Plastic | Soft-Crease Edges | Stackable | Fits with Plasma Storm, Phantom Forces, XY Primal Clash & More',
   'trading-cards',
   'pokémon-tcg',
@@ -2774,9 +2774,9 @@ INSERT INTO products (
   'Shop ETB Protector Case for Pokemon, Elite Trainer Box Case, 5 Pack | 0.50mm Clear PET Plastic | Soft-Crease Edges | Stackable | Fits with Plasma Storm, Phan...',
   'ETB Protector Case for Pokemon, Elite Trainer Box Case, 5 Pack | 0.50mm Clear PET Plastic | Soft-Crease Edges | Stackable | Fits with Plasma Storm,...',
   'ETB Protector Case for Pokemon, Elite Trainer Box Case, 5 Pack | 0.50mm Clear PET Plastic | Soft-Crease Edges | Stackable | Fits with Plasma Storm, Phantom Forces, XY Primal Clash & More',
-  11,
-  54,
-  856,
+  18,
+  56,
+  802,
   ARRAY['https://m.media-amazon.com/images/I/71tdyE52TXL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-48","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
@@ -2786,7 +2786,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2815,65 +2815,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ead28f96-c27d-4fc4-9a16-088768ec40af',
-  'Unknown Product',
-  'trading-cards',
-  'pokémon-tcg',
-  0,
-  NULL,
-  '',
-  0,
-  0,
-  'Amazon',
-  'https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12',
-  'Unknown Product',
-  NOW(),
-  'Unknown Product',
-  'Shop Unknown Product - Premium Trading Cards with fast shipping. Best deals at FindHive.',
-  'Unknown Product',
-  'Unknown Product',
-  18,
-  18,
-  508,
-  ARRAY[''],
-  '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-49","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
-  'published',
-  'unknown-product',
-  ARRAY['findhive', 'authentic', 'fast-shipping', 'best-price', 'trading', 'cards', 'unknown', 'product'],
-  5,
-  NOW()
-);
-
-INSERT INTO products (
-  id,
-  title,
-  category,
-  subcategory,
-  price,
-  original_price,
-  image_url,
-  rating,
-  review_count,
-  source_retailer,
-  source_url,
-  description,
-  created_at,
-  meta_title,
-  meta_description,
-  short_description,
-  long_description,
-  sold_count,
-  stock_count,
-  viewer_count,
-  images,
-  attributes,
-  status,
-  slug,
-  tags,
-  low_stock_threshold,
-  updated_at
-) VALUES (
-  'a6ce3461-63f4-4c78-80c9-b4f9fc0736db',
+  '5243bf2d-5388-4223-bf1f-cb1cd7b722b2',
   'Unknown Product',
   'trading-cards',
   'pokémon-tcg',
@@ -2890,11 +2832,11 @@ INSERT INTO products (
   'Unknown Product available now - Authentic Trading Cards sourced directly. Order today.',
   'Unknown Product',
   'Unknown Product',
-  5,
-  44,
-  897,
+  17,
+  41,
+  797,
   ARRAY[''],
-  '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-50","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
+  '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-49","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
   'published',
   'unknown-product',
   ARRAY['findhive', 'authentic', 'fast-shipping', 'best-price', 'trading', 'cards', 'unknown', 'product'],
@@ -2902,7 +2844,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2931,7 +2873,65 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '7e19307c-3eb6-4a9e-bef2-84ec5ee82018',
+  '2785aa3a-447b-4125-9e78-9ef316f820b4',
+  'Unknown Product',
+  'trading-cards',
+  'pokémon-tcg',
+  0,
+  NULL,
+  '',
+  0,
+  0,
+  'Amazon',
+  'https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12',
+  'Unknown Product',
+  NOW(),
+  'Unknown Product',
+  'Buy Unknown Product at FindHive - Authentic Trading Cards at competitive prices.',
+  'Unknown Product',
+  'Unknown Product',
+  18,
+  56,
+  355,
+  ARRAY[''],
+  '{"source_file":"pokemon card best sellers.xlsx","web_scraper_order":"1785895127-50","amazon_url":"https://www.amazon.com/s?k=pokemon+30th+anniversary+etb&crid=3H4Y1LAUBVRKP&sprefix=pokemon+30th%2Caps%2C1488&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_5_12"}'::jsonb,
+  'published',
+  'unknown-product',
+  ARRAY['findhive', 'authentic', 'fast-shipping', 'best-price', 'trading', 'cards', 'unknown', 'product'],
+  5,
+  NOW()
+);
+
+INSERT INTO public.products (
+  id,
+  title,
+  category,
+  subcategory,
+  price,
+  original_price,
+  image_url,
+  rating,
+  review_count,
+  source_retailer,
+  source_url,
+  description,
+  created_at,
+  meta_title,
+  meta_description,
+  short_description,
+  long_description,
+  sold_count,
+  stock_count,
+  viewer_count,
+  images,
+  attributes,
+  status,
+  slug,
+  tags,
+  low_stock_threshold,
+  updated_at
+) VALUES (
+  '0abb23f3-b310-418e-a9fa-a1d81a36813c',
   'Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101',
   'trading-cards',
   'pokémon-tcg',
@@ -2945,12 +2945,12 @@ INSERT INTO products (
   'Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101',
   NOW(),
   'Pokemon TCG: March 2026 Expansion Boosters - 36-ct Displa...',
-  'Buy Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101 at FindHive - Authentic Trading Cards at competitive pri...',
+  'Shop Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101 - Premium Trading Cards with fast shipping. Best deals ...',
   'Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101',
   'Pokemon TCG: March 2026 Expansion Boosters - 36-ct Display (EU), Collectible Cards, 10-10380-101',
-  4,
-  51,
-  404,
+  11,
+  53,
+  999,
   ARRAY['https://m.media-amazon.com/images/I/61zqaYySZkL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-1","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -2960,7 +2960,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -2989,7 +2989,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '24bd31bc-1bf5-4484-b423-3855b9314849',
+  'a9364237-97ad-4404-9e9b-2624c7d64ce0',
   'Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs',
   'trading-cards',
   'pokémon-tcg',
@@ -3003,12 +3003,12 @@ INSERT INTO products (
   'Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs',
   NOW(),
   'Pokemon TCG: Mega Evolution Pitch Black Pokemon Center El...',
-  'Shop Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs - Premium Trading Card...',
+  'Buy Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs at FindHive - Authentic...',
   'Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs',
   'Pokemon TCG: Mega Evolution Pitch Black Pokemon Center Elite Trainer Box | PB PKC ETB | Exclusive Zarude Promo | 11 Booster Packs',
-  2,
-  46,
-  895,
+  14,
+  47,
+  262,
   ARRAY['https://m.media-amazon.com/images/I/61aqGLu3KML._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-2","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3018,7 +3018,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3047,7 +3047,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '85e9792a-8749-40bf-a749-5bd74afe7205',
+  '0fca70a7-f69a-4bdb-9a4f-abdc5760a5d1',
   'Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards',
   'trading-cards',
   'pokémon-tcg',
@@ -3061,12 +3061,12 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards',
   NOW(),
   'Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Boo...',
-  'Shop Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards',
   'Pokemon TCG Trading Card Game Perfect Order 8 Sleeved Booster Packs - 80 Cards',
-  7,
-  56,
-  302,
+  6,
+  27,
+  864,
   ARRAY['https://m.media-amazon.com/images/I/71XmW3DEbML._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-3","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3076,7 +3076,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3105,7 +3105,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '92306480-8e36-4fe1-b63d-9ec1540b990a',
+  '4d676dae-5d92-4ca8-810c-459c9241e1e1',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre)',
   'trading-cards',
   'pokémon-tcg',
@@ -3119,12 +3119,12 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre)',
   NOW(),
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booste...',
-  'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre) available now - Authentic Trading Cards sou...',
+  'Buy Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre) at FindHive - Authentic Trading Cards a...',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre)',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Kyogre)',
-  4,
-  31,
-  748,
+  18,
+  25,
+  1072,
   ARRAY['https://m.media-amazon.com/images/I/71o2Rdou4CL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-4","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3134,7 +3134,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3163,7 +3163,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'd65b6daf-f5e7-41d7-92d8-0d4e1945a228',
+  '71383a53-ab0a-40e2-aeaa-fb655bd1eab0',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga)',
   'trading-cards',
   'pokémon-tcg',
@@ -3177,12 +3177,12 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga)',
   NOW(),
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booste...',
-  'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga) available now - Authentic Trading Cards sou...',
+  'Buy Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga) at FindHive - Authentic Trading Cards a...',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga)',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Dialga)',
-  6,
-  38,
-  809,
+  17,
+  23,
+  639,
   ARRAY['https://m.media-amazon.com/images/I/71+GceW5-1L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-5","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3192,7 +3192,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3221,7 +3221,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '5002bd24-7557-43c3-b740-8d08672652db',
+  '98a5efb8-d73f-48bd-b2d0-9d517cc96dd0',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Xerneas)',
   'trading-cards',
   'pokémon-tcg',
@@ -3238,9 +3238,9 @@ INSERT INTO products (
   'Shop Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Xerneas) - Premium Trading Cards with fast shi...',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Xerneas)',
   'Pokemon TCG Trading Card Games Azure Legends Tin 4 Booster Packs from Scarlet and Violet with Promo Card (Xerneas)',
-  17,
-  34,
-  478,
+  10,
+  44,
+  214,
   ARRAY['https://m.media-amazon.com/images/I/713U3PNTCKL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-6","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3250,7 +3250,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3279,7 +3279,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '4c7db765-7b9f-4e9b-9bc9-4dd7c994edc6',
+  '1aa1338b-82dc-4a29-89f1-a9c2f1e6a51c',
   'Pokemon TCG Trading Card Game Perfect Order Single Booster Pack with Makuhita Promo Card and Snorlax Coin',
   'trading-cards',
   'pokémon-tcg',
@@ -3296,9 +3296,9 @@ INSERT INTO products (
   'Buy Pokemon TCG Trading Card Game Perfect Order Single Booster Pack with Makuhita Promo Card and Snorlax Coin at FindHive - Authentic Trading Cards at compet...',
   'Pokemon TCG Trading Card Game Perfect Order Single Booster Pack with Makuhita Promo Card and Snorlax Coin',
   'Pokemon TCG Trading Card Game Perfect Order Single Booster Pack with Makuhita Promo Card and Snorlax Coin',
-  2,
-  53,
-  725,
+  8,
+  39,
+  470,
   ARRAY['https://m.media-amazon.com/images/I/51ENmkZRwTL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-7","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3308,7 +3308,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3337,7 +3337,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '109b35fa-4b5e-4741-b210-bfcc8223a5ed',
+  '1da57988-744e-4a20-b5cb-c2d7d5c3ceec',
   'Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin',
   'trading-cards',
   'pokémon-tcg',
@@ -3351,12 +3351,12 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin',
   NOW(),
   'Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal...',
-  'Buy Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin at FindHive - Auth...',
+  'Shop Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin - Premium Trading...',
   'Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin',
   'Pokemon TCG Trading Card Game 2 Pack Blister 1 Phantasmal Flames, 1 Mega Evolution and 3 Promo Cards Oddish, Vileplume, Gloom and Coin',
-  18,
-  47,
-  196,
+  12,
+  22,
+  942,
   ARRAY['https://m.media-amazon.com/images/I/71us74YREmL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-8","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3366,7 +3366,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3395,7 +3395,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0088e5d4-0798-4b76-b2c1-084ec4fac89a',
+  '78ce3935-f969-4ec6-9d7b-74ac128d61fc',
   'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition',
   'trading-cards',
   'pokémon-tcg',
@@ -3409,12 +3409,12 @@ INSERT INTO products (
   'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition',
   NOW(),
   'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes ...',
-  'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition available now - Authentic Trading Ca...',
+  'Buy Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition at FindHive - Authentic Trading ...',
   'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition',
   'Pack of Three Pokémon TCG Dark Pesto Expansion Envelopes (1 Holographic Promo Card and 3 Booster Pack) - Italian Edition',
-  3,
-  43,
-  408,
+  14,
+  51,
+  108,
   ARRAY['https://m.media-amazon.com/images/I/91eso9+Zy6L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-9","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3424,7 +3424,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3453,7 +3453,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '1be35e84-a418-4496-a058-8996771e2f2f',
+  '2a8b36bf-b290-4f0c-bffe-98dd24a9a284',
   'Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack',
   'trading-cards',
   'pokémon-tcg',
@@ -3467,12 +3467,12 @@ INSERT INTO products (
   'Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack',
   NOW(),
   'Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack',
-  'Shop Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack',
   'Pokemon TCG: Mega Evolution - Chaos Rising Booster Pack',
-  2,
-  26,
-  165,
+  3,
+  55,
+  1063,
   ARRAY['https://m.media-amazon.com/images/I/71UJqmPxIjL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-10","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3482,7 +3482,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3511,7 +3511,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'fad31183-f2b2-40c8-9128-cf6457e040c7',
+  'c3a69904-6eb0-4828-8fd3-156474dd34ab',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
   'trading-cards',
   'pokémon-tcg',
@@ -3528,9 +3528,9 @@ INSERT INTO products (
   'Buy Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
   'Pokemon TCG: Mega Evolution - Pitch Black 3 Booster Pack Blister',
-  19,
-  44,
-  932,
+  13,
+  46,
+  310,
   ARRAY['https://m.media-amazon.com/images/I/91xodh9yAqL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-11","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3540,7 +3540,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3569,7 +3569,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'aab12d65-0861-4e97-b781-46bc1dcfd408',
+  'ee9a1f3d-a692-464c-aab6-0f983142d586',
   'TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109',
   'trading-cards',
   'pokémon-tcg',
@@ -3583,12 +3583,12 @@ INSERT INTO products (
   'TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109',
   NOW(),
   'TCG: March 2026 Premium Checklane Blister Extension - Gen...',
-  'Buy TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109 at FindHive - Authentic Trading Cards at comp...',
+  'TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109 available now - Authentic Trading Cards sourced d...',
   'TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109',
   'TCG: March 2026 Premium Checklane Blister Extension - Generic Display D12 (US), Trading Cards, 10-10374-109',
-  12,
-  56,
-  335,
+  15,
+  32,
+  644,
   ARRAY['https://m.media-amazon.com/images/I/613ymI-aS8L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-12","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3598,7 +3598,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3627,7 +3627,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'da45796d-423e-4c10-9e0e-5d26c19319c7',
+  'd8e26b17-06fd-4ea1-829e-0bab1a2cfbaa',
   'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack',
   'trading-cards',
   'pokémon-tcg',
@@ -3641,12 +3641,12 @@ INSERT INTO products (
   'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack',
   NOW(),
   'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster...',
-  'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack available now - Authentic Trading Cards sourced directly. Order today.',
+  'Buy Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack',
   'Pokemon TCG: Mega Evolution - Pitch Black Sleeved Booster Pack',
-  2,
-  40,
-  117,
+  3,
+  38,
+  155,
   ARRAY['https://m.media-amazon.com/images/I/51bvsvJNkKL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-13","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3656,7 +3656,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3685,7 +3685,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '2877fdb2-a0de-4018-9e50-50da14bef2a8',
+  '8fb41293-6e46-40e1-ae04-c2c8806a0d8b',
   'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs',
   'trading-cards',
   'pokémon-tcg',
@@ -3699,12 +3699,12 @@ INSERT INTO products (
   'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs',
   NOW(),
   'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Dis...',
-  'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs available now - Authentic Trading Cards sourced ...',
+  'Buy Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs at FindHive - Authentic Trading Cards at com...',
   'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs',
   'Pokemon TCG Simplified Chinese Sword & Shield Umbreon Display Card Frame (CS4.5DF1) Includes 2 Booster Packs',
-  6,
-  51,
-  612,
+  10,
+  58,
+  560,
   ARRAY['https://m.media-amazon.com/images/I/51jC50X++2L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-14","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3714,7 +3714,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3743,7 +3743,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'b6fbfa06-7b5c-4100-a965-04c6d3340f3e',
+  '04b05bb7-f6b1-496d-aba8-a086e8af510c',
   'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet)',
   'trading-cards',
   'pokémon-tcg',
@@ -3757,12 +3757,12 @@ INSERT INTO products (
   'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet)',
   NOW(),
   'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster...',
-  'Buy TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet) at FindHive - Authentic Trading Cards at competitive pri...',
+  'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet) available now - Authentic Trading Cards sourced directly. Or...',
   'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet)',
   'TCG: Lumiose City Mini Tin: Salamence & Litleo (2 booster packs, 1 art card and 1 sticker sheet)',
-  3,
-  43,
-  358,
+  19,
+  58,
+  749,
   ARRAY['https://m.media-amazon.com/images/I/71ZWpNoOisL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-15","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3772,7 +3772,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3801,7 +3801,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '787bd066-bb68-48ad-b77e-f8c10c0f90cc',
+  'abbe2872-9af9-4f59-99f7-aea7c83ed02d',
   'Pokemon TCG: Mega Evolution Chaos Rising Pokemon Center Elite Trainer Box | CR PKC ETB | Exclusive Fennekin Promo | 11 Booster Packs',
   'trading-cards',
   'pokémon-tcg',
@@ -3819,8 +3819,8 @@ INSERT INTO products (
   'Pokemon TCG: Mega Evolution Chaos Rising Pokemon Center Elite Trainer Box | CR PKC ETB | Exclusive Fennekin Promo | 11 Booster Packs',
   'Pokemon TCG: Mega Evolution Chaos Rising Pokemon Center Elite Trainer Box | CR PKC ETB | Exclusive Fennekin Promo | 11 Booster Packs',
   2,
-  52,
-  1059,
+  55,
+  691,
   ARRAY['https://m.media-amazon.com/images/I/71Dtzhp8caL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-16","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3830,7 +3830,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3859,7 +3859,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '32274c87-c4b9-4487-97ab-16a8fb7f6f17',
+  '5f63da9f-d4b6-4cad-a8f6-c2bb2e304a3c',
   'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins)',
   'trading-cards',
   'pokémon-tcg',
@@ -3873,12 +3873,12 @@ INSERT INTO products (
   'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins)',
   NOW(),
   'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins)',
-  'Buy Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins) at FindHive - Authentic Trading Cards at competitive prices.',
+  'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins) available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins)',
   'Pokemon TCG: Lumiose City Mini Tin Display (10 Mini Tins)',
-  16,
-  23,
-  933,
+  18,
+  53,
+  125,
   ARRAY['https://m.media-amazon.com/images/I/616hSRDi6JL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-17","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3888,7 +3888,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3917,7 +3917,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'e0227727-86b1-4dcb-b10e-f7ef719a2c11',
+  '3ff90bbb-2282-49d0-b9f4-c3ee17ad5661',
   'TCG: Mega Evolution—Chaos Rising Triple Pack (1 Foil Promo Card & 3 Booster Packs)',
   'trading-cards',
   'pokémon-tcg',
@@ -3934,9 +3934,9 @@ INSERT INTO products (
   'Buy TCG: Mega Evolution—Chaos Rising Triple Pack (1 Foil Promo Card & 3 Booster Packs) at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Evolution—Chaos Rising Triple Pack (1 Foil Promo Card & 3 Booster Packs)',
   'TCG: Mega Evolution—Chaos Rising Triple Pack (1 Foil Promo Card & 3 Booster Packs)',
-  13,
-  28,
-  574,
+  11,
+  33,
+  957,
   ARRAY['https://m.media-amazon.com/images/I/919C05yGWOL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-18","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -3946,7 +3946,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -3975,7 +3975,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '88550ac8-ab53-4cab-b02e-1985077bc133',
+  '03d6fd09-0ad5-4df2-bbf9-b2febe61c21b',
   'TCG: Mega Moonlit Tin Mega Clefable',
   'trading-cards',
   'pokémon-tcg',
@@ -3989,12 +3989,12 @@ INSERT INTO products (
   'TCG: Mega Moonlit Tin Mega Clefable',
   NOW(),
   'TCG: Mega Moonlit Tin Mega Clefable',
-  'Shop TCG: Mega Moonlit Tin Mega Clefable - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy TCG: Mega Moonlit Tin Mega Clefable at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Moonlit Tin Mega Clefable',
   'TCG: Mega Moonlit Tin Mega Clefable',
-  0,
-  41,
-  236,
+  15,
+  17,
+  150,
   ARRAY['https://m.media-amazon.com/images/I/71DWxru5wdL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-19","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4004,7 +4004,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4033,7 +4033,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a448e3ac-9427-4d52-92ff-ae8ffaf3dd11',
+  'a37d9210-a554-4827-a33f-953014c3d1b9',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
   'trading-cards',
   'pokémon-tcg',
@@ -4050,9 +4050,9 @@ INSERT INTO products (
   'TCG: Mega Evolution—Pitch Black Booster Display Box available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
   'TCG: Mega Evolution—Pitch Black Booster Display Box',
-  1,
-  46,
-  500,
+  0,
+  44,
+  160,
   ARRAY['https://m.media-amazon.com/images/I/81oV7PbLhBL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-20","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4062,7 +4062,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4091,7 +4091,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '5dad068c-b769-446a-8ae7-703c0350239b',
+  '283c609b-0d10-45e3-a41d-a1867737cc66',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -4108,9 +4108,9 @@ INSERT INTO products (
   'Buy TCG: Mega Evolution—Pitch Black Booster Bundle at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
   'TCG: Mega Evolution—Pitch Black Booster Bundle',
-  7,
+  11,
   56,
-  181,
+  644,
   ARRAY['https://m.media-amazon.com/images/I/81ANtTqGJVL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-21","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4120,7 +4120,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4149,7 +4149,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '6c54206a-8282-4cfa-af47-0e89af87a708',
+  'e4837b2c-0a32-4e0c-a980-d97b7f892f1d',
   'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese)',
   'trading-cards',
   'pokémon-tcg',
@@ -4163,12 +4163,12 @@ INSERT INTO products (
   'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese)',
   NOW(),
   'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese)',
-  'Buy Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese) at FindHive - Authentic Trading Cards at competitive prices.',
+  'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese) available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese)',
   'Pokemon TCG Booster Box - CBB5C: Vol. 5 Gem Pack (Chinese)',
   0,
-  38,
-  818,
+  49,
+  858,
   ARRAY['https://m.media-amazon.com/images/I/71qBK-74UcL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-22","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4178,7 +4178,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4207,7 +4207,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'c223732e-9bda-4f4c-985c-ba4e053db087',
+  'edd3545b-90d3-4b26-9270-5b9c34d29940',
   'Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack',
   'trading-cards',
   'pokémon-tcg',
@@ -4221,12 +4221,12 @@ INSERT INTO products (
   'Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack',
   NOW(),
   'Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booste...',
-  'Shop Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'Buy Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack at FindHive - Authentic Trading Cards at competitive prices.',
   'Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack',
   'Pokemon TCG: Mega Evolution - Chaos Rising Sleeved Booster Pack',
-  8,
-  13,
-  1054,
+  9,
+  55,
+  809,
   ARRAY['https://m.media-amazon.com/images/I/61WH8+8qgXL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-23","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4236,7 +4236,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4265,7 +4265,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '8dd521ac-615d-4e74-a6ad-796211e99a95',
+  'a3713604-bea4-443a-bb82-c942f328806f',
   'TCG: Mega Greninja ex Premium Collection',
   'trading-cards',
   'pokémon-tcg',
@@ -4282,9 +4282,9 @@ INSERT INTO products (
   'TCG: Mega Greninja ex Premium Collection available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Greninja ex Premium Collection',
   'TCG: Mega Greninja ex Premium Collection',
-  17,
-  11,
-  749,
+  19,
+  58,
+  625,
   ARRAY['https://m.media-amazon.com/images/I/91E+9GLiyyL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-24","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4294,7 +4294,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4323,7 +4323,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '2d7ba5c5-2386-4a81-aa75-ee4eb5619332',
+  'ba3d11d2-ca09-4fc3-b8a6-457046b26157',
   'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
   'trading-cards',
   'pokémon-tcg',
@@ -4337,12 +4337,12 @@ INSERT INTO products (
   'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
   NOW(),
   'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Bo...',
-  'Shop TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs) - Premium Trading Cards wit...',
+  'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs) available now - Authentic Tradin...',
   'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
   'TCG: Mega Evolution—Ascended Heroes Mega Feraligatr ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
-  11,
-  52,
-  419,
+  17,
+  51,
+  343,
   ARRAY['https://m.media-amazon.com/images/I/91KHF4XawRL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-25","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4352,7 +4352,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4381,7 +4381,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'cada4a73-71ea-4e53-bf75-fb8fe9fe2fd6',
+  '6ce798fd-1b43-44f4-af60-dbd518c6084c',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -4395,12 +4395,12 @@ INSERT INTO products (
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
   NOW(),
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
-  'Shop TCG: Mega Evolution—Chaos Rising Elite Trainer Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'TCG: Mega Evolution—Chaos Rising Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
   'TCG: Mega Evolution—Chaos Rising Elite Trainer Box',
-  1,
-  23,
-  819,
+  16,
+  36,
+  1027,
   ARRAY['https://m.media-amazon.com/images/I/81EPbaDcgQL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-26","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4410,7 +4410,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4439,7 +4439,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '3c31aac7-da1b-42c4-9a94-39c5b3c71a9c',
+  '2ac33e76-16e8-47c9-8890-e9c24d637f53',
   'TCG: Mega Evolution—Chaos Rising Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -4456,9 +4456,9 @@ INSERT INTO products (
   'Shop TCG: Mega Evolution—Chaos Rising Booster Bundle - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Chaos Rising Booster Bundle',
   'TCG: Mega Evolution—Chaos Rising Booster Bundle',
-  0,
-  51,
-  952,
+  19,
+  12,
+  445,
   ARRAY['https://m.media-amazon.com/images/I/81pdaHp6Q1L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-27","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4468,7 +4468,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4497,7 +4497,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'ae7f431d-f3dc-4c4b-9d01-feacf71cd840',
+  '964e4d62-75ce-4517-8f48-ef53e7949408',
   'TCG: Mega Evolution—Ascended Heroes Mega Emboar ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
   'trading-cards',
   'pokémon-tcg',
@@ -4514,9 +4514,9 @@ INSERT INTO products (
   'TCG: Mega Evolution—Ascended Heroes Mega Emboar ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs) available now - Authentic Trading Ca...',
   'TCG: Mega Evolution—Ascended Heroes Mega Emboar ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
   'TCG: Mega Evolution—Ascended Heroes Mega Emboar ex Box (1 Foil Promo Card, 1 Oversize Lenticular Card & 4 Booster Packs)',
-  2,
-  30,
-  868,
+  14,
+  39,
+  468,
   ARRAY['https://m.media-amazon.com/images/I/91tnj2G0NxL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-28","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4526,7 +4526,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4555,7 +4555,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '9c885bac-f8d8-4938-b21e-c2a6fdae0827',
+  '3b53bb35-562f-425c-b15a-1189f94acede',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
   'trading-cards',
   'pokémon-tcg',
@@ -4569,12 +4569,12 @@ INSERT INTO products (
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
   NOW(),
   'Pokemon Trading Card Game | First Partner Holo Card Set |...',
-  'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years available now - Authentic Trading Car...',
+  'Shop Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years - Premium Trading Cards with fas...',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
   'Pokemon Trading Card Game | First Partner Holo Card Set | Vol 1 | 30th Anniversary | Chinese | For Collectors 15+ Years',
-  4,
-  33,
-  1031,
+  14,
+  10,
+  252,
   ARRAY['https://m.media-amazon.com/images/I/61cWSgPfbUL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-29","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4584,7 +4584,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4613,7 +4613,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '7d8f1942-491c-42db-b72b-c377e906dd0a',
+  'aa36203e-5db7-4272-9031-e7feb6ee3b0a',
   'TCG: First Partner Illustration Collection —Series 2',
   'trading-cards',
   'pokémon-tcg',
@@ -4627,12 +4627,12 @@ INSERT INTO products (
   'TCG: First Partner Illustration Collection —Series 2',
   NOW(),
   'TCG: First Partner Illustration Collection —Series 2',
-  'Shop TCG: First Partner Illustration Collection —Series 2 - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'TCG: First Partner Illustration Collection —Series 2 available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: First Partner Illustration Collection —Series 2',
   'TCG: First Partner Illustration Collection —Series 2',
-  13,
-  15,
-  426,
+  16,
+  44,
+  305,
   ARRAY['https://m.media-amazon.com/images/I/81ve1KtO-pL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-30","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4642,7 +4642,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4671,7 +4671,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '7f9b5fdd-8c07-40dd-97c5-b62b1cc6dd4b',
+  '03d5dab4-8b34-44be-b299-01c47005c486',
   'TCG: Mega Evolution—Chaos Rising Booster Display',
   'trading-cards',
   'pokémon-tcg',
@@ -4685,12 +4685,12 @@ INSERT INTO products (
   'TCG: Mega Evolution—Chaos Rising Booster Display',
   NOW(),
   'TCG: Mega Evolution—Chaos Rising Booster Display',
-  'Shop TCG: Mega Evolution—Chaos Rising Booster Display - Premium Trading Cards with fast shipping. Best deals at FindHive.',
+  'TCG: Mega Evolution—Chaos Rising Booster Display available now - Authentic Trading Cards sourced directly. Order today.',
   'TCG: Mega Evolution—Chaos Rising Booster Display',
   'TCG: Mega Evolution—Chaos Rising Booster Display',
-  15,
-  10,
-  774,
+  18,
+  17,
+  305,
   ARRAY['https://m.media-amazon.com/images/I/71P7kd2+9AL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-31","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4700,7 +4700,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4729,7 +4729,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'bcb7a197-31d1-47d2-a22a-b3bf51445e0a',
+  'b1849205-868a-4fa0-8e76-2c4410adab87',
   'Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box',
   'trading-cards',
   'pokémon-tcg',
@@ -4743,12 +4743,12 @@ INSERT INTO products (
   'Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box',
   NOW(),
   'Perfect Order TCG Pokemon Compatible Random Assortment Bu...',
-  'Shop Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box - Premium Trading Cards wi...',
+  'Buy Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box at FindHive - Authentic Tra...',
   'Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box',
   'Perfect Order TCG Pokemon Compatible Random Assortment Bundle || Guaranteed Ultra Rare + 20 Random Cards + Dan123yal Deck Box',
-  19,
-  23,
-  790,
+  5,
+  17,
+  823,
   ARRAY['https://m.media-amazon.com/images/I/81NbLrjkZ7L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-32","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4758,7 +4758,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4787,7 +4787,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '8165528c-6c04-4901-8b79-45e3a803ee54',
+  'be929634-ea1b-4a28-aea4-23d870c55b5e',
   'TCG: Mega Moonlit Tin',
   'trading-cards',
   'pokémon-tcg',
@@ -4801,12 +4801,12 @@ INSERT INTO products (
   'TCG: Mega Moonlit Tin',
   NOW(),
   'TCG: Mega Moonlit Tin',
-  'Buy TCG: Mega Moonlit Tin at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop TCG: Mega Moonlit Tin - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Moonlit Tin',
   'TCG: Mega Moonlit Tin',
-  7,
-  41,
-  356,
+  6,
+  18,
+  728,
   ARRAY['https://m.media-amazon.com/images/I/81mm4CJGgFL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-33","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4816,7 +4816,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4845,7 +4845,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '310c84c5-3988-47b9-82d4-c6a2f4ec1c37',
+  '0fabfccb-acc2-43f5-87b9-a6a013e651d2',
   'TCG: Mega Evolution - Perfect Order - Booster - English',
   'trading-cards',
   'pokémon-tcg',
@@ -4859,12 +4859,12 @@ INSERT INTO products (
   'TCG: Mega Evolution - Perfect Order - Booster - English',
   NOW(),
   'TCG: Mega Evolution - Perfect Order - Booster - English',
-  'TCG: Mega Evolution - Perfect Order - Booster - English available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop TCG: Mega Evolution - Perfect Order - Booster - English - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution - Perfect Order - Booster - English',
   'TCG: Mega Evolution - Perfect Order - Booster - English',
-  9,
-  11,
-  1010,
+  12,
+  18,
+  455,
   ARRAY['https://m.media-amazon.com/images/I/81pq3Of+29L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-34","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4874,7 +4874,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4903,7 +4903,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '6bd8cc23-576d-4915-8ced-284948561b53',
+  '723c823d-6a96-4f9d-baf8-e255c92b6614',
   '2025 Pokémon TCG World Championships Deck',
   'trading-cards',
   'pokémon-tcg',
@@ -4917,12 +4917,12 @@ INSERT INTO products (
   '2025 Pokémon TCG World Championships Deck',
   NOW(),
   '2025 Pokémon TCG World Championships Deck',
-  'Buy 2025 Pokémon TCG World Championships Deck at FindHive - Authentic Trading Cards at competitive prices.',
+  '2025 Pokémon TCG World Championships Deck available now - Authentic Trading Cards sourced directly. Order today.',
   '2025 Pokémon TCG World Championships Deck',
   '2025 Pokémon TCG World Championships Deck',
   18,
-  47,
-  1014,
+  19,
+  160,
   ARRAY['https://m.media-amazon.com/images/I/91OaHQ8ZRtL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-35","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4932,7 +4932,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -4961,7 +4961,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'c3ac68e6-549a-4b85-8d4e-f82f708acd1f',
+  '7ebb8680-e212-4198-9a3a-e49661fe5302',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
   'trading-cards',
   'pokémon-tcg',
@@ -4975,12 +4975,12 @@ INSERT INTO products (
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
   NOW(),
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/...',
-  'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box available now - Authentic Trading Cards sourced directly. Order today.',
+  'Shop TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
   'TCG: Mega Evolution—Ascended Heroes Mega Meganium/Emboar/Feraligatr ex Box',
-  2,
-  43,
-  844,
+  17,
+  50,
+  793,
   ARRAY['https://m.media-amazon.com/images/I/91hWD1tF0KL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-36","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -4990,7 +4990,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5019,7 +5019,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '5afaa91e-dc1c-40ef-96a3-b4e111680ee3',
+  '57485d98-ce9b-40f1-969f-3288f134d61c',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -5036,9 +5036,9 @@ INSERT INTO products (
   'Buy TCG: Mega Evolution—Ascended Heroes Booster Bundle at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
   'TCG: Mega Evolution—Ascended Heroes Booster Bundle',
-  3,
-  53,
-  764,
+  9,
+  17,
+  747,
   ARRAY['https://m.media-amazon.com/images/I/81sZheTQIhL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-37","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5048,7 +5048,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5077,7 +5077,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '92bd1c67-3c53-4290-9c16-379662e3f13a',
+  'c493d2d1-b49a-4ce9-9095-7a053f32d8a1',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Pikachu and Tepig)',
   'trading-cards',
   'pokémon-tcg',
@@ -5094,9 +5094,9 @@ INSERT INTO products (
   'Shop Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Pikachu and Tepig) - Premium Trading Cards with fast shipping....',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Pikachu and Tepig)',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Pikachu and Tepig)',
-  0,
-  27,
-  684,
+  18,
+  49,
+  971,
   ARRAY['https://m.media-amazon.com/images/I/715zbD+OknL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-38","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5106,7 +5106,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5135,7 +5135,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'fe312555-f908-4b27-96e1-19ee4cfd91bf',
+  'd2e78c5c-81e3-41dc-a5ed-79bb71828a7c',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Zorua and Cramorant)',
   'trading-cards',
   'pokémon-tcg',
@@ -5152,9 +5152,9 @@ INSERT INTO products (
   'Shop Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Zorua and Cramorant) - Premium Trading Cards with fast shippin...',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Zorua and Cramorant)',
   'Pokemon TCG Trading Card Game: Mega Evolution: Ascended Heroes Single Mini Tin - 2 Packs (Zorua and Cramorant)',
-  16,
-  31,
-  524,
+  1,
+  40,
+  909,
   ARRAY['https://m.media-amazon.com/images/I/711kqNvyaJL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-39","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5164,7 +5164,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5193,7 +5193,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0cc69145-1a6e-498a-b4ed-944987346772',
+  '27c99669-8e0e-422d-9227-6f974f1d404f',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Larry''s Komala)',
   'trading-cards',
   'pokémon-tcg',
@@ -5210,9 +5210,9 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Larry''s Komala) available now - Authentic Trading Cards sou...',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Larry''s Komala)',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Larry''s Komala)',
-  18,
-  47,
-  1081,
+  8,
+  40,
+  1039,
   ARRAY['https://m.media-amazon.com/images/I/51GjsP-pZNL._AC_UL930_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-40","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5222,7 +5222,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5251,7 +5251,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '1658503d-f5d2-47d4-8cb5-a3f245e4c851',
+  '8ce6aa65-15a8-4148-8120-540901d6111d',
   'TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega Charizard X ex)',
   'trading-cards',
   'pokémon-tcg',
@@ -5265,12 +5265,12 @@ INSERT INTO products (
   'TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega Charizard X ex)',
   NOW(),
   'TCG Trading Card Game: Mega Charizard ex Promo Card and T...',
-  'Buy TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega Chariza...',
+  'TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega Charizard X...',
   'TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega C...',
   'TCG Trading Card Game: Mega Charizard ex Promo Card and Tin, Comes with 4 Packs (2 Phantasmal Flames, 1 Journey Together, 1 mega Evolution) (Mega Charizard X ex)',
-  16,
-  56,
-  715,
+  13,
+  29,
+  688,
   ARRAY['https://m.media-amazon.com/images/I/71FHSzi03PL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-41","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5280,7 +5280,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5309,7 +5309,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'edce3867-050a-4bcf-85fd-d99764c78930',
+  '391b6c13-3cd8-4f68-a0db-cf94a9f42b00',
   'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin',
   'trading-cards',
   'pokémon-tcg',
@@ -5323,12 +5323,12 @@ INSERT INTO products (
   'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin',
   NOW(),
   'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolut...',
-  'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin available now - Authentic Trading Cards s...',
+  'Shop Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin - Premium Trading Cards with fast sh...',
   'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin',
   'Pokemon TCG Trading Card Game 2 Booster Packs Mega Evolutions and Phantasmal Flames with Raikou Promo Card and Coin',
-  5,
-  52,
-  901,
+  11,
+  38,
+  171,
   ARRAY['https://m.media-amazon.com/images/I/51HN4gaiWyL._AC_UL948_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-42","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5338,7 +5338,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5367,7 +5367,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '0e148f0c-699b-4c14-a855-f09e87ae29b6',
+  '430fda10-ff88-4377-81f8-d9c7defe3e0e',
   'TCG Mega Evolution Ascended Heroes Deluxe Pin Collection, 3 Foil Promo Cards, 1 Deluxe Pin, 5 Booster Packs',
   'trading-cards',
   'pokémon-tcg',
@@ -5384,9 +5384,9 @@ INSERT INTO products (
   'TCG Mega Evolution Ascended Heroes Deluxe Pin Collection, 3 Foil Promo Cards, 1 Deluxe Pin, 5 Booster Packs available now - Authentic Trading Cards sourced d...',
   'TCG Mega Evolution Ascended Heroes Deluxe Pin Collection, 3 Foil Promo Cards, 1 Deluxe Pin, 5 Booster Packs',
   'TCG Mega Evolution Ascended Heroes Deluxe Pin Collection, 3 Foil Promo Cards, 1 Deluxe Pin, 5 Booster Packs',
-  9,
-  22,
-  623,
+  3,
+  15,
+  531,
   ARRAY['https://m.media-amazon.com/images/I/51xVyDFLPNL._AC_UL912_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-43","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5396,7 +5396,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5425,7 +5425,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'a9432f8a-8e27-455b-8d49-c25d24e35b14',
+  '35e1d5e0-6f07-4d26-9d69-128241bd5952',
   'Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight Maquerade and Coin',
   'trading-cards',
   'pokémon-tcg',
@@ -5439,12 +5439,12 @@ INSERT INTO products (
   'Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight Maquerade and Coin',
   NOW(),
   'Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG ...',
-  'Shop Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight Maque...',
+  'Buy Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight Maquer...',
   'Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight ...',
   'Team Rocket''s Articuno, Zapdos and Tyranitar Pokemon TCG Trading Card Game Includes 3 Promo Cards, with 2 Booster Packs Surging Sparks, Twighlight Maquerade and Coin',
-  2,
-  57,
-  900,
+  19,
+  33,
+  988,
   ARRAY['https://m.media-amazon.com/images/I/61wehTudXEL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-44","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5454,7 +5454,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5483,7 +5483,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '2fbe0875-e608-4d54-b088-cac2ecb21423',
+  '95664891-5268-4ac5-b1f8-52dc023fe2d3',
   'TCG: Mega Lucario ex League Battle Deck',
   'trading-cards',
   'pokémon-tcg',
@@ -5497,12 +5497,12 @@ INSERT INTO products (
   'TCG: Mega Lucario ex League Battle Deck',
   NOW(),
   'TCG: Mega Lucario ex League Battle Deck',
-  'TCG: Mega Lucario ex League Battle Deck available now - Authentic Trading Cards sourced directly. Order today.',
+  'Buy TCG: Mega Lucario ex League Battle Deck at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Mega Lucario ex League Battle Deck',
   'TCG: Mega Lucario ex League Battle Deck',
-  19,
-  54,
-  585,
+  17,
+  57,
+  722,
   ARRAY['https://m.media-amazon.com/images/I/918tqXfPc9L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-45","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5512,7 +5512,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5541,7 +5541,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '4d446a08-eb99-4524-80eb-f3ab01ed108d',
+  '4d77e049-742e-4812-af6e-f1735d1b3c69',
   'Pokemon Trading Card Game TCG - Mega Evolution: Ascended Heroes 10-Card Booster Pack (English)',
   'trading-cards',
   'pokémon-tcg',
@@ -5558,9 +5558,9 @@ INSERT INTO products (
   'Shop Pokemon Trading Card Game TCG - Mega Evolution: Ascended Heroes 10-Card Booster Pack (English) - Premium Trading Cards with fast shipping. Best deals at...',
   'Pokemon Trading Card Game TCG - Mega Evolution: Ascended Heroes 10-Card Booster Pack (English)',
   'Pokemon Trading Card Game TCG - Mega Evolution: Ascended Heroes 10-Card Booster Pack (English)',
-  9,
-  55,
-  1008,
+  2,
+  35,
+  252,
   ARRAY['https://m.media-amazon.com/images/I/61cITjlHG8L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-46","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5570,7 +5570,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5599,7 +5599,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '83a9eeb9-1412-469a-bfb9-42e4faf8df19',
+  'c74e55c7-0877-4cdc-87cb-e18e60b540bb',
   'TCG: Enhanced 2-Pack Blister (March 2026) - English',
   'trading-cards',
   'pokémon-tcg',
@@ -5616,9 +5616,9 @@ INSERT INTO products (
   'Buy TCG: Enhanced 2-Pack Blister (March 2026) - English at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Enhanced 2-Pack Blister (March 2026) - English',
   'TCG: Enhanced 2-Pack Blister (March 2026) - English',
-  9,
-  56,
-  581,
+  0,
+  46,
+  412,
   ARRAY['https://m.media-amazon.com/images/I/71-PJM93klL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-47","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5628,7 +5628,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5657,7 +5657,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'aa73b6c2-50e7-4793-bbb4-2e4c8af84650',
+  '627dcf3b-ebbb-4482-8275-d24c4e83b192',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Erika''s Tangela)',
   'trading-cards',
   'pokémon-tcg',
@@ -5674,9 +5674,9 @@ INSERT INTO products (
   'Buy Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Erika''s Tangela) at FindHive - Authentic Trading Cards ...',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Erika''s Tangela)',
   'Pokemon TCG Trading Card Game Mega Evolutions Ascended Heroes 2 Packs, 1 Promo Card and one Coin (Erika''s Tangela)',
-  1,
-  55,
-  316,
+  0,
+  39,
+  789,
   ARRAY['https://m.media-amazon.com/images/I/51FuzzN-sXL._AC_UL928_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-48","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5686,7 +5686,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5715,7 +5715,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '31ef00ae-0af9-4738-8657-881a05c1aa9b',
+  '87b55923-e74c-49df-a116-6b5be7efe9b2',
   'Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle',
   'trading-cards',
   'pokémon-tcg',
@@ -5729,12 +5729,12 @@ INSERT INTO products (
   'Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle',
   NOW(),
   'Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bu...',
-  'Buy Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle',
   'Pokemon TCG: Scarlet and Violet Shrouded Fable Booster Bundle',
-  9,
-  29,
-  143,
+  17,
+  56,
+  187,
   ARRAY['https://m.media-amazon.com/images/I/81QjecMWWAL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-49","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5744,7 +5744,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5773,7 +5773,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'aef010ff-b882-424f-bc0f-eba587e56f56',
+  'c970d1a3-6ce2-4fbd-b4d6-cb18fae7ff0a',
   'TCG: Collector Chest',
   'trading-cards',
   'pokémon-tcg',
@@ -5790,9 +5790,9 @@ INSERT INTO products (
   'Buy TCG: Collector Chest at FindHive - Authentic Trading Cards at competitive prices.',
   'TCG: Collector Chest',
   'TCG: Collector Chest',
-  16,
-  53,
-  478,
+  5,
+  13,
+  858,
   ARRAY['https://m.media-amazon.com/images/I/81onJxiFfKL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-50","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5802,7 +5802,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5831,7 +5831,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  'f4fa1ad0-2a73-40d2-9a4d-07aaef8468cb',
+  '218f28d5-c026-40b4-a18b-eee908275b8b',
   'Pokemon TCG: Crown Zenith Elite Trainer Box',
   'trading-cards',
   'pokémon-tcg',
@@ -5848,9 +5848,9 @@ INSERT INTO products (
   'Pokemon TCG: Crown Zenith Elite Trainer Box available now - Authentic Trading Cards sourced directly. Order today.',
   'Pokemon TCG: Crown Zenith Elite Trainer Box',
   'Pokemon TCG: Crown Zenith Elite Trainer Box',
-  11,
-  23,
-  604,
+  1,
+  44,
+  645,
   ARRAY['https://m.media-amazon.com/images/I/61S0G8AHUtL._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-51","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5860,7 +5860,7 @@ INSERT INTO products (
   NOW()
 );
 
-INSERT INTO products (
+INSERT INTO public.products (
   id,
   title,
   category,
@@ -5889,7 +5889,7 @@ INSERT INTO products (
   low_stock_threshold,
   updated_at
 ) VALUES (
-  '9241b12f-36d0-4970-bb36-cb1fe70c03ab',
+  'acd4bdae-ab22-4fde-9a6a-22dab5669bc1',
   'The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal',
   'trading-cards',
   'pokémon-tcg',
@@ -5903,12 +5903,12 @@ INSERT INTO products (
   'The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal',
   NOW(),
   'The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melm...',
-  'Buy The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal at FindHive - Authentic Trading Cards at competitive prices.',
+  'Shop The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal - Premium Trading Cards with fast shipping. Best deals at FindHive.',
   'The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal',
   'The Pokemon TCG: Pokemon GO V Battle Deck Mewtwo vs. Melmetal',
-  10,
-  54,
-  155,
+  17,
+  45,
+  985,
   ARRAY['https://m.media-amazon.com/images/I/61vsAiUvj9L._AC_UL960_FMwebp_QL65_.jpg'],
   '{"source_file":"pokemon cards finale.xlsx","web_scraper_order":"1785748090-52","amazon_url":"https://www.amazon.com/s?k=pokemon+tcg&s=date-desc-rank&crid=EUDFZ74VQDRA&qid=1785747874&sprefix=pokemon+%2Caps%2C777&ref=sr_st_date-desc-rank&ds=v1%3A6P3UMlgJzYWYAI0ByUtZgG%2FK%2BEwf0VWhx5nRglfCJao"}'::jsonb,
   'published',
@@ -5919,7 +5919,7 @@ INSERT INTO products (
 );
 
 -- Verify import
-SELECT COUNT(*) as total_products FROM products WHERE status = 'published';
+SELECT COUNT(*) as total_products FROM public.products WHERE status = 'published';
 
 -- Check products by category
-SELECT category, COUNT(*) as count FROM products GROUP BY category ORDER BY count DESC;
+SELECT category, COUNT(*) as count FROM public.products GROUP BY category ORDER BY count DESC;
