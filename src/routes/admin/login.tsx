@@ -1,17 +1,19 @@
-import { useState } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { supabase } from "@/integrations/supabase/client";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
-import { toast } from "sonner";
+import { adminSignIn } from "@/lib/admin/auth";
 
 export const Route = createFileRoute("/admin/login")({
+  ssr: false,
   head: () => ({
     meta: [
-      { title: "Admin Login — FindHive" },
-      { name: "description", content: "Secure FindHive admin login for managing products, orders, customers, and content." },
+      { title: "Admin sign in — findhive" },
+      { name: "description", content: "Secure sign in for the findhive store administration panel." },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
   component: AdminLogin,
@@ -21,85 +23,64 @@ function AdminLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [mode, setMode] = useState("login");
+  const [busy, setBusy] = useState(false);
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setLoading(true);
-
-    if (mode === "reset") {
-      if (!email) {
-        toast.error("Enter your email to reset the password.");
-        setLoading(false);
-        return;
-      }
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/admin/login`,
-      });
-      setLoading(false);
-      if (error) {
-        toast.error(error.message);
-      } else {
-        toast.success("Password recovery email sent.");
-      }
-      return;
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setBusy(true);
+    try {
+      await adminSignIn(email, password);
+      toast.success("Welcome back");
+      navigate({ to: "/admin", replace: true });
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Sign in failed");
+    } finally {
+      setBusy(false);
     }
-
-    if (!email || !password) {
-      toast.error("Email and password are required.");
-      setLoading(false);
-      return;
-    }
-
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setLoading(false);
-    if (error) {
-      toast.error(error.message);
-      return;
-    }
-
-    toast.success("Signed in successfully.");
-    navigate("/admin/dashboard");
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 py-20">
-      <div className="mx-auto w-full max-w-md px-4">
-        <Card className="border border-border bg-white p-8 shadow-lg">
-          <div className="mb-6 text-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500">FindHive Admin</p>
-            <h1 className="mt-4 text-3xl font-semibold text-slate-900">Secure login</h1>
-            <p className="mt-2 text-sm text-slate-600">Only authorized staff can manage products, orders, and store settings.</p>
+    <div className="grid min-h-screen place-items-center bg-primary px-4">
+      <div className="w-full max-w-sm rounded-2xl bg-card p-8 shadow-2xl">
+        <div className="mb-6 flex items-center gap-2 text-primary">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent text-accent-foreground">
+            <Lock size={17} />
+          </span>
+          <div>
+            <h1 className="text-lg font-black leading-none">findhive admin</h1>
+            <p className="text-xs text-muted-foreground">Store administration</p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
-            </div>
-            {mode === "login" ? (
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
-              </div>
-            ) : null}
-            <div className="flex items-center justify-between gap-3">
-              <Button type="submit" className="min-w-[8rem]" disabled={loading}>
-                {mode === "login" ? "Sign in" : "Send reset email"}
-              </Button>
-              <button
-                type="button"
-                onClick={() => setMode(mode === "login" ? "reset" : "login")}
-                className="text-sm text-slate-600 underline-offset-4 transition hover:text-slate-900"
-              >
-                {mode === "login" ? "Forgot password?" : "Back to login"}
-              </button>
-            </div>
-          </form>
-          <p className="mt-6 text-sm text-slate-500">
-            Admin sign in is protected by Supabase Authentication. Regular shoppers cannot access this area.
-          </p>
-        </Card>
+        </div>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="space-y-1.5">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              autoComplete="username"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="space-y-1.5">
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <Button type="submit" disabled={busy} className="w-full rounded-xl font-bold">
+            {busy ? "Signing in…" : "Sign in"}
+          </Button>
+        </form>
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Admin access only. All actions are logged.
+        </p>
       </div>
     </div>
   );

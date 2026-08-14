@@ -23,7 +23,7 @@ export const Route = createFileRoute("/search")({
   head: ({ loaderData }) => ({
     meta: [
       { title: "Search Results — findhive" },
-      { name: "description", content: "Search the findhive catalog for top-rated products and fast shipping deals." },
+      { name: "description", content: "Search across trusted retailers for the best deals on findhive." },
     ],
   }),
   component: Search,

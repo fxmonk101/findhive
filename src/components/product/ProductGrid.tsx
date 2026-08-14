@@ -5,7 +5,7 @@ import { ProductCardSkeleton } from "./ProductCardSkeleton";
 export function ProductGrid({ products, loading, empty }: { products: Product[]; loading?: boolean; empty?: React.ReactNode }) {
   if (loading) {
     return (
-      <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
+      <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
         {Array.from({ length: 8 }).map((_, i) => <ProductCardSkeleton key={i} />)}
       </div>
     );
@@ -14,7 +14,7 @@ export function ProductGrid({ products, loading, empty }: { products: Product[];
     return <div className="rounded-lg border border-dashed p-12 text-center text-muted-foreground">{empty ?? "No products found."}</div>;
   }
   return (
-    <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
+    <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
       {products.map((p) => <ProductCard key={p.id} product={p} />)}
     </div>
   );

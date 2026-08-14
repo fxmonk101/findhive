@@ -7,6 +7,7 @@ import { Newsletter } from "@/components/home/Newsletter";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import { CATEGORIES } from "@/lib/categories";
 import { getFeatured, listByCategory } from "@/lib/products";
+import { useT } from "@/lib/i18n";
 
 const featuredOpts = queryOptions({ queryKey: ["featured"], queryFn: () => getFeatured(8) });
 const catOpts = (slug: string) =>
@@ -21,6 +22,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const t = useT();
   const featured = useQuery(featuredOpts);
   return (
     <>
@@ -30,25 +32,25 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-5 flex items-end justify-between gap-4">
             <div>
-              <h2 className="text-xl font-bold text-primary md:text-2xl">Trending Now</h2>
-              <p className="text-sm text-muted-foreground">Restocked this week — ready to ship from our warehouse</p>
+              <h2 className="text-xl font-bold text-primary md:text-2xl">{t("home.trending")}</h2>
+              <p className="text-sm text-muted-foreground">{t("home.trendingSub")}</p>
             </div>
           </div>
           <ProductGrid products={featured.data ?? []} loading={featured.isLoading} />
         </div>
       </section>
-      {CATEGORIES.map((c) => (
-        <CategoryShowcaseWrapper key={c.slug} slug={c.slug} />
+      {CATEGORIES.map((c, i) => (
+        <CategoryShowcaseWrapper key={c.slug} slug={c.slug} index={i} />
       ))}
       <Newsletter />
     </>
   );
 }
 
-function CategoryShowcaseWrapper({ slug }: { slug: string }) {
+function CategoryShowcaseWrapper({ slug, index }: { slug: string; index: number }) {
   const q = useQuery(catOpts(slug));
   const cat = CATEGORIES.find((c) => c.slug === slug)!;
   if (!q.data?.length) return null;
-  return <CategoryShowcase category={cat} products={q.data} />;
+  return <CategoryShowcase category={cat} products={q.data} index={index} />;
 }
 

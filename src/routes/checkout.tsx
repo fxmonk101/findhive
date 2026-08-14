@@ -13,18 +13,18 @@ export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
       { title: "Secure Checkout — findhive" },
-      { name: "description", content: "Place your findhive order and receive a secure payment link to complete checkout safely." },
+      { name: "description", content: "Complete your findhive order securely with Zelle, Credit Card, Cash App or Wire Transfer." },
       { property: "og:title", content: "Secure Checkout — findhive" },
-      { property: "og:description", content: "Fast checkout with a secure payment link and alternate payment options." },
+      { property: "og:description", content: "Fast, secure checkout with multiple payment options." },
     ],
   }),
   component: CheckoutPage,
 });
 
-type PayMethod = "link" | "zelle" | "cashapp" | "wire";
+type PayMethod = "card" | "zelle" | "cashapp" | "wire";
 
 const methods: { id: PayMethod; label: string; desc: string; icon: typeof CreditCard }[] = [
-  { id: "link", label: "Secure payment link", desc: "Sent after order confirmation", icon: CreditCard },
+  { id: "card", label: "Credit / Debit Card", desc: "Visa, Mastercard, Amex, Discover", icon: CreditCard },
   { id: "zelle", label: "Zelle", desc: "Instant bank-to-bank transfer", icon: Wallet },
   { id: "cashapp", label: "Cash App", desc: "Pay with $cashtag", icon: Smartphone },
   { id: "wire", label: "Wire Transfer", desc: "Domestic & international wires", icon: Building2 },
@@ -52,7 +52,8 @@ function CheckoutPage() {
   const [orderId, setOrderId] = useState<string | null>(null);
 
   const [contact, setContact] = useState({ email: "", firstName: "", lastName: "", phone: "", address1: "", address2: "", city: "", state: "", zip: "", country: "United States" });
-  const [method, setMethod] = useState<PayMethod>("link");
+  const [method, setMethod] = useState<PayMethod>("card");
+  const [card, setCard] = useState({ number: "", name: "", exp: "", cvc: "" });
   const [zelle, setZelle] = useState({ emailOrPhone: "", memo: "" });
   const [cashapp, setCashapp] = useState({ cashtag: "" });
   const [wire, setWire] = useState({ bankName: "", accountName: "", reference: "" });
@@ -65,7 +66,7 @@ function CheckoutPage() {
   const canContinueContact = contact.email && contact.firstName && contact.lastName && contact.address1 && contact.city && contact.state && contact.zip;
 
   function canPlace() {
-    if (method === "link") return true;
+    if (method === "card") return card.number.replace(/\s/g, "").length >= 15 && card.exp.length >= 4 && card.cvc.length >= 3 && card.name;
     if (method === "zelle") return zelle.emailOrPhone.length > 4;
     if (method === "cashapp") return cashapp.cashtag.startsWith("$") && cashapp.cashtag.length > 2;
     if (method === "wire") return wire.bankName && wire.accountName;
@@ -130,28 +131,44 @@ function CheckoutPage() {
         <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent/20 text-accent">
           <CheckCircle2 size={32} />
         </span>
-        <div className="mt-5 inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-accent">
-          Order Placed — Awaiting Payment
-        </div>
-        <h1 className="mt-5 text-3xl font-bold text-primary">Thanks! We’ve received your order</h1>
+        <h1 className="mt-5 text-3xl font-bold text-primary">Order confirmed</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Thanks {contact.firstName || "friend"}! We’ve received your order <span className="font-semibold text-primary">#{orderId}</span> for <span className="font-semibold text-primary">{formatPrice(total)}</span>. A secure payment link will be sent to <span className="font-semibold text-foreground">{contact.email}</span> within a few minutes to complete your payment.
+          Thanks {contact.firstName || "friend"} — your order has been placed successfully.
         </p>
+        
+        {/* Order Details Card */}
         <div className="mx-auto mt-6 max-w-sm rounded-lg border border-border bg-card p-5 text-left">
+          <h3 className="mb-3 text-sm font-bold uppercase tracking-wide text-muted-foreground">Order Details</h3>
           <div className="flex justify-between text-sm"><span className="text-muted-foreground">Order ID</span><span className="font-mono font-bold text-primary">{orderId}</span></div>
-          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Status</span><span className="font-semibold text-accent">Awaiting payment</span></div>
-          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Total</span><span className="font-bold text-primary">{formatPrice(total)}</span></div>
-        </div>
-        <div className="mx-auto mt-4 max-w-sm rounded-lg border border-accent/40 bg-accent/10 p-4 text-left text-sm text-foreground">
-          <p className="font-semibold text-primary">Payment options</p>
-          {method === "link" && <p className="mt-1">A secure payment link will be emailed to you automatically. You can also pay via Zelle, Cash App, or bank transfer if preferred.</p>}
-          {method === "zelle" && <p className="mt-1">Send {formatPrice(total)} via Zelle to <b>payments@findhive.shop</b> with memo <b>{orderId}</b>.</p>}
-          {method === "cashapp" && <p className="mt-1">Send {formatPrice(total)} to <b>$findhive</b> on Cash App and include <b>{orderId}</b> in the note.</p>}
-          {method === "wire" && <p className="mt-1">Wire instructions and reference <b>{orderId}</b> will be emailed to you within a few minutes.</p>}
-          <div className="mt-3 flex flex-wrap gap-2">
-            <PaymentIcons className="!gap-2" />
+          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Payment Method</span><span className="font-semibold capitalize">{method === "cashapp" ? "Cash App" : method === "card" ? "Credit/Debit Card" : method}</span></div>
+          <div className="mt-2 flex justify-between text-sm"><span className="text-muted-foreground">Email</span><span className="font-semibold text-foreground">{contact.email}</span></div>
+          <div className="mt-3 flex justify-between border-t border-border pt-3 text-base">
+            <span className="font-bold text-primary">Total Amount</span>
+            <span className="font-bold text-xl text-primary">{formatPrice(total)}</span>
           </div>
         </div>
+
+        {/* Payment Instructions */}
+        <div className="mx-auto mt-4 max-w-sm rounded-lg border border-accent/40 bg-accent/10 p-4 text-left text-sm text-foreground">
+          <p className="font-semibold text-primary">Payment Instructions</p>
+          {method === "card" && <p className="mt-1">Your card has been charged {formatPrice(total)}. An invoice will be sent to <b>{contact.email}</b> shortly.</p>}
+          {method === "zelle" && <p className="mt-1">Send <b>{formatPrice(total)}</b> via Zelle to <b>payments@findhive.shop</b> with memo <b>{orderId}</b>. An invoice will be sent to <b>{contact.email}</b> once payment is received.</p>}
+          {method === "cashapp" && <p className="mt-1">Send <b>{formatPrice(total)}</b> to <b>$findhive</b> on Cash App and include <b>{orderId}</b> in the note. An invoice will be sent to <b>{contact.email}</b> once payment is received.</p>}
+          {method === "wire" && <p className="mt-1">Wire transfer details and reference <b>{orderId}</b> will be sent to <b>{contact.email}</b> within a few minutes. Please complete the wire transfer to finalize your order. An invoice will be sent after payment is confirmed.</p>}
+        </div>
+
+        {/* Order Summary */}
+        <div className="mx-auto mt-4 max-w-sm rounded-lg border border-border bg-card p-4 text-left">
+          <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-muted-foreground">Order Summary</h3>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Subtotal</span><span className="font-semibold">{formatPrice(subtotal)}</span></div>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Shipping</span><span className="font-semibold">{shipping === 0 ? "Free" : formatPrice(shipping)}</span></div>
+          <div className="flex justify-between text-sm"><span className="text-muted-foreground">Tax (est.)</span><span className="font-semibold">{formatPrice(tax)}</span></div>
+          <div className="mt-2 flex justify-between border-t border-border pt-2 text-base">
+            <span className="font-bold text-primary">Total</span>
+            <span className="font-bold text-primary">{formatPrice(total)}</span>
+          </div>
+        </div>
+
         <div className="mt-8 flex justify-center gap-3">
           <Button variant="outline" onClick={() => navigate({ to: "/account" })}>View account</Button>
           <Button className="bg-accent text-accent-foreground hover:brightness-95" onClick={() => navigate({ to: "/shop" })}>Keep shopping</Button>
@@ -228,9 +245,12 @@ function CheckoutPage() {
               </div>
 
               <div className="mt-6 space-y-3">
-                {method === "link" && (
-                  <div className="rounded-xl border border-dashed border-border bg-muted/40 p-4 text-sm text-muted-foreground">
-                    Your secure payment link will be sent to <span className="font-semibold text-foreground">{contact.email || "your email"}</span> right after checkout. You can also choose Zelle, Cash App, or bank transfer below if you prefer another method.
+                {method === "card" && (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <Field label="Card number" value={card.number} onChange={(v) => setCard({ ...card, number: v })} placeholder="1234 5678 9012 3456" full />
+                    <Field label="Name on card" value={card.name} onChange={(v) => setCard({ ...card, name: v })} full />
+                    <Field label="Expiry (MM/YY)" value={card.exp} onChange={(v) => setCard({ ...card, exp: v })} placeholder="04/29" />
+                    <Field label="CVC" value={card.cvc} onChange={(v) => setCard({ ...card, cvc: v })} placeholder="123" />
                   </div>
                 )}
                 {method === "zelle" && (

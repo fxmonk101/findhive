@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Layers, Watch, Gem, Backpack, Mountain } from "lucide-react";
+import { Layers, Watch, Gem, Mountain } from "lucide-react";
 import catTradingCards from "@/assets/cat-trading-cards.jpg";
 import catWatches from "@/assets/cat-watches.jpg";
 import catFitness from "@/assets/cat-fitness.jpg";
@@ -27,7 +27,6 @@ export const CATEGORIES: Category[] = [
       { slug: "pokemon-tcg", name: "Pokémon TCG" },
       { slug: "nba-cards", name: "NBA Trading Cards" },
       { slug: "nfl-cards", name: "NFL Trading Cards" },
-      { slug: "card-accessories", name: "Card Accessories" },
     ],
   },
   {
@@ -38,7 +37,6 @@ export const CATEGORIES: Category[] = [
     subcategories: [
       { slug: "mens-watches", name: "Men's Watches" },
       { slug: "womens-watches", name: "Women's Watches" },
-      { slug: "watch-accessories", name: "Watch Accessories" },
     ],
   },
   {
@@ -53,17 +51,6 @@ export const CATEGORIES: Category[] = [
     ],
   },
   {
-    slug: "bags",
-    name: "Bags",
-    icon: Backpack,
-    subcategories: [
-      { slug: "handbags", name: "Handbags & Purses" },
-      { slug: "backpacks", name: "Backpacks" },
-      { slug: "travel-bags", name: "Travel & Duffel Bags" },
-      { slug: "wallets", name: "Wallets & Small Accessories" },
-    ],
-  },
-  {
     slug: "outdoor-fitness",
     name: "Outdoor & Fitness",
     icon: Mountain,
@@ -71,9 +58,6 @@ export const CATEGORIES: Category[] = [
     subcategories: [
       { slug: "camping-hiking", name: "Camping & Hiking" },
       { slug: "fitness-equipment", name: "Fitness Equipment" },
-      { slug: "vibration-plates", name: "Vibration Plate Machines" },
-      { slug: "cycling", name: "Cycling Gear" },
-      { slug: "sports-recreation", name: "Sports & Recreation" },
     ],
   },
 ];

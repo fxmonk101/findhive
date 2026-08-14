@@ -1,9 +1,8 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { useQuery, queryOptions } from "@tanstack/react-query";
 import { useEffect, useMemo, useState } from "react";
-import { ChevronRight, Heart, ShoppingBag, Zap, Minus, Plus, Star } from "lucide-react";
+import { ChevronRight, Heart, ShoppingBag, Zap, Minus, Plus } from "lucide-react";
 import { toast } from "sonner";
-import { z } from "zod";
 import { getProduct, getRelated } from "@/lib/products";
 import { getCategory, getSubcategory } from "@/lib/categories";
 import { RatingStars } from "@/components/product/RatingStars";
@@ -12,14 +11,17 @@ import { ProductGrid } from "@/components/product/ProductGrid";
 import { ImageGallery } from "@/components/product/ImageGallery";
 import { ViewerBadge } from "@/components/product/ViewerBadge";
 import { TrustBadges } from "@/components/product/TrustBadges";
+import { ProductDescription } from "@/components/product/ProductDescription";
+import { NotifyMeForm } from "@/components/product/NotifyMeForm";
+import { ProductReviews } from "@/components/product/ProductReviews";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useWishlist } from "@/lib/stores/wishlist";
 import { useCart } from "@/lib/stores/cart";
-import { useReviews } from "@/lib/stores/reviews";
 import { useRecentlyViewed } from "@/lib/stores/recently-viewed";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatPrice } from "@/lib/format";
+import { useT } from "@/lib/i18n";
 
 const productOpts = (id: string) =>
   queryOptions({ queryKey: ["product", id], queryFn: () => getProduct(id) });
@@ -61,6 +63,7 @@ export const Route = createFileRoute("/product/$id")({
 });
 
 function ProductPage() {
+  const t = useT();
   const { id } = Route.useParams();
   const { data: product } = useQuery(productOpts(id));
   const related = useQuery({
@@ -133,9 +136,15 @@ function ProductPage() {
             {sub && <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent">{sub.name}</div>}
             <h1 className="text-3xl font-black leading-tight text-primary md:text-4xl">{product.title}</h1>
 
-            <a href="#reviews" className="mt-3 inline-flex w-fit items-center gap-2 hover:opacity-90">
-              <RatingStars rating={product.rating} reviewCount={product.review_count} />
-            </a>
+            {product.review_count > 0 ? (
+              <a href="#reviews" className="mt-3 inline-flex w-fit items-center gap-2 hover:opacity-90">
+                <RatingStars rating={product.rating} reviewCount={product.review_count} />
+              </a>
+            ) : (
+              <a href="#reviews" className="mt-3 w-fit text-sm text-muted-foreground hover:text-accent">
+                No reviews yet — be the first to review this product
+              </a>
+            )}
 
             <div className="mt-5 flex flex-wrap items-baseline gap-4">
               <PriceTag price={product.price} original={product.original_price} size="lg" />
@@ -150,8 +159,8 @@ function ProductPage() {
               ) : (
                 <span className="font-semibold text-destructive">Out of stock</span>
               )}
-              {hydrated && <ViewerBadge count={product.viewer_count} size="md" />}
-              {product.sold_count >= 20 && (
+              {hydrated && inStock && <ViewerBadge count={product.viewer_count} size="md" />}
+              {product.sold_count > 5 && (
                 <span className="text-xs text-muted-foreground">
                   <span className="font-semibold text-primary">{product.sold_count.toLocaleString()}</span> sold this month
                 </span>
@@ -164,6 +173,14 @@ function ProductPage() {
               </p>
             )}
 
+            {!inStock ? (
+              <div className="mt-7 space-y-4">
+                <Button size="lg" disabled variant="secondary" className="w-full rounded-xl sm:w-auto sm:min-w-[220px]">
+                  Out of Stock
+                </Button>
+                <NotifyMeForm productTitle={product.title} />
+              </div>
+            ) : (
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center rounded-xl border border-border bg-card">
                 <button
@@ -188,7 +205,7 @@ function ProductPage() {
                 className="min-w-[180px] flex-1 rounded-xl bg-accent text-accent-foreground shadow-sm hover:brightness-95 sm:flex-none"
                 onClick={() => doAdd()}
               >
-                <ShoppingBag size={18} className="mr-2" /> Add to Cart
+                <ShoppingBag size={18} className="mr-2" /> {t("product.addToCart")}
               </Button>
               <Button
                 size="lg"
@@ -197,7 +214,7 @@ function ProductPage() {
                 className="min-w-[140px] flex-1 rounded-xl border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground sm:flex-none"
                 onClick={buyNow}
               >
-                <Zap size={18} className="mr-2" /> Buy Now
+                <Zap size={18} className="mr-2" /> {t("product.buyNow")}
               </Button>
               <Button
                 variant="ghost"
@@ -209,6 +226,17 @@ function ProductPage() {
                 <Heart size={18} className={wishlisted ? "fill-accent text-accent" : ""} />
               </Button>
             </div>
+            )}
+            {!inStock && (
+              <Button
+                variant="ghost"
+                onClick={() => toggleWish(product.id)}
+                aria-pressed={wishlisted}
+                className="mt-3 w-fit rounded-xl px-2"
+              >
+                <Heart size={18} className={wishlisted ? "mr-2 fill-accent text-accent" : "mr-2"} /> Save for later
+              </Button>
+            )}
 
             <div className="mt-8">
               <TrustBadges compact />
@@ -221,20 +249,20 @@ function ProductPage() {
           <Tabs defaultValue="description">
             <TabsList className="mb-4 h-auto flex-wrap bg-transparent p-0">
               <TabsTrigger value="description" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Description
+                {t("product.description")}
               </TabsTrigger>
               <TabsTrigger value="info" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
                 Additional Information
               </TabsTrigger>
               <TabsTrigger value="reviews" className="rounded-lg px-4 py-2 text-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
-                Reviews ({product.review_count})
+                {t("product.reviewsTab")} ({product.review_count})
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="description" className="rounded-2xl border border-border bg-card p-6 md:p-8">
-              <div className="prose prose-sm max-w-none whitespace-pre-line leading-relaxed text-muted-foreground">
-                {product.long_description || product.description || product.short_description || "No description available."}
-              </div>
+              <ProductDescription
+                content={product.long_description || product.description || product.short_description || ""}
+              />
             </TabsContent>
 
             <TabsContent value="info" className="rounded-2xl border border-border bg-card p-6 md:p-8">
@@ -242,7 +270,7 @@ function ProductPage() {
             </TabsContent>
 
             <TabsContent value="reviews" className="rounded-2xl border border-border bg-card p-6 md:p-8" id="reviews">
-              <ProductReviews productId={product.id} productTitle={product.title} />
+              <ProductReviews productId={product.id} />
             </TabsContent>
           </Tabs>
         </section>
@@ -311,146 +339,6 @@ function AttributesTable({
           ))}
         </tbody>
       </table>
-    </div>
-  );
-}
-
-const reviewSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(60),
-  title: z.string().trim().min(3, "Title is too short").max(80),
-  body: z.string().trim().min(10, "Review should be at least 10 characters").max(1000),
-  rating: z.number().int().min(1, "Please pick a rating").max(5),
-});
-
-function ProductReviews({ productId, productTitle }: { productId: string; productTitle: string }) {
-  const hydrated = useHydrated();
-  const allReviews = useReviews((s) => s.reviews);
-  const add = useReviews((s) => s.add);
-  const list = hydrated ? allReviews.filter((r) => r.productId === productId) : [];
-
-  const total = list.length;
-  const avg = total ? list.reduce((n, r) => n + r.rating, 0) / total : 0;
-  const dist = [5, 4, 3, 2, 1].map((s) => ({ star: s, count: list.filter((r) => r.rating === s).length }));
-
-  const [form, setForm] = useState({ name: "", title: "", body: "", rating: 0 });
-  const [errors, setErrors] = useState<Partial<Record<keyof typeof form, string>>>({});
-
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const parsed = reviewSchema.safeParse(form);
-    if (!parsed.success) {
-      const errs: typeof errors = {};
-      for (const iss of parsed.error.issues) {
-        const k = iss.path[0] as keyof typeof form;
-        if (!errs[k]) errs[k] = iss.message;
-      }
-      setErrors(errs);
-      return;
-    }
-    setErrors({});
-    add({ ...parsed.data, productId });
-    setForm({ name: "", title: "", body: "", rating: 0 });
-    toast.success("Thanks — your review has been posted.");
-  }
-
-  return (
-    <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
-      <div>
-        <div className="mb-6 flex items-start gap-6 rounded-xl bg-muted/40 p-5">
-          <div className="text-center">
-            <div className="text-4xl font-black text-primary">{avg.toFixed(1)}</div>
-            <div className="mt-1 flex justify-center">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <Star key={n} size={16} className={n <= Math.round(avg) ? "fill-accent text-accent" : "text-muted-foreground/40"} />
-              ))}
-            </div>
-            <div className="mt-1 text-xs text-muted-foreground">{total} review{total === 1 ? "" : "s"}</div>
-          </div>
-          <ul className="flex-1 space-y-1.5">
-            {dist.map((d) => {
-              const pct = total ? (d.count / total) * 100 : 0;
-              return (
-                <li key={d.star} className="flex items-center gap-3 text-xs">
-                  <span className="w-6 text-muted-foreground">{d.star}★</span>
-                  <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
-                    <div className="h-full rounded-full bg-accent" style={{ width: `${pct}%` }} />
-                  </div>
-                  <span className="w-6 text-right text-muted-foreground">{d.count}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        {list.length === 0 ? (
-          <p className="text-sm text-muted-foreground">No reviews yet for this product — be the first to share your experience.</p>
-        ) : (
-          <ul className="space-y-4">
-            {list.map((r) => (
-              <li key={r.id} className="rounded-xl border border-border bg-card p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="font-bold text-primary">{r.title}</h3>
-                    <div className="mt-1 text-xs text-muted-foreground">
-                      <span className="font-semibold text-foreground">{r.name}</span> · {new Date(r.createdAt).toLocaleDateString()}
-                    </div>
-                  </div>
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <Star key={n} size={14} className={n <= r.rating ? "fill-accent text-accent" : "text-muted-foreground/40"} />
-                    ))}
-                  </div>
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground">{r.body}</p>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <aside>
-        <div className="rounded-xl border border-border bg-card p-5">
-          <h3 className="text-lg font-bold text-primary">Write a review</h3>
-          <p className="mt-1 text-xs text-muted-foreground">Reviewing: {productTitle}</p>
-          <form onSubmit={onSubmit} noValidate className="mt-4 space-y-3">
-            <div>
-              <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-primary">Your rating</label>
-              <div className="flex gap-1" role="radiogroup">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    role="radio"
-                    aria-checked={form.rating === n}
-                    aria-label={`${n} star${n === 1 ? "" : "s"}`}
-                    onClick={() => setForm((f) => ({ ...f, rating: n }))}
-                    className="p-0.5"
-                  >
-                    <Star size={22} className={n <= form.rating ? "fill-accent text-accent" : "text-muted-foreground/40 hover:text-accent"} />
-                  </button>
-                ))}
-              </div>
-              {errors.rating && <p className="mt-1 text-xs text-destructive">{errors.rating}</p>}
-            </div>
-            <div>
-              <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-primary">Name</label>
-              <input maxLength={60} value={form.name} onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40" />
-              {errors.name && <p className="mt-1 text-xs text-destructive">{errors.name}</p>}
-            </div>
-            <div>
-              <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-primary">Title</label>
-              <input maxLength={80} value={form.title} onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40" />
-              {errors.title && <p className="mt-1 text-xs text-destructive">{errors.title}</p>}
-            </div>
-            <div>
-              <label className="mb-1 block text-xs font-bold uppercase tracking-wide text-primary">Review</label>
-              <textarea rows={4} maxLength={1000} value={form.body} onChange={(e) => setForm((f) => ({ ...f, body: e.target.value }))} className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent/40" />
-              {errors.body && <p className="mt-1 text-xs text-destructive">{errors.body}</p>}
-            </div>
-            <Button type="submit" className="w-full rounded-xl bg-accent text-accent-foreground hover:brightness-95">Post review</Button>
-          </form>
-        </div>
-      </aside>
     </div>
   );
 }
